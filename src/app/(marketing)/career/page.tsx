@@ -170,28 +170,29 @@ export default function CareerPage() {
       <section className="pb-16 md:pb-20">
         <div className="section-container">
           <div
-            className="relative isolate overflow-hidden rounded-2xl p-8 md:p-12 text-black shadow-[0_20px_40px_-10px_rgba(0,0,0,0.04)]"
+            className="relative isolate overflow-hidden rounded-2xl p-8 md:p-12 text-white"
             style={{
-              background: "linear-gradient(180deg, #FFFFFF 0%, #F6F6F5 100%)",
-              backgroundImage: "linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)",
+              background: "#080808",
+              backgroundImage: "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
               backgroundSize: "28px 28px",
-              border: "1px solid rgba(0,0,0,0.06)",
+              border: "1px solid rgba(255,255,255,0.08)",
             }}
           >
-            <span className="absolute top-0 left-0 w-8 h-px bg-black/10" />
-            <span className="absolute top-0 left-0 h-8 w-px bg-black/10" />
-            <span className="absolute bottom-0 right-0 w-8 h-px bg-black/10" />
-            <span className="absolute bottom-0 right-0 h-8 w-px bg-black/10" />
+            <span className="absolute top-0 left-0 w-8 h-px bg-white/20" />
+            <span className="absolute top-0 left-0 h-8 w-px bg-white/20" />
+            <span className="absolute bottom-0 right-0 w-8 h-px bg-white/20" />
+            <span className="absolute bottom-0 right-0 h-8 w-px bg-white/20" />
             <ScrollReveal>
               <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                 <div>
-                  <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-black/40">
+                  <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/50">
                     Stay connected
                   </p>
                   <h2
-                    className="section-heading max-w-xl text-black"
+                    className="section-heading max-w-xl text-white"
+                    style={{ color: "#fff" }}
                   >
-                    Don&apos;t see a role? Send us your <span className="serif-italic" style={{ color: "#000" }}>work anyway.</span>
+                    Don&apos;t see a role? Send us your <span className="serif-italic" style={{ background: "linear-gradient(135deg, #fdece2 0%, #d2b9f5 100%)", WebkitBackgroundClip: "text", color: "transparent" }}>work anyway.</span>
                   </h2>
                 </div>
                 <Link href="/contact" className="inline-flex h-10 w-max items-center justify-center rounded-full bg-white px-4 text-[13px] font-semibold text-black">

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 const navLinks = [
   { href: "/about", label: "About" },
@@ -41,38 +40,24 @@ export function Navbar() {
           className="overflow-hidden transition-all duration-500 ease-in-out"
           style={{
             borderRadius: open ? "24px" : scrolled ? "9999px" : "0px",
-            background: open
-              ? "rgba(255,255,255,0.72)"
-              : scrolled
+            background: scrolled
               ? "rgba(250,250,250,0.90)"
               : white
-              ? "transparent"
-              : "rgba(250,250,250,0.88)",
-            border: scrolled || open
+                ? "transparent"
+                : "rgba(250,250,250,0.88)",
+            border: scrolled
               ? "1px solid rgba(0,0,0,0.07)"
               : white
-              ? "0 solid transparent"
-              : "0 solid transparent",
-            borderBottom: scrolled || open
+                ? "0 solid transparent"
+                : "0 solid transparent",
+            borderBottom: scrolled
               ? undefined
               : white
-              ? "1px solid rgba(255,255,255,0.12)"
-              : "1px solid rgba(0,0,0,0.05)",
-            backdropFilter: open
-              ? "blur(32px) saturate(2)"
-              : scrolled
-              ? "blur(24px) saturate(1.8)"
-              : white
-              ? "none"
-              : "blur(16px)",
-            WebkitBackdropFilter: open
-              ? "blur(32px) saturate(2)"
-              : scrolled
-              ? "blur(24px) saturate(1.8)"
-              : white
-              ? "none"
-              : "blur(16px)",
-            boxShadow: scrolled || open ? "0 8px 32px -16px rgba(0,0,0,0.18)" : "none",
+                ? "1px solid rgba(255,255,255,0.12)"
+                : "1px solid rgba(0,0,0,0.05)",
+            backdropFilter: scrolled ? "blur(24px) saturate(1.8)" : white ? "none" : "blur(16px)",
+            WebkitBackdropFilter: scrolled ? "blur(24px) saturate(1.8)" : white ? "none" : "blur(16px)",
+            boxShadow: scrolled ? "0 8px 32px -16px rgba(0,0,0,0.18)" : "none",
           }}
         >
           {/* Desktop */}
@@ -115,8 +100,8 @@ export function Navbar() {
                           ? "#ffffff"
                           : "rgba(255,255,255,0.72)"
                         : active
-                        ? "#0A0A0A"
-                        : "rgba(0,0,0,0.52)",
+                          ? "#0A0A0A"
+                          : "rgba(0,0,0,0.52)",
                     }}
                   >
                     <span
@@ -190,31 +175,27 @@ export function Navbar() {
 
             <div
               className="overflow-hidden transition-all duration-300 ease-in-out"
-              style={{ maxHeight: open ? "420px" : "0px" }}
+              style={{ maxHeight: open ? "380px" : "0px" }}
             >
-              <div className="px-5 pb-7 pt-2">
-                <div className="flex flex-col gap-1">
-                  {navLinks.map((link) => {
-                    const active = pathname === link.href;
-                    return (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        onClick={() => setOpen(false)}
-                        className="group flex items-center justify-between rounded-xl px-4 py-3.5 transition-all duration-200 active:scale-[0.98]"
-                        style={{ background: active ? "rgba(0,0,0,0.04)" : "transparent" }}
-                      >
-                        <span className={`text-[15px] font-medium transition-colors ${active ? "text-black" : "text-black/60"}`}>
-                          {link.label}
-                        </span>
-                        <ArrowRight className={`size-4 opacity-0 transition-all -translate-x-2 group-hover:opacity-40 group-hover:translate-x-0 ${active ? "opacity-30 translate-x-0" : ""}`} />
-                      </Link>
-                    );
-                  })}
+              <div className="px-4 pb-5 pt-1">
+                <div
+                  className="rounded-2xl bg-white p-2"
+                  style={{ boxShadow: "0 8px 32px -12px rgba(0,0,0,0.22)", border: "1px solid rgba(0,0,0,0.06)" }}
+                >
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setOpen(false)}
+                      className="block rounded-xl px-4 py-3 text-[13.5px] font-medium text-black/65 transition-colors hover:bg-black/[0.035] hover:text-black"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
                   <Link
                     href="/contact"
                     onClick={() => setOpen(false)}
-                    className="mt-4 flex h-12 items-center justify-center rounded-full bg-black text-[15px] font-semibold text-white shadow-lg active:scale-[0.98] transition-transform"
+                    className="mt-2 flex h-10 items-center justify-center rounded-full bg-black text-[13.5px] font-medium text-white"
                   >
                     Get Started
                   </Link>

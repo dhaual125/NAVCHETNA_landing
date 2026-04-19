@@ -431,28 +431,31 @@ export default function ServicesPage() {
         <div className="section-container pt-16">
           <ScrollReveal>
             <div
-              className="relative isolate overflow-hidden rounded-2xl flex flex-col items-center text-center shadow-[0_20px_40px_-10px_rgba(0,0,0,0.04)]"
+              className="relative isolate overflow-hidden rounded-2xl flex flex-col items-center text-center"
               style={{
-                background: "linear-gradient(180deg, #FFFFFF 0%, #F6F6F5 100%)",
-                backgroundImage: "linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)",
-                backgroundSize: "28px 28px",
-                border: "1px solid rgba(0,0,0,0.06)",
+                background: "linear-gradient(135deg, #fdfbf7 0%, #f8f6ff 50%, #fef9f5 100%)",
+                backgroundImage: "linear-gradient(135deg, #fdfbf7 0%, #f8f6ff 50%, #fef9f5 100%), linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px)",
+                backgroundSize: "100% 100%, 32px 32px, 32px 32px",
+                border: "1px solid rgba(0,0,0,0.08)",
                 padding: "80px 48px",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.8)",
               }}
             >
-              <span className="absolute top-0 left-0 w-8 h-px bg-black/10" />
-              <span className="absolute top-0 left-0 h-8 w-px bg-black/10" />
-              <span className="absolute bottom-0 right-0 w-8 h-px bg-black/10" />
-              <span className="absolute bottom-0 right-0 h-8 w-px bg-black/10" />
+              <span className="absolute top-0 left-0 w-12 h-px bg-gradient-to-r from-black/15 to-transparent" />
+              <span className="absolute top-0 left-0 h-12 w-px bg-gradient-to-b from-black/15 to-transparent" />
+              <span className="absolute bottom-0 right-0 w-12 h-px bg-gradient-to-l from-black/15 to-transparent" />
+              <span className="absolute bottom-0 right-0 h-12 w-px bg-gradient-to-t from-black/15 to-transparent" />
+              <div className="absolute top-0 left-1/4 w-64 h-64 bg-gradient-radial from-purple-200/20 to-transparent blur-3xl opacity-40" />
+              <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-gradient-radial from-orange-200/20 to-transparent blur-3xl opacity-40" />
               <div className="relative z-10 max-w-2xl mx-auto">
-                <span className="inline-flex items-center gap-2 mb-6 text-black/50 bg-black/[0.02]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: "10px", letterSpacing: "1.4px", textTransform: "uppercase", border: "1px solid rgba(0,0,0,0.06)", padding: "5px 14px", borderRadius: "9999px" }}>
+                <span className="inline-flex items-center gap-2 mb-6 text-black/50" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: "10px", letterSpacing: "1.4px", textTransform: "uppercase", border: "1px solid rgba(0,0,0,0.12)", padding: "5px 14px", borderRadius: "3px", background: "rgba(255,255,255,0.6)", backdropFilter: "blur(8px)" }}>
                   Ready to transform?
                 </span>
-                <h2 className="text-black text-balance mb-4" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 400, letterSpacing: "-0.03em", lineHeight: 1.08 }}>
+                <h2 className="text-balance mb-4" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 400, letterSpacing: "-0.03em", lineHeight: 1.08, color: "#000" }}>
                   Let&apos;s build something{" "}
-                  <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", color: "#000" }}>useful and beautiful.</span>
+                  <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", background: "linear-gradient(135deg, #d4845a 0%, #8b6bc7 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>useful and beautiful.</span>
                 </h2>
-                <p className="text-black/50 mb-8" style={{ lineHeight: 1.7, fontSize: "0.95rem" }}>
+                <p className="text-black/60 mb-8" style={{ lineHeight: 1.7, fontSize: "0.95rem" }}>
                   Book a structured consultation and see how careful product thinking can reshape your workflow.
                 </p>
                 <Link href="/contact" className="mt-8 btn btn-primary" style={{ height: "2.5rem", padding: "0 1.5rem" }}>

@@ -40,7 +40,7 @@ export function Footer() {
       {/* Warm glow at the bottom edge */}
       <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 h-[32rem] w-[140%] opacity-[0.85] mix-blend-multiply" style={{ background: "radial-gradient(ellipse at bottom, rgba(245, 190, 145, 0.35) 0%, rgba(185, 165, 230, 0.15) 35%, transparent 70%)" }} />
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#fdece2]/30 to-transparent mix-blend-multiply" />
-      
+
       <div className="relative z-10 mx-auto max-w-[80rem] px-5 sm:px-8">
         {/* Main grid */}
         <div className="grid grid-cols-2 gap-x-8 gap-y-12 py-16 sm:grid-cols-5 md:py-20">
@@ -49,9 +49,9 @@ export function Footer() {
             <span className="type-3xl text-black font-medium tracking-tight">Navchetna Technologies</span>
             <p className="mt-5 type-sm text-black/50 leading-relaxed max-w-[280px]">
               Based in India, For India,<br />
-              By Students of India.
+              By Students of India
             </p>
-            
+
           </div>
 
           {/* Products */}

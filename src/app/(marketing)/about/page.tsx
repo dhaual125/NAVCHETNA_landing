@@ -576,7 +576,7 @@ export default function AboutPage() {
             </div>
           </ScrollReveal>
 
-                    {/* Three story cards */}
+          {/* Three story cards */}
           <div className="grid md:grid-cols-3 gap-4 md:gap-5">
 
             {/* Card 1 */}
@@ -727,7 +727,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      
+
       <section className="py-24 md:py-32 relative bg-[#F8F8F7]">
         <div className="section-sep" />
         <div className="section-container px-6 sm:px-12 md:px-24">
@@ -754,15 +754,15 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
             <ScrollReveal>
-              <div className="group relative bg-white rounded-3xl p-8 md:p-12 h-full flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)]" style={{ border: "1px solid rgba(0,0,0,0.08)" }}>
+              <div className="bg-white rounded-2xl p-8 md:p-10 h-full flex flex-col justify-between" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
                 <div>
-                  <div className="inline-flex size-11 items-center justify-center rounded-xl border border-black/[0.08] mb-8 bg-black/[0.02] group-hover:bg-black/[0.04] transition-colors">
-                    <Flame className="size-[18px] text-black/70 stroke-[1.5]" />
+                  <div className="size-12 rounded-full flex items-center justify-center mb-6" style={{ background: "rgba(0,0,0,0.03)" }}>
+                    <Flame className="size-5 text-black/60" />
                   </div>
-                  <h3 className="text-xl text-black mb-4 leading-tight" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>
+                  <h3 className="text-[1.35rem] text-black mb-4 leading-tight" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>
                     From Dreamers to Builders
                   </h3>
-                  <p className="text-black/50 text-[13.5px] leading-[1.7]">
+                  <p className="text-black/50 text-[0.95rem] leading-relaxed">
                     Back then, we were just a bunch of dreamers with laptops and big ideas.
                     No fancy offices, no investors, no roadmap — just a shared vision and a
                     lot of determination. We wanted to create solutions that actually help
@@ -773,15 +773,15 @@ export default function AboutPage() {
             </ScrollReveal>
 
             <ScrollReveal delay={100}>
-              <div className="group relative bg-white rounded-3xl p-8 md:p-12 h-full flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)]" style={{ border: "1px solid rgba(0,0,0,0.08)" }}>
+              <div className="bg-white rounded-2xl p-8 md:p-10 h-full flex flex-col justify-between" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
                 <div>
-                  <div className="inline-flex size-11 items-center justify-center rounded-xl border border-black/[0.08] mb-8 bg-black/[0.02] group-hover:bg-black/[0.04] transition-colors">
-                    <Heart className="size-[18px] text-black/70 stroke-[1.5]" />
+                  <div className="size-12 rounded-full flex items-center justify-center mb-6" style={{ background: "rgba(0,0,0,0.03)" }}>
+                    <Heart className="size-5 text-black/60" />
                   </div>
-                  <h3 className="text-xl text-black mb-4 leading-tight" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>
+                  <h3 className="text-[1.35rem] text-black mb-4 leading-tight" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>
                     Today's Reality
                   </h3>
-                  <p className="text-black/50 text-[13.5px] leading-[1.7]">
+                  <p className="text-black/50 text-[0.95rem] leading-relaxed">
                     Today, we've grown from five friends to a core team of six and a
                     family of 15 passionate people. Our growth has always been powered by
                     curiosity, creativity, and a love for building things that matter. The scale changed, but the heart remains the same.
@@ -796,7 +796,7 @@ export default function AboutPage() {
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           LOCATION + AWS — Bento grid
           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      
+
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           TEAM
           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
@@ -851,37 +851,42 @@ export default function AboutPage() {
             <div
               className="mt-6 relative isolate overflow-hidden rounded-2xl flex flex-col items-center text-center"
               style={{
-                background: "linear-gradient(180deg, #FFFFFF 0%, #F6F6F5 100%)",
-                backgroundImage: "linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)",
-                backgroundSize: "28px 28px",
-                border: "1px solid rgba(0,0,0,0.06)",
+                background: "linear-gradient(135deg, #fdfbf7 0%, #f8f6ff 50%, #fef9f5 100%)",
+                backgroundImage: "linear-gradient(135deg, #fdfbf7 0%, #f8f6ff 50%, #fef9f5 100%), linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px)",
+                backgroundSize: "100% 100%, 32px 32px, 32px 32px",
+                border: "1px solid rgba(0,0,0,0.08)",
                 padding: "clamp(3rem, 10vw, 5rem) clamp(1.25rem, 5vw, 3rem)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.8)",
               }}
             >
               {/* corner accents */}
-              <span className="absolute top-0 left-0 w-8 h-px bg-black/10" />
-              <span className="absolute top-0 left-0 h-8 w-px bg-black/10" />
-              <span className="absolute bottom-0 right-0 w-8 h-px bg-black/10" />
-              <span className="absolute bottom-0 right-0 h-8 w-px bg-black/10" />
+              <span className="absolute top-0 left-0 w-12 h-px bg-gradient-to-r from-black/15 to-transparent" />
+              <span className="absolute top-0 left-0 h-12 w-px bg-gradient-to-b from-black/15 to-transparent" />
+              <span className="absolute bottom-0 right-0 w-12 h-px bg-gradient-to-l from-black/15 to-transparent" />
+              <span className="absolute bottom-0 right-0 h-12 w-px bg-gradient-to-t from-black/15 to-transparent" />
+              <div className="absolute top-0 left-1/4 w-64 h-64 bg-gradient-radial from-purple-200/20 to-transparent blur-3xl opacity-40" />
+              <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-gradient-radial from-orange-200/20 to-transparent blur-3xl opacity-40" />
 
               <span
-                className="inline-flex items-center gap-2 mb-6 text-black/50 bg-black/[0.02]"
+                className="inline-flex items-center gap-2 mb-6 text-black/50"
                 style={{
                   fontFamily: "'Inter', sans-serif",
                   fontWeight: 700,
                   fontSize: "10px",
                   letterSpacing: "1.4px",
                   textTransform: "uppercase",
-                  border: "1px solid rgba(0,0,0,0.06)",
+                  border: "1px solid rgba(0,0,0,0.12)",
                   padding: "5px 14px",
-                  borderRadius: "9999px",
+                  borderRadius: "3px",
+                  background: "rgba(255,255,255,0.6)",
+                  backdropFilter: "blur(8px)",
                 }}
               >
                 <Users className="size-3" />
                 Join Our Growing Family
               </span>
               <h3
-                className="mb-5 text-balance text-center mx-auto text-black"
+                className="text-black mb-5 text-balance text-center mx-auto"
                 style={{
                   fontFamily: "var(--font-waldenburg)",
                   fontWeight: 50,
@@ -889,6 +894,7 @@ export default function AboutPage() {
                   letterSpacing: "-0.025em",
                   lineHeight: 1.15,
                   maxWidth: "520px",
+                  color: "#000"
                 }}
               >
                 Navchetna isn&apos;t just a company.{" "}
@@ -896,14 +902,16 @@ export default function AboutPage() {
                   style={{
                     fontFamily: "'Instrument Serif', serif",
                     fontStyle: "italic",
-                    color: "#000",
+                    background: "linear-gradient(135deg, #d4845a 0%, #8b6bc7 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
                   }}
                 >
                   It&apos;s a story.
                 </span>
               </h3>
               <p
-                className="text-black/50 max-w-lg mx-auto mb-10 text-pretty"
+                className="text-black/55 max-w-lg mx-auto mb-10 text-pretty"
                 style={{
                   fontFamily: "'Inter', sans-serif",
                   fontSize: "15px",
