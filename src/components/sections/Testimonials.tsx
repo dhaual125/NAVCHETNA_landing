@@ -41,7 +41,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="relative overflow-hidden py-20 md:py-28 bg-[#F8F8F7]">
+    <section className="relative overflow-hidden py-20 md:py-28 bg-[var(--page-bg)]">
       {/* Header */}
       <div className="section-container mb-16">
         <ScrollReveal>
@@ -136,7 +136,7 @@ export function Testimonials() {
         className="absolute bottom-0 left-0 right-0 pointer-events-none z-20"
         style={{
           height: "180px",
-          background: "linear-gradient(to top, #F8F8F7 0%, #F8F8F7 20%, transparent 100%)",
+          background: "linear-gradient(to top, var(--page-bg) 0%, var(--page-bg) 20%, transparent 100%)",
         }}
       />
     </section>
