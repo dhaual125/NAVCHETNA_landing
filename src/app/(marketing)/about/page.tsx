@@ -403,15 +403,15 @@ export default function AboutPage() {
                 </span>
               </div>
 
-              {/* Headline — smaller, left-aligned, about-page weight */}
+              {/* Headline */}
               <h1
                 className="mb-5 text-black text-balance"
                 style={{
-                  fontSize: "clamp(2.5rem, 5vw, 4.2rem)",
-                  lineHeight: "1.05",
-                  letterSpacing: "-0.035em",
+                  fontSize: "clamp(2rem, 4vw, 3.15rem)",
+                  lineHeight: 1.08,
+                  letterSpacing: "-0.03em",
                   fontFamily: "var(--font-waldenburg)",
-                  fontWeight: 400,
+                  fontWeight: 500,
                   color: "#000",
                 }}
               >
@@ -543,10 +543,10 @@ export default function AboutPage() {
                 <h2
                   style={{
                     fontFamily: "var(--font-waldenburg)",
-                    fontWeight: 400,
-                    fontSize: "clamp(2.2rem, 4.5vw, 3.6rem)",
-                    letterSpacing: "-0.035em",
-                    lineHeight: 1.06,
+                    fontWeight: 500,
+                    fontSize: "clamp(2rem, 4vw, 3.15rem)",
+                    letterSpacing: "-0.03em",
+                    lineHeight: 1.08,
                     color: "#000",
                   }}
                 >
@@ -737,10 +737,10 @@ export default function AboutPage() {
                   className="text-black mt-5 mb-7"
                   style={{
                     fontFamily: "var(--font-waldenburg)",
-                    fontWeight: 400,
-                    fontSize: "clamp(2rem, 4vw, 3.2rem)",
+                    fontWeight: 500,
+                    fontSize: "clamp(2rem, 4vw, 3.15rem)",
                     letterSpacing: "-0.03em",
-                    lineHeight: 1.1,
+                    lineHeight: 1.08,
                   }}
                 >
                   More Than Just{" "}
@@ -897,10 +897,10 @@ export default function AboutPage() {
                   className="text-black text-balance mt-5"
                   style={{
                     fontFamily: "var(--font-waldenburg)",
-                    fontWeight: 400,
-                    fontSize: "clamp(2rem, 4vw, 3.2rem)",
+                    fontWeight: 500,
+                    fontSize: "clamp(2rem, 4vw, 3.15rem)",
                     letterSpacing: "-0.03em",
-                    lineHeight: 1.1,
+                    lineHeight: 1.08,
                     maxWidth: "400px",
                   }}
                 >

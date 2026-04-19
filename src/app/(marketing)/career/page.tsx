@@ -44,10 +44,10 @@ export default function CareerPage() {
                 className="text-black text-balance"
                 style={{
                   fontFamily: "var(--font-waldenburg)",
-                  fontSize: "clamp(2.5rem, 5vw, 4rem)",
-                  fontWeight: 400,
+                  fontSize: "clamp(2rem, 4vw, 3.15rem)",
+                  fontWeight: 500,
                   letterSpacing: "-0.03em",
-                  lineHeight: 1.05,
+                  lineHeight: 1.08,
                 }}
               >
                 Build useful technology with a{" "}
@@ -134,9 +134,9 @@ export default function CareerPage() {
                   className="max-w-xl text-black"
                   style={{
                     fontFamily: "var(--font-waldenburg)",
-                    fontSize: "clamp(2rem, 4vw, 3.2rem)",
-                    fontWeight: 400,
-                    letterSpacing: "-0.025em",
+                    fontSize: "clamp(2rem, 4vw, 3.15rem)",
+                    fontWeight: 500,
+                    letterSpacing: "-0.03em",
                     lineHeight: 1.08,
                   }}
                 >
