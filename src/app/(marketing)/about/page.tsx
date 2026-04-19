@@ -1020,7 +1020,8 @@ export default function AboutPage() {
               </p>
               <Link
                 href="/career"
-                className="blueprint-btn inline-flex items-center gap-2"
+                className="mt-8 btn btn-primary inline-flex items-center gap-2"
+                style={{ height: "2.5rem", padding: "0 1.5rem" }}
               >
                 <Users className="size-3.5" />
                 View Open Positions

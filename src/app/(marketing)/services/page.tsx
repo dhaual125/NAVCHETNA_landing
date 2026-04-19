@@ -304,7 +304,8 @@ export default function ServicesPage() {
                 </p>
                 <Link
                   href="/contact"
-                  className="blueprint-btn"
+                  className="mt-8 btn btn-primary"
+                  style={{ height: "2.5rem", padding: "0 1.5rem" }}
                 >
                   Schedule a Call
                 </Link>

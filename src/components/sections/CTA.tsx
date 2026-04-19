@@ -64,10 +64,11 @@ export function CTA() {
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link
                   href="/contact"
-                  className="blueprint-btn"
+                  className="btn btn-primary gap-2"
+                  style={{ height: "2.5rem", padding: "0 1.5rem" }}
                 >
                   Schedule consultation
-                  <ArrowRight weight="bold" className="size-3.5" />
+                  <ArrowRight weight="bold" className="size-3.5 text-white/50" />
                 </Link>
                 <a
                   href="mailto:hello@navchetna.tech"
