@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 
 export function ScrollTextReveal({
   children,
@@ -40,7 +40,7 @@ const Word = ({
   range,
 }: {
   children: string;
-  progress: any;
+  progress: MotionValue<number>;
   range: [number, number];
 }) => {
   const opacity = useTransform(progress, range, [0.15, 1]);

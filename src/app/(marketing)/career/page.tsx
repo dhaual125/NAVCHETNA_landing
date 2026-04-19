@@ -1,114 +1,166 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { Mail, MapPin, Users, Sparkles, Heart, Coffee, Rocket, GraduationCap } from "lucide-react";
+import {
+  Briefcase,
+  Coffee,
+  GraduationCap,
+  Heart,
+  Mail,
+  MapPin,
+  Rocket,
+  Sparkles,
+  Users,
+} from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Careers - NAVCHETNA TECHNOLOGIES",
+  description: "Join Navchetna Technologies and help build conscious technology that impacts real lives across India.",
+};
 
 const perks = [
-  { icon: Rocket, title: "Build What Matters", desc: "Work on products like Osmium and Natraj that impact real lives across India." },
-  { icon: GraduationCap, title: "Learn Every Day", desc: "We're a team of learners. Explore AI, AR, cloud, and cutting-edge tech hands-on." },
-  { icon: Users, title: "Small Team, Big Impact", desc: "No bureaucracy. Your ideas get heard, built, and shipped — fast." },
-  { icon: Heart, title: "Culture of Care", desc: "Flexible hours, mental health support, and a team that genuinely has your back." },
-  { icon: Coffee, title: "Hostel-Room Energy", desc: "We started in a hostel room. That scrappy, late-night energy is still our DNA." },
-  { icon: Sparkles, title: "Grow With Us", desc: "We're just getting started. Early team members shape the company's future." },
+  { icon: Rocket, title: "Build What Matters", desc: "Work on products like Osmium and Natraj that solve practical problems." },
+  { icon: GraduationCap, title: "Learn Every Day", desc: "Explore AI, AR, cloud, product thinking, and design through real work." },
+  { icon: Users, title: "Small Team, Big Impact", desc: "A close team where ownership is visible and ideas move quickly." },
+  { icon: Heart, title: "Culture of Care", desc: "Flexible collaboration, supportive peers, and a healthy learning environment." },
+  { icon: Coffee, title: "Builder Energy", desc: "Curious, scrappy, and focused on shipping useful things with taste." },
+  { icon: Sparkles, title: "Grow With Us", desc: "Early team members help shape how the company builds and operates." },
 ];
 
 const categories = ["Engineering", "Design", "Business", "Marketing", "Operations"];
 
 export default function CareerPage() {
   return (
-    <>
-      {/* ━━━ HERO — split screen ━━━ */}
-      <section className="min-h-screen flex flex-col lg:flex-row">
-        {/* Left — image */}
-        <div className="relative w-full lg:w-1/2 h-[40vh] lg:h-auto flex-none">
-          <Image
-            src="/ref/eric-dane.jpeg"
-            alt=""
-            fill
-            priority
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-black/10" />
-          {/* Overlay text on mobile */}
-          <div className="absolute bottom-6 left-6 right-6 lg:hidden">
-            <p className="type-2xs font-bold uppercase tracking-wider text-white/60 bg-white/10 px-2.5 py-1 rounded-md w-fit mb-3 backdrop-blur-sm">
-              Join Our Mission
-            </p>
-            <h1 className="type-5xl" style={{ color: "#ffffff" }}>
-              Build the Future with Our Team
-            </h1>
-          </div>
-        </div>
-
-        {/* Right — content */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-center px-6 sm:px-10 md:px-14 lg:px-16 py-12 lg:py-0 lg:min-h-screen">
-          <div className="max-w-lg">
-            <ScrollReveal>
-              <p className="hidden lg:block type-sm font-semibold uppercase tracking-[0.15em] mb-5 px-4 py-1.5 rounded-full bg-warm-50 text-brand ring-[0.5px] ring-inset ring-black/[0.06] w-fit">
-                Join Our Mission
-              </p>
-              <h1 className="hidden lg:block type-6xl text-black mb-6" style={{ fontSize: "clamp(1.875rem, 3.5vw, 2.75rem)" }}>
-                Build the Future with Our Team
+    <main className="bg-[var(--page-bg)]">
+      <section className="relative border-b border-black/[0.12] pt-28 pb-12 md:pt-36 md:pb-16" style={{ background: "var(--quiet-gradient)" }}>
+        <div className="grid-overlay" />
+        <div className="section-container relative z-10 mx-auto grid gap-10 lg:grid-cols-[1fr_0.72fr] lg:items-end">
+          <ScrollReveal>
+            <div className="max-w-3xl">
+              <span className="mb-4 inline-flex rounded-full border border-black/[0.08] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-black/42">
+                Careers
+              </span>
+              <h1
+                className="text-black text-balance"
+                style={{
+                  fontFamily: "var(--font-waldenburg)",
+                  fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                  fontWeight: 400,
+                  letterSpacing: "-0.03em",
+                  lineHeight: 1.05,
+                }}
+              >
+                Build useful technology with a{" "}
+                <span className="serif-italic">
+                  focused team.
+                </span>
               </h1>
-              <p className="type-base text-warm-600 leading-relaxed">
-                Join Navchetna Technology TECHNOLOGY and be part of a team that&apos;s revolutionizing
-                technology through conscious innovation. We&apos;re five friends
-                who became a family of fifteen — and we&apos;re looking for
-                people who share our fire.
+              <p className="mt-6 max-w-2xl text-pretty text-black/50" style={{ fontFamily: "var(--font-body)", fontSize: "16px", lineHeight: 1.7 }}>
+                Join Navchetna Technologies and help shape products, platforms,
+                and learning systems that create visible impact across India.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-4">
-                <div className="flex items-center gap-2 type-sm text-warm-500">
-                  <MapPin className="size-4 text-brand" />
-                  Jodhpur & Ahmedabad, India
-                </div>
-                <div className="flex items-center gap-2 type-sm text-warm-500">
-                  <Users className="size-4 text-brand" />
+              <div className="mt-6 flex flex-wrap gap-4 text-[13px] font-medium text-black/52">
+                <span className="inline-flex items-center gap-2">
+                  <MapPin className="size-4 text-black/34" />
+                  Jodhpur & Ahmedabad
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <Users className="size-4 text-black/34" />
                   15+ team members
-                </div>
+                </span>
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href="#positions"
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-black text-white transition-transform duration-300 ease-out active:scale-[0.98] hover:bg-warm-900 h-12 px-6 type-base font-medium"
-                >
+              <div className="mt-7 flex flex-wrap gap-3">
+                <a href="#positions" className="btn btn-primary">
                   View positions
                 </a>
-                <Link
-                  href="/about"
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.06),0_1px_2px_0_rgba(0,0,0,0.04),0_2px_4px_0_rgba(0,0,0,0.04)] transition-transform duration-300 ease-out active:scale-[0.98] hover:bg-warm-50 h-12 px-6 type-base"
-                >
+                <Link href="/about" className="btn btn-secondary">
                   Our story
                 </Link>
               </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ━━━ PERKS ━━━ */}
-      <section className="py-16 md:py-24 bg-warm-50">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-14">
-              <p className="type-xs text-brand font-medium uppercase tracking-wider mb-3">Why Navchetna Technology Technology</p>
-              <h2 className="type-5xl text-black text-balance max-w-lg mx-auto">
-                More than just a workplace
-              </h2>
             </div>
           </ScrollReveal>
 
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {perks.map((p, i) => (
-              <ScrollReveal key={p.title} delay={i * 80}>
-                <div className="flex h-full flex-col rounded-2xl border border-black/5 bg-white p-6 sm:p-7 transition-shadow hover:shadow-[0_0_0_1px_rgba(0,0,0,0.06),0_2px_8px_rgba(0,0,0,0.06)]">
-                  <div className="flex items-center justify-center size-12 rounded-xl bg-warm-50 ring-[0.5px] ring-inset ring-black/[0.06] mb-5">
-                    <p.icon className="size-6 text-brand" />
-                  </div>
-                  <h3 className="type-xl text-black mb-2">{p.title}</h3>
-                  <p className="type-sm text-warm-500 leading-relaxed">{p.desc}</p>
+          <ScrollReveal delay={80}>
+            <div className="rounded-[var(--panel-radius)] bg-white p-4 ring-1 ring-black/[0.06]">
+              <div
+                className="relative h-44 overflow-hidden rounded-[12px] bg-[#f4f4f3]"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(rgba(0,0,0,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.12) 1px, transparent 1px)",
+                    backgroundSize: "28px 28px",
+                  }}
+              >
+                <div className="absolute left-1/2 top-1/2 size-[4.5rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white shadow-[0_18px_50px_-32px_rgba(0,0,0,0.45)] ring-1 ring-black/[0.06]" />
+                <div className="absolute left-1/2 top-1/2 flex size-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[14px] bg-black text-white">
+                  <Briefcase className="size-5" />
+                </div>
+                {[0, 1, 2, 3].map((i) => (
+                  <span
+                    key={i}
+                    className="absolute rounded-full border border-black/[0.08]"
+                    style={{
+                      width: `${104 + i * 32}px`,
+                      height: `${104 + i * 32}px`,
+                      left: "50%",
+                      top: "50%",
+                      transform: "translate(-50%, -50%)",
+                    }}
+                  />
+                ))}
+              </div>
+              <div className="mt-5 grid grid-cols-3 gap-2 text-center">
+                {["Product", "AI", "Design"].map((item) => (
+                  <span key={item} className="rounded-full bg-black/[0.035] px-3 py-2 text-xs font-semibold text-black/54">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="py-14 md:py-[4.5rem]">
+        <div className="section-container">
+          <ScrollReveal>
+            <div className="mb-7 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-black/36">
+                  Culture
+                </p>
+                <h2
+                  className="max-w-xl text-black"
+                  style={{
+                    fontFamily: "var(--font-waldenburg)",
+                    fontSize: "clamp(2rem, 4vw, 3.2rem)",
+                    fontWeight: 400,
+                    letterSpacing: "-0.025em",
+                    lineHeight: 1.08,
+                  }}
+                >
+                  A calm place to do <span className="serif-italic">ambitious work.</span>
+                </h2>
+              </div>
+              <p className="max-w-md text-sm leading-7 text-black/48">
+                We value taste, ownership, curiosity, and direct communication.
+              </p>
+            </div>
+          </ScrollReveal>
+
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {perks.map((perk, index) => (
+              <ScrollReveal key={perk.title} delay={index * 40}>
+                <div className="group relative h-full overflow-hidden rounded-2xl bg-black/[0.02] border border-black/[0.06] p-7 transition-all duration-500 hover:bg-black/[0.04] hover:border-black/[0.12]">
+                  {/* Subtle Blueprint Background on Hover */}
+                  <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)", backgroundSize: "16px 16px" }} />
+                  
+                  <span className="relative mb-6 flex size-10 items-center justify-center rounded-xl bg-white shadow-sm border border-black/[0.05] text-black/70">
+                    <perk.icon className="size-4" />
+                  </span>
+                  <h3 className="relative text-lg font-medium text-black tracking-tight" style={{ fontFamily: "var(--font-waldenburg)" }}>{perk.title}</h3>
+                  <p className="relative mt-3 text-[14px] leading-relaxed text-black/60">{perk.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -116,87 +168,107 @@ export default function CareerPage() {
         </div>
       </section>
 
-      {/* ━━━ OPEN POSITIONS ━━━ */}
-      <section id="positions" className="py-16 md:py-24 scroll-mt-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+      <section id="positions" className="scroll-mt-24 border-t border-black/[0.06] py-14 md:py-[4.5rem]">
+        <div className="section-container">
           <ScrollReveal>
-            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+            <div className="mb-7 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
               <div>
-                <p className="type-sm text-warm-500 font-medium mb-4">Open Positions</p>
-                <h2 className="type-5xl text-black text-balance max-w-xl">
+                <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-black/36">
+                  Open Positions
+                </p>
+                <h2 
+                  className="text-black"
+                  style={{
+                    fontFamily: "var(--font-waldenburg)",
+                    fontSize: "clamp(2rem, 4vw, 3.2rem)",
+                    fontWeight: 400,
+                    letterSpacing: "-0.025em",
+                    lineHeight: 1.08,
+                  }}
+                >
                   Current openings
                 </h2>
               </div>
               <div className="flex flex-wrap gap-2">
-                {categories.map((c) => (
-                  <span
-                    key={c}
-                    className="inline-flex items-center rounded-full bg-warm-50 px-3 py-1.5 type-2xs text-warm-600 ring-[0.5px] ring-inset ring-black/[0.06] cursor-pointer hover:bg-warm-100 transition-colors"
-                  >
-                    {c}
+                {categories.map((category) => (
+                  <span key={category} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-black/52 ring-1 ring-black/[0.06]">
+                    {category}
                   </span>
                 ))}
               </div>
             </div>
           </ScrollReveal>
 
-          {/* Empty state */}
-          <ScrollReveal delay={100}>
-            <div className="rounded-2xl border border-black/5 bg-warm-50 p-10 md:p-16 text-center">
-              <div className="flex items-center justify-center size-16 rounded-2xl bg-white ring-[0.5px] ring-inset ring-black/[0.06] mx-auto mb-6">
-                <Users className="size-8 text-warm-400" />
+          <ScrollReveal delay={80}>
+            <div className="rounded-[var(--panel-radius)] bg-white p-6 ring-1 ring-black/[0.06] md:flex md:items-center md:justify-between md:gap-8">
+              <div className="flex gap-5">
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-[var(--soft-radius)] bg-black/[0.045] text-black/44">
+                  <Users className="size-6" />
+                </span>
+                <div>
+                  <h3 className="text-lg font-semibold text-black">No open positions currently</h3>
+                  <p className="mt-2 max-w-2xl text-sm leading-7 text-black/48">
+                    We are not actively hiring right now, but we are always open
+                    to meeting thoughtful builders who care about product,
+                    design, engineering, and impact.
+                  </p>
+                </div>
               </div>
-              <h3 className="type-4xl text-black mb-3">No Open Positions Currently</h3>
-              <p className="type-sm text-warm-500 max-w-lg mx-auto mb-8">
-                We&apos;re not actively hiring at the moment, but we&apos;re
-                always interested in connecting with talented individuals who
-                share our passion for innovation.
-              </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 type-sm font-medium text-white transition-colors hover:bg-warm-900"
+                className="mt-6 inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-full bg-black px-5 text-sm font-semibold text-white md:mt-0"
               >
                 <Mail className="size-4" />
-                Send Your Resume
+                Send Resume
               </Link>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* ━━━ CTA ━━━ */}
-      <section className="pb-20 md:pb-28">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <ScrollReveal>
-            <div className="relative isolate overflow-hidden rounded-3xl bg-black text-center">
-              <div className="absolute inset-0">
-                <Image src="/ref/xuo8mc9lweg-dali.jpeg" alt="" fill sizes="100vw" className="object-cover opacity-30" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-              </div>
-              <div className="pointer-events-none absolute inset-0 z-30 rounded-3xl ring-[0.5px] ring-inset ring-white/[0.075]" />
-
-              <div className="relative z-10 px-6 sm:px-10 md:px-14 py-16 md:py-24 max-w-2xl mx-auto">
-                <h2 className="type-5xl text-balance" style={{ fontSize: "clamp(1.5rem, 3.5vw, 2.25rem)", color: "#ffffff" }}>
-                  Don&apos;t see a suitable position?
-                </h2>
-                <p className="mt-6 type-base text-white/60 text-pretty">
-                  We&apos;re always looking for talented individuals to join our
-                  team. Send us your resume and let us know how you&apos;d like
-                  to contribute to our mission.
+      <section className="pb-16 md:pb-20">
+        <div className="section-container">
+          <div
+            className="relative isolate overflow-hidden rounded-2xl p-8 md:p-12 text-white"
+            style={{
+              background: "#080808",
+              backgroundImage: "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
+              backgroundSize: "28px 28px",
+              border: "1px solid rgba(255,255,255,0.08)",
+            }}
+          >
+            <span className="absolute top-0 left-0 w-8 h-px bg-white/20" />
+            <span className="absolute top-0 left-0 h-8 w-px bg-white/20" />
+            <span className="absolute bottom-0 right-0 w-8 h-px bg-white/20" />
+            <span className="absolute bottom-0 right-0 h-8 w-px bg-white/20" />
+            <ScrollReveal>
+            <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div>
+                <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/50">
+                  Stay connected
                 </p>
-                <div className="mt-10 flex flex-wrap gap-3 justify-center">
-                  <Link href="/contact" className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-white text-black transition-all duration-300 active:scale-[0.98] hover:bg-warm-100 h-12 px-7 type-base font-medium">
-                    Get in touch
-                  </Link>
-                  <Link href="/about" className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-white/10 text-white transition-all duration-300 active:scale-[0.98] hover:bg-white/20 h-12 px-7 type-base font-medium ring-[0.5px] ring-inset ring-white/20">
-                    Learn about us
-                  </Link>
-                </div>
+                <h2 
+                  className="max-w-xl text-white"
+                  style={{
+                    color: "#fff",
+                    fontFamily: "var(--font-waldenburg)",
+                    fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
+                    fontWeight: 400,
+                    letterSpacing: "-0.02em",
+                    lineHeight: 1.1,
+                  }}
+                >
+                  Don&apos;t see a role? Send us your <span className="serif-italic" style={{ background: "linear-gradient(135deg, #fdece2 0%, #d2b9f5 100%)", WebkitBackgroundClip: "text", color: "transparent" }}>work anyway.</span>
+                </h2>
               </div>
+              <Link href="/contact" className="blueprint-btn">
+                Get in touch
+              </Link>
             </div>
           </ScrollReveal>
+          </div>
         </div>
       </section>
-    </>
+    </main>
   );
 }

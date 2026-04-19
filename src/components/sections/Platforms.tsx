@@ -1,137 +1,104 @@
-import Link from "next/link";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import {
-  Smartphone,
-  Brain,
-  Star,
-  Megaphone,
-  Palette,
-  FileText,
-  Video,
-} from "lucide-react";
 
 const pillars = [
   {
     title: "Product Development",
-    desc: "Cross-platform design & development from start to finish. Android, iOS, Web, Desktop, and Game development.",
-    icon: Smartphone,
-    tags: ["Scalable", "Adaptive"],
+    desc: "Web, mobile, desktop, and game experiences built with a clear product plan. We focus on scalable architecture and seamless user experiences across all devices.",
   },
   {
     title: "AI & Automation",
-    desc: "AI-driven automation, recommendation engines, custom LLMs — combined with engaging UI/UX and creative branding.",
-    icon: Brain,
-    tags: ["Optimized", "Intelligent"],
-    highlight: true,
+    desc: "LLM workflows, recommendation systems, and automation that reduce manual effort. We integrate intelligent agents that learn and adapt to your organizational needs.",
   },
   {
     title: "Strategy & Management",
-    desc: "From project management and marketing to research, cloud, and IoT — we help you scale with confidence.",
-    icon: Star,
-    tags: ["Reliable", "Growth-focused"],
+    desc: "Research, planning, cloud direction, and execution support for growing teams. We provide the technical leadership necessary to guide complex projects to completion.",
   },
 ];
 
 const capabilities = [
-  { icon: Megaphone, title: "Marketing & Outreach", desc: "Digital, print, & social reach strategies." },
-  { icon: Palette, title: "Design & Branding", desc: "Impactful logos and visuals that build identity." },
-  { icon: FileText, title: "Research & Documentation", desc: "Structured insights & technical writing." },
-  { icon: Video, title: "Content Creation", desc: "Video, writing, and editing for growth." },
+  "Digital Marketing", "Brand Strategy", "Market Research", 
+  "Content Creation", "Data Engineering", "Cybersecurity", 
+  "Cloud Infrastructure", "3D & AR Experiences"
 ];
 
 export function Platforms() {
   return (
-    <section className="py-20 md:py-32 relative overflow-hidden bg-[var(--page-bg)]">
-      {/* Grid background */}
-      <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px)", backgroundSize: "56px 56px" }} />
-      <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 50% at 50% 0%, transparent 40%, var(--page-bg) 100%)" }} />
+    <section className="relative overflow-hidden py-10 md:py-14">
+      <div className="section-sep" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
+      <div className="section-container">
+        {/* Header */}
         <ScrollReveal>
-          <div className="max-w-3xl mb-16">
-            <span className="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full bg-black/5 text-xs font-medium uppercase tracking-wider text-black/60">
-              Services & Capabilities
-            </span>
-            <h2
-              className="text-black text-balance leading-tight max-w-2xl mb-6"
-              style={{
-                fontSize: "clamp(2rem, 4vw, 3rem)",
-                fontFamily: "var(--font-montserrat)",
-                fontWeight: 400,
-                letterSpacing: "-0.03em",
-                lineHeight: 1.08,
-              }}
+          <div className="mb-12 grid gap-6 md:grid-cols-[0.9fr_1fr] md:items-end">
+            <div>
+              <span className="chip mb-4">Services</span>
+              <h2 className="section-heading max-w-xl">
+                Practical systems,
+                {" "}
+                <span className="serif-italic">shaped with restraint.</span>
+              </h2>
+            </div>
+            <p
+              className="max-w-md md:justify-self-end"
+              style={{ color: "rgba(0,0,0,0.48)", lineHeight: 1.68, fontSize: "0.94rem" }}
             >
-              Our Proven &{" "}
-              <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", fontWeight: 400 }}>
-                Intelligent Approach
-              </span>
-            </h2>
-            <p className="type-lg text-black/60 text-pretty max-w-xl leading-relaxed" style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic" }}>
-              From analysis to implementation — we provide the comprehensive architecture you need to
-              automate, optimize, and massively scale your operations.
+              We keep the workflow focused: understand the problem, shape the experience,
+              engineer the system, and support the launch with disciplined iteration.
             </p>
           </div>
         </ScrollReveal>
 
-        {/* Three Pillars Bento Grid */}
-        <div className="grid gap-6 md:grid-cols-3">
-          {pillars.map((p, i) => (
-            <ScrollReveal key={p.title} delay={i * 100}>
-              <div
-                className="group relative isolate h-full overflow-hidden rounded-[2rem] bg-white text-black"
-                style={{
-                  border: "1px solid var(--card-border)",
-                }}
-              >
-                <div className="relative flex h-full flex-col p-8 sm:p-10 z-10">
-                  <div className="flex items-center justify-between mb-12">
-                    <div className="flex items-center justify-center size-12 rounded-[1rem] bg-black/5">
-                      <p.icon className="h-6 w-6 text-black" />
-                    </div>
-                  </div>
+        {/* Dotted divider */}
+        <div className="section-divider mb-10" />
 
-                  <h3 className="type-2xl font-medium mb-3 tracking-tight">{p.title}</h3>
-                  <p className="type-sm leading-relaxed text-pretty text-black/60">
-                    {p.desc}
-                  </p>
-
-                  <div className="mt-8 flex flex-wrap gap-2">
-                    {p.tags.map((t) => (
-                      <span key={t} className="inline-flex items-center rounded-lg px-2.5 py-1 text-xs font-medium bg-black/5 text-black">
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+        {/* Core Services — open typographic layout */}
+        <div className="grid gap-10 md:grid-cols-3 mb-16">
+          {pillars.map((pillar, index) => (
+            <ScrollReveal key={pillar.title} delay={index * 60}>
+              <div className="flex flex-col">
+                <span className="text-[10px] font-semibold text-black/30 mb-4 tracking-widest">
+                  0{index + 1}
+                </span>
+                <h3
+                  className="mb-3"
+                  style={{
+                    fontFamily: "var(--font-waldenburg)",
+                    fontSize: "1.15rem",
+                    fontWeight: 500,
+                    letterSpacing: "-0.01em",
+                  }}
+                >
+                  {pillar.title}
+                </h3>
+                <p style={{ color: "rgba(0,0,0,0.5)", lineHeight: 1.65, fontSize: "0.88rem" }}>
+                  {pillar.desc}
+                </p>
               </div>
             </ScrollReveal>
           ))}
         </div>
 
-        {/* Capabilities Row Bento Grid */}
-        <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {capabilities.map((c, i) => (
-            <ScrollReveal key={c.title} delay={i * 80}>
-              <div
-                className="rounded-[1.5rem] bg-[var(--card-bg)] p-6"
-                style={{
-                  border: "1px solid var(--card-border)"
+        {/* Additional capabilities — simple text list instead of chips */}
+        <ScrollReveal delay={200}>
+          <div className="border-t border-dotted border-black/[0.15] pt-8">
+            <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-12">
+              <h4 
+                className="whitespace-nowrap"
+                style={{ 
+                  fontFamily: "var(--font-waldenburg)", 
+                  fontSize: "0.95rem",
+                  color: "var(--heading-color)"
                 }}
               >
-                <div className="flex flex-col gap-4">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-black/5">
-                    <c.icon className="h-4 w-4 text-black" />
-                  </span>
-                  <div>
-                    <h4 className="type-base font-medium text-black mb-1.5">{c.title}</h4>
-                    <p className="type-sm text-black/60">{c.desc}</p>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
+                Also delivering:
+              </h4>
+              <p className="text-[0.88rem] leading-relaxed text-black/60">
+                {capabilities.join(" · ")}
+              </p>
+            </div>
+          </div>
+        </ScrollReveal>
+
       </div>
     </section>
   );

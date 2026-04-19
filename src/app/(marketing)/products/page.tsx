@@ -1,270 +1,282 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { Brain, Zap, TrendingUp, ShieldCheck, Eye, FileText, Heart, Maximize, Users, ArrowRight, Sparkles } from "lucide-react";
-
-/* ── Data ── */
-const categories = ["All", "Core Intelligence", "Vision & AR", "Business Automation"];
+import { ArrowUpRight } from "@phosphor-icons/react";
 
 const allProducts = [
   {
     id: "osmium",
     name: "Osmium",
-    category: "Core Intelligence",
     tag: "Deep Learning",
-    logo: "/assets/osmium.png",
-    desc: "Advanced deep learning platform that transforms complex data into intelligent insights. AI-powered education & career guidance built from thousands of past papers.",
-    tags: ["Neural Networks", "NLP", "Exam Prediction"],
+    image: "/assets/osmium-mockup.png",
+    desc: "AI-powered education and career guidance built from thousands of past papers, with intelligent exam prediction.",
     href: "https://osmium.co.in",
     isFlagship: true,
   },
   {
     id: "natraj",
     name: "Natraj",
-    category: "Vision & AR",
     tag: "AI + AR",
-    logo: "/assets/natraj.png",
-    desc: "Immersive AI-powered augmented reality platform. Point your phone at a body part and view realistic 3D models of bones and organs in place.",
-    tags: ["Augmented Reality", "Spatial AI", "Interactive"],
+    image: "/assets/nataraj_mockup.png",
+    desc: "Immersive augmented reality platform. Point your phone at a body part and view realistic 3D models in place.",
     href: "/news/product/natraj",
-    isFlagship: false,
   },
   {
     id: "aegis",
     name: "Aegis Auth",
-    category: "Core Intelligence",
     tag: "Agentic AI",
-    logo: "/assets/agegis.png",
+    image: "/assets/aegis1.png",
     desc: "Intelligent autonomous agents that understand, learn, and execute complex tasks with human-like reasoning.",
-    tags: ["Autonomous Agents", "Reasoning", "Automation"],
     href: "/news/product/aegis",
-    isFlagship: false,
   },
   {
     id: "kriya",
     name: "Kriya",
-    category: "Business Automation",
     tag: "Organizational AI",
-    logo: "/assets/kriya.png",
-    desc: "Comprehensive organizational intelligence platform that streamlines workflows and drives productivity.",
-    tags: ["Workflow AI", "Collaboration", "Analytics"],
+    image: "/assets/kriya1.png",
+    desc: "Organizational intelligence platform that streamlines workflows and drives productivity across teams.",
     href: "/news/product/kriya",
-    isFlagship: false,
   },
   {
     id: "lmlens",
     name: "LM Lens",
-    category: "Vision & AR",
     tag: "Vision AI",
-    logo: "/assets/lm-lens.svg",
+    image: "/assets/lmlens.png",
     desc: "Intelligent data extraction that converts unstructured documents into actionable data using advanced OCR.",
-    tags: ["OCR", "Computer Vision", "Template Free"],
     href: "/news/product/lmlens",
-    isFlagship: false,
   },
   {
     id: "nsl",
     name: "NSL",
-    category: "Business Automation",
     tag: "Smart Billing",
-    logo: "/assets/nsl.png",
+    image: "/assets/nsl.png",
     desc: "Intelligent billing and ledger management system that automates the entire billing lifecycle.",
-    tags: ["Auto Invoicing", "Smart Ledger", "Automation"],
     href: "/news/product/nsl",
-    isFlagship: false,
   },
 ];
 
-const whyChoose = [
-  { icon: Heart, title: "Conscious AI", desc: "Designed with ethical considerations and human values at their core." },
-  { icon: Maximize, title: "Scalable", desc: "Cloud-native architecture that grows with your needs and adapts to any scale." },
-  { icon: Users, title: "Human-Centered", desc: "Intuitive interfaces that enhance human capabilities rather than replace them." },
+const pillars = [
+  { title: "Conscious AI", desc: "Designed with ethical considerations and human values at their core. We build AI that serves, not replaces." },
+  { title: "Scalable", desc: "Cloud-native architecture that grows with your needs and adapts to any scale. From day one to year ten." },
+  { title: "Human-Centered", desc: "Intuitive interfaces that enhance human capabilities rather than replace them. Technology that stays out of the way." },
 ];
 
 export default function ProductsPage() {
-  const [activeCategory, setActiveCategory] = useState("All");
-
-  const filteredProducts = allProducts.filter((p) => 
-    activeCategory === "All" ? true : p.category === activeCategory
-  );
-
   return (
     <>
-      {/* ━━━ HEADER ━━━ */}
-      <section className="pt-28 sm:pt-36 md:pt-44 pb-12">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+      {/* ── Header with subtle gradient ── */}
+      <section
+        className="relative pt-28 sm:pt-32 md:pt-36 pb-10"
+        style={{
+          background: "linear-gradient(180deg, rgba(72,105,133,0.04) 0%, rgba(125,72,53,0.03) 40%, var(--page-bg) 100%)",
+        }}
+      >
+        <div className="grid-overlay" />
+        <div className="section-container relative z-10">
           <ScrollReveal>
-            <div className="text-center max-w-3xl mx-auto">
-              <p className="type-sm text-black/40 font-bold uppercase tracking-widest mb-6">
-                Product Directory
-              </p>
-              <h1 className="type-6xl text-black text-balance leading-tight" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
-                Conscious Intelligence <br className="hidden md:block"/><span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic" }}>Meets Innovation</span>
+            <div className="max-w-3xl">
+              <span className="chip mb-5">Product Directory</span>
+              <h1
+                className="text-black text-balance"
+                style={{
+                  fontFamily: "var(--font-waldenburg)",
+                  fontSize: "clamp(2rem, 4vw, 3.15rem)",
+                  fontWeight: 500,
+                  letterSpacing: "-0.03em",
+                  lineHeight: 1.08,
+                }}
+              >
+                Conscious Intelligence{" "}
+                <span className="serif-italic">meets innovation.</span>
               </h1>
-              <p className="mt-8 type-base text-black/60 text-pretty max-w-xl mx-auto">
-                Explore our directory of revolutionary AI products that redefine possibilities across education, creativity, and enterprise automation.
+              <p
+                className="mt-5 max-w-xl"
+                style={{ color: "rgba(0,0,0,0.50)", lineHeight: 1.68, fontSize: "0.95rem" }}
+              >
+                Explore our directory of AI products that redefine possibilities across education,
+                creativity, and enterprise automation.
               </p>
             </div>
           </ScrollReveal>
         </div>
+
+        <div className="section-container mt-10">
+          <div className="section-divider" />
+        </div>
       </section>
 
-      {/* ━━━ DYNAMIC FILTER DIRECTORY ━━━ */}
-      <section className="pb-24">
-        {/* Sticky Filter Bar */}
-        <div className="sticky top-[73px] z-40 bg-[var(--page-bg)]/90 backdrop-blur-xl border-y border-black/[0.08] py-4 mb-12 shadow-[0_4px_32px_rgba(0,0,0,0.02)]">
-          <div className="mx-auto max-w-7xl px-5 sm:px-8">
-            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth">
-              {categories.map((cat) => {
-                const isActive = activeCategory === cat;
-                return (
-                  <button
-                    key={cat}
-                    onClick={() => setActiveCategory(cat)}
-                    className={`relative whitespace-nowrap rounded-full px-5 py-2.5 type-sm font-medium transition-colors duration-300 ${
-                      isActive 
-                        ? "bg-black text-white" 
-                        : "bg-transparent text-[var(--heading-color)] hover:bg-black/5 border border-[var(--card-border)]"
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-
-        {/* Framer Motion Minimal Grid (Sarvam Style) */}
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <motion.div 
-            layout 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            <AnimatePresence mode="popLayout">
-              {filteredProducts.map((p) => (
-                <motion.div
-                  key={p.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="group relative flex flex-col overflow-hidden rounded-[2rem] bg-[var(--card-bg)] transition-all duration-300 hover:bg-[var(--section-bg)] p-8 border border-[var(--card-border)]"
+      {/* ── Product Grid — Flat, human editorial layout ── */}
+      <section className="relative overflow-hidden py-14 md:py-20">
+        <div className="section-container">
+          <div className="grid gap-x-8 gap-y-16 sm:grid-cols-2">
+            {allProducts.map((p, index) => (
+              <ScrollReveal key={p.id} delay={index * 45}>
+                <Link
+                  href={p.href}
+                  target={p.href.startsWith("http") ? "_blank" : undefined}
+                  rel={p.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="group block"
                 >
-                  <Link href={p.href} className="flex flex-col h-full cursor-pointer">
-                    
-                    {/* Top row: Animated Logo & Category Tag */}
-                    <div className="flex items-center justify-between mb-8 h-16">
-                      <motion.img 
-                        src={p.logo} 
-                        alt={p.name} 
-                        className="h-14 w-auto max-w-[64px] object-contain origin-center"
-                      />
-                      <span className="type-2xs font-semibold text-black/60 bg-black/5 px-2.5 py-1 rounded-[0.4rem]">
-                        {p.category}
-                      </span>
+                  <div className="relative mb-4 overflow-hidden rounded-sm bg-black/[0.02] border border-black/[0.08]">
+                    <div className="relative aspect-[16/10] w-full overflow-hidden">
+                      <Image
+                        src={p.image}
+                        alt={p.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        quality={84} />
+                      <div className="absolute inset-0 z-10 opacity-[0.15] mix-blend-overlay pointer-events-none transition-opacity duration-500 group-hover:opacity-[0.35]" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }} />
+                      <div className="absolute inset-0 z-20 bg-black/0 transition-colors duration-500 group-hover:bg-black/[0.03] pointer-events-none" />
                     </div>
+                  </div>
 
-                    {/* Title & Description */}
-                    <div className="flex flex-col flex-1">
-                      <div className="flex items-center gap-3 mb-3">
-                        <h3 className="type-2xl font-bold text-black tracking-tight">{p.name}</h3>
+                  <div className="flex flex-col border-b border-dotted border-black/[0.25] pb-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <h3
+                          style={{
+                            fontFamily: "var(--font-waldenburg)",
+                            fontSize: "1.1rem",
+                            fontWeight: 500,
+                            letterSpacing: "-0.015em",
+                            color: "var(--heading-color)"
+                          }}
+                        >
+                          {p.name}
+                        </h3>
                         {p.isFlagship && (
-                          <span className="type-2xs font-bold uppercase tracking-wider text-brand px-2 py-0.5 rounded-md bg-brand/5 ring-[0.5px] ring-inset ring-brand/20">
+                          <span className="rounded-full bg-[rgba(125,72,53,0.06)] px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-[var(--color-brand)]">
                             Flagship
                           </span>
                         )}
                       </div>
-                      <p className="type-sm text-warm-600 leading-relaxed text-pretty flex-1 mb-8">
-                        {p.desc}
-                      </p>
-                      
-                      {/* Interactive Tags */}
-                      <div className="flex flex-wrap gap-1.5 mb-8">
-                        {p.tags.map((t) => (
-                          <span key={t} className="inline-flex items-center rounded-md bg-warm-50 px-2 py-1 type-2xs font-medium text-warm-700 ring-[0.5px] ring-inset ring-black/[0.04]">
-                            {t}
-                          </span>
-                        ))}
-                      </div>
-
-                      {/* Footer CTA */}
-                      <div className="mt-auto flex items-center justify-between border-t border-black/[0.06] pt-5">
-                        <span className="inline-flex items-center gap-1.5 type-sm font-semibold text-black/60 transition-colors group-hover:text-black">
-                          Explore <ArrowRight className="size-4 -rotate-45" />
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-black/40">
+                          {p.tag}
                         </span>
+                        <ArrowUpRight
+                          weight="bold"
+                          className="w-3.5 h-3.5 text-black/30"
+                        />
                       </div>
                     </div>
-                  </Link>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
-          
-          {filteredProducts.length === 0 && (
-             <div className="py-20 text-center">
-               <p className="type-base text-warm-500">No products found in this category.</p>
-             </div>
-          )}
-        </div>
-      </section>
-
-      {/* ━━━ WHY CHOOSE ━━━ */}
-      <section className="py-12 md:py-16">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <div className="relative border-t border-black/[0.08] pt-16 md:pt-20">
-            <ScrollReveal>
-              <div className="text-center mb-16">
-                <p className="type-sm text-brand font-bold uppercase tracking-widest mb-3">Core Pillars</p>
-                <h2 className="type-5xl text-black text-balance max-w-lg mx-auto leading-tight">Built for the Future</h2>
-              </div>
-            </ScrollReveal>
-
-            <div className="grid gap-6 md:grid-cols-3">
-              {whyChoose.map((w, i) => (
-                <ScrollReveal key={w.title} delay={i * 100}>
-                  <div className="flex h-full flex-col items-center text-center p-8 transition-colors hover:bg-warm-50 rounded-3xl">
-                    <div className="flex items-center justify-center size-16 rounded-[1.25rem] bg-black text-white shadow-xl mb-6">
-                      <w.icon className="size-7" />
-                    </div>
-                    <h3 className="type-xl text-black mb-3 font-semibold">{w.title}</h3>
-                    <p className="type-base text-warm-500 leading-relaxed text-balance">{w.desc}</p>
+                    <p className="text-[13px] leading-relaxed text-black/50 pr-4">
+                      {p.desc}
+                    </p>
                   </div>
-                </ScrollReveal>
-              ))}
-            </div>
+                </Link>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ━━━ CTA ━━━ */}
-      <section className="py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+      {/* ── Core Pillars — Flat typographic list ── */}
+      <section className="relative overflow-hidden py-10 md:py-14">
+        <div className="section-sep" />
+        <div className="section-container">
           <ScrollReveal>
-            <div className="relative isolate overflow-hidden rounded-[2.5rem] bg-black text-center shadow-2xl">
-              <div className="absolute inset-0">
-                <Image src="/ref/purpleblue.jpeg" alt="" fill sizes="100vw" className="object-cover opacity-40 mix-blend-screen" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-              </div>
-              <div className="pointer-events-none absolute inset-0 z-30 rounded-[2.5rem] ring-[0.5px] ring-inset ring-white/[0.1]" />
+            <div className="mb-12">
+              <span className="chip mb-4">Core Pillars</span>
+              <h2 className="section-heading max-w-sm">
+                Built for the{" "}
+                <span className="serif-italic">future.</span>
+              </h2>
+            </div>
+          </ScrollReveal>
 
-              <div className="relative z-10 px-6 sm:px-10 md:px-14 py-20 md:py-28 max-w-2xl mx-auto">
-                <h2 className="type-5xl text-balance tracking-tight leading-tight" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#ffffff" }}>
-                  Ready to Experience Conscious Intelligence?
+          <div className="section-divider mb-12" />
+
+          <div className="grid gap-10 md:grid-cols-3">
+            {pillars.map((w, i) => (
+              <ScrollReveal key={w.title} delay={i * 70}>
+                <div className="flex flex-col border-l border-dotted border-black/[0.25] pl-6">
+                  <span className="text-[10px] font-semibold text-black/30 mb-4 tracking-widest">
+                    0{i + 1}
+                  </span>
+                  <h3
+                    className="mb-3"
+                    style={{
+                      fontFamily: "var(--font-waldenburg)",
+                      fontSize: "1.15rem",
+                      fontWeight: 500,
+                      letterSpacing: "-0.01em",
+                      color: "var(--heading-color)"
+                    }}
+                  >
+                    {w.title}
+                  </h3>
+                  <p style={{ color: "rgba(0,0,0,0.5)", lineHeight: 1.65, fontSize: "0.88rem" }}>
+                    {w.desc}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="relative overflow-hidden py-14 md:py-20">
+        <div className="section-container">
+          <ScrollReveal>
+            <div
+              className="relative isolate overflow-hidden rounded-2xl flex flex-col items-center text-center"
+              style={{
+                background: "#080808",
+                backgroundImage: "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
+                backgroundSize: "28px 28px",
+                border: "1px solid rgba(255,255,255,0.08)",
+                padding: "80px 48px",
+              }}
+            >
+              {/* corner accents */}
+              <span className="absolute top-0 left-0 w-8 h-px bg-white/20" />
+              <span className="absolute top-0 left-0 h-8 w-px bg-white/20" />
+              <span className="absolute bottom-0 right-0 w-8 h-px bg-white/20" />
+              <span className="absolute bottom-0 right-0 h-8 w-px bg-white/20" />
+              <div className="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto">
+                <span
+                  className="inline-flex items-center gap-2 mb-6 text-white/40"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "10px",
+                    letterSpacing: "1.4px",
+                    textTransform: "uppercase",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                    padding: "5px 14px",
+                    borderRadius: "3px",
+                  }}
+                >
+                  Explore Products
+                </span>
+                <h2
+                  className="mb-4 text-balance text-white"
+                  style={{
+                    fontFamily: "var(--font-waldenburg)",
+                    fontSize: "clamp(1.6rem, 3vw, 2.35rem)",
+                    fontWeight: 500,
+                    lineHeight: 1.08,
+                    letterSpacing: "-0.03em",
+                    color: "#fff"
+                  }}
+                >
+                  Ready to experience{" "}
+                  <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", background: "linear-gradient(135deg, #fdece2 0%, #c4b0f5 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>conscious intelligence?</span>
                 </h2>
-                <p className="mt-6 type-base text-white/70 text-pretty">
+                <p className="max-w-xl mt-3" style={{ color: "rgba(255,255,255,0.45)", lineHeight: 1.7, fontSize: "0.95rem" }}>
                   Discover how our AI-powered products can transform your workflow and unlock new possibilities.
                 </p>
-                <div className="mt-10 flex flex-wrap gap-4 justify-center">
-                  <Link href="/contact" className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-white text-black h-14 px-8 type-base font-bold">
-                    Request Integration
-                  </Link>
-                </div>
+                <Link
+                  href="/contact"
+                  className="mt-8 blueprint-btn"
+                >
+                  Request Integration
+                </Link>
               </div>
             </div>
           </ScrollReveal>

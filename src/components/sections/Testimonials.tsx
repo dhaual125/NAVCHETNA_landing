@@ -1,169 +1,144 @@
-"use client";
-
-import { useState, useEffect, useCallback } from "react";
-import Link from "next/link";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { ArrowRight } from "lucide-react";
 
 const testimonials = [
   {
     name: "Priya Kumari",
-    role: "Student, Patna",
-    color: "#3b82f6",
-    avatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Priya",
-    quote: "I used Osmium for my JEE prep. Honestly, it felt less like an app and more like a study partner. The mock tests were scarily close to the actual exam pattern.",
+    role: "JEE Student, Patna",
+    quote: "Osmium didn't feel like an exam prep app — it felt like someone who understood how I studied. The predictions were accurate, and I wasn't second-guessing myself the night before my exam.",
+    initial: "P",
   },
   {
     name: "Dr. Mehul Shah",
-    role: "Professor, Ahmedabad",
-    color: "#8b5cf6",
-    avatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Mehul",
-    quote: "We tried Natraj in our college for managing course content. Usually, software means headaches, but this one was surprisingly smooth. Even my colleagues figured it out.",
+    role: "Assistant Professor, Ahmedabad",
+    quote: "We integrated Natraj into our anatomy curriculum. Students who previously struggled with spatial understanding had a tangible breakthrough. That kind of impact is rare with any software.",
+    initial: "M",
   },
   {
     name: "Raghav Malhotra",
-    role: "Founder, New Delhi",
-    color: "#22c55e",
-    avatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Raghav",
-    quote: "Our startup needed a website that didn't look like it was built in the 90s. Navchetna Technology Technology delivered exactly that. Clean, modern, and easy to use.",
+    role: "Co-Founder, EdTech Startup, Delhi",
+    quote: "We needed a digital presence that matched how seriously we take our work. Navchetna delivered without hand-holding. Timeline was honest, delivery was solid.",
+    initial: "R",
   },
   {
     name: "Arjun Nair",
-    role: "Professional, Bangalore",
-    color: "#f59e0b",
-    avatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Arjun",
-    quote: "I asked Navchetna Technology Technology for branding help and they made a logo so good that even my mom finally understood what my company does. That's the real UX win here.",
+    role: "Product Manager, Bangalore",
+    quote: "What impressed me was that they pushed back on a few of our assumptions — in a good way. They genuinely understood our product goals, not just the spec sheet.",
+    initial: "A",
+  },
+  {
+    name: "Sneha Desai",
+    role: "Director of Operations, Mumbai",
+    quote: "Kriya removed a layer of friction we didn't even know was costing us hours every week. The team's communication throughout was straightforward and no-nonsense.",
+    initial: "S",
+  },
+  {
+    name: "Vikram Singh",
+    role: "Founder & CEO, Jaipur",
+    quote: "Most agencies optimize for their process. Navchetna optimized for our outcome. That distinction matters more than any portfolio or pitch deck.",
+    initial: "V",
   },
 ];
 
-const INTERVAL = 5000;
-
 export function Testimonials() {
-  const [active, setActive] = useState(0);
-  const [progress, setProgress] = useState(0);
-  const [fading, setFading] = useState(false);
-
-  const goTo = useCallback((idx: number) => {
-    setFading(true);
-    setTimeout(() => {
-      setActive(idx);
-      setProgress(0);
-      setFading(false);
-    }, 200);
-  }, []);
-
-  useEffect(() => {
-    const tick = setInterval(() => {
-      setProgress((p) => {
-        if (p >= 100) {
-          goTo((active + 1) % testimonials.length);
-          return 0;
-        }
-        return p + 100 / (INTERVAL / 50);
-      });
-    }, 50);
-    return () => clearInterval(tick);
-  }, [active, goTo]);
-
-  const t = testimonials[active];
-
   return (
-    <section className="py-24 md:py-32 bg-[var(--page-bg)] relative overflow-hidden">
-      {/* Grid background */}
-      <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px)", backgroundSize: "56px 56px" }} />
-      <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 60% at 50% 100%, transparent 40%, var(--page-bg) 100%)" }} />
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section className="relative overflow-hidden py-20 md:py-28 bg-[#F8F8F7]">
+      {/* Header */}
+      <div className="section-container mb-16">
         <ScrollReveal>
-          <div className="flex flex-col items-start gap-16 lg:flex-row lg:items-end lg:justify-between mb-20">
-            <div className="max-w-xl">
-              <h2
-                className="text-black tracking-tight leading-[1.1] mb-6"
+          <div className="max-w-2xl">
+            <span
+              className="inline-block mb-5 text-[10px] font-semibold uppercase tracking-[0.18em] text-black/40"
+              style={{ letterSpacing: "0.18em" }}
+            >
+              Client Perspectives
+            </span>
+            <h2
+              className="text-black text-balance"
+              style={{
+                fontFamily: "var(--font-waldenburg)",
+                fontSize: "clamp(2rem, 4vw, 3rem)",
+                fontWeight: 400,
+                letterSpacing: "-0.03em",
+                lineHeight: 1.1,
+              }}
+            >
+              Trusted by builders,{" "}
+              <span
                 style={{
-                  fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-                  fontFamily: "'Inter', sans-serif",
-                  fontWeight: 400,
-                  letterSpacing: "-0.03em",
+                  fontFamily: "'Instrument Serif', serif",
+                  fontStyle: "italic",
                 }}
               >
-                Voices of impact and{" "}
-                <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", fontWeight: 400 }}>
-                  sustainable growth.
-                </span>
-              </h2>
-              <p className="type-lg text-black/60">
-                Hear directly from our partners across the nation about how our technology has systematically transformed their operations.
-              </p>
-            </div>
-
-            <Link
-              href="/contact"
-              className="group flex-shrink-0 inline-flex items-center gap-2 rounded-full px-6 py-3.5 type-sm font-medium bg-black text-white hover:bg-black/80"
+                educators &amp; founders.
+              </span>
+            </h2>
+            <p
+              className="mt-5 text-black/50"
+              style={{ fontSize: "0.95rem", lineHeight: 1.7, maxWidth: "480px" }}
             >
-              Become a Partner
-              <ArrowRight className="size-4" />
-            </Link>
-          </div>
-
-          <div className="relative pt-12 pb-8 border-t border-black/[0.06]">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-
-              <div className="lg:col-span-5 flex flex-wrap gap-4 items-center align-middle justify-start h-min">
-                {testimonials.map((person, i) => {
-                  const isActive = active === i;
-                  return (
-                    <button
-                      key={person.name}
-                      onClick={() => goTo(i)}
-                      className={`relative outline-none ${isActive ? "z-10 grayscale-0" : "grayscale-[0.8] opacity-50"
-                        }`}
-                      style={{
-                        boxShadow: isActive ? "0 10px 30px -10px rgba(0,0,0,0.15)" : "none",
-                        borderRadius: "24px"
-                      }}
-                      aria-label={person.name}
-                    >
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-3xl overflow-hidden bg-black/5 relative">
-                        <img src={person.avatar} alt="" className="w-full h-full object-cover p-2" />
-                        {isActive && (
-                          <div
-                            className="absolute bottom-0 left-0 h-1 bg-black"
-                            style={{
-                              width: `${progress}%`,
-                              transition: "width 50ms linear"
-                            }}
-                          />
-                        )}
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
-
-              <div className="lg:col-span-7 flex flex-col justify-center">
-                <div className={`transition-opacity duration-300 ease-in-out ${fading ? 'opacity-0' : 'opacity-100'}`}>
-                  <h3
-                    className="text-black leading-[1.3] text-balance mb-8"
-                    style={{
-                      fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
-                      fontFamily: "'Instrument Serif', serif",
-                      fontStyle: "italic",
-                      letterSpacing: "-0.01em"
-                    }}
-                  >
-                    "{t.quote}"
-                  </h3>
-
-                  <div>
-                    <p className="type-lg font-semibold text-black mb-1.5">{t.name}</p>
-                    <p className="type-sm text-black/50 tracking-wide uppercase font-medium">{t.role}</p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+              A small collection of what people say after working with us or using our products.
+            </p>
           </div>
         </ScrollReveal>
       </div>
+
+      {/* Grid */}
+      <div className="section-container">
+        <ScrollReveal>
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-5 space-y-5 relative z-10 pb-24">
+            {testimonials.map((testimonial) => (
+              <div
+                key={testimonial.name}
+                className="break-inside-avoid flex flex-col rounded-2xl bg-white p-6 border border-black/[0.05]"
+              >
+                {/* Stars */}
+                <div
+                  className="mb-5 text-black/80"
+                  style={{ letterSpacing: "0.15em", fontSize: "13px" }}
+                >
+                  ★★★★★
+                </div>
+
+                {/* Quote */}
+                <p
+                  className="mb-6 flex-1 text-black/70"
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "0.925rem",
+                    lineHeight: 1.65,
+                  }}
+                >
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+
+                {/* Author */}
+                <div className="flex items-center gap-3 pt-4 border-t border-black/[0.05]">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-black/[0.06] text-[12px] font-semibold text-black/70">
+                    {testimonial.initial}
+                  </div>
+                  <div>
+                    <p style={{ fontSize: "0.83rem", fontWeight: 600, color: "#111", lineHeight: 1.3 }}>
+                      {testimonial.name}
+                    </p>
+                    <p style={{ fontSize: "0.75rem", color: "rgba(0,0,0,0.4)", marginTop: "2px" }}>
+                      {testimonial.role}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
+      </div>
+
+      {/* Fade out bottom */}
+      <div
+        className="absolute bottom-0 left-0 right-0 pointer-events-none z-20"
+        style={{
+          height: "180px",
+          background: "linear-gradient(to top, #F8F8F7 0%, #F8F8F7 20%, transparent 100%)",
+        }}
+      />
     </section>
   );
 }

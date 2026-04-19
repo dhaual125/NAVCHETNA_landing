@@ -2,390 +2,317 @@
 
 import { useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import {
-  Check,
-  ChevronRight,
   ArrowDown,
-} from "lucide-react";
-
-/* ──────────────────────────────────────────────────────
-   Service Data
-   ────────────────────────────────────────────────────── */
+  Brain,
+  CaretRight,
+  Cloud,
+  Code,
+  PaintBrush,
+  GearSix,
+  Gauge,
+  Cube,
+  Megaphone,
+  Database,
+  Globe,
+  ShieldCheck,
+  Headset,
+  ChartLine,
+  GameController,
+  DeviceMobile,
+} from "@phosphor-icons/react";
 
 const services = [
   {
     num: "01",
-    tag: "Core Service",
-    title: "Project Management\n& Operations.",
-    desc: "Build and deploy with complete control: post-train models, build custom agents, and run production AI anywhere — from edge to cloud — with enterprise-grade tooling.",
-    bullets: [
-      "Agile workflows",
-      "End-to-end observability",
-      "Data privacy and operational controls",
-    ],
-    cta: "Discover Studio",
-    image: "/assets/Group 1000006262.png"
+    tag: "Operations",
+    title: "Project Management & Operations",
+    desc: "Plan, coordinate, and ship with transparent milestones, clear ownership, and reliable execution systems.",
+    bullets: ["Agile workflows", "End-to-end observability", "Operational controls"],
+    cta: "Discuss operations",
+    icon: GearSix,
   },
   {
     num: "02",
-    tag: "Full-Stack",
-    title: "Software\nDevelopment.",
-    desc: "Develop robust digital platforms with expert engineering. We build mobile apps, web platforms, and unified enterprise systems designed for scale and performance.",
-    bullets: [
-      "Cross-platform applications",
-      "Scalable backend architecture",
-      "Unified enterprise systems",
-    ],
-    cta: "Start Building",
-    image: "/assets/Group 1000006262.png"
+    tag: "Engineering",
+    title: "Software Development",
+    desc: "Robust mobile apps, websites, dashboards, and backend systems designed for real users and long-term scale.",
+    bullets: ["Cross-platform builds", "Scalable backend architecture", "Unified systems"],
+    cta: "Start building",
+    icon: Code,
   },
   {
     num: "03",
-    tag: "AI",
-    title: "AI & Machine\nLearning.",
-    desc: "Empower your product with next-generation artificial intelligence. We integrate LLMs, computer vision, and generative AI into seamless agentic workflows.",
-    bullets: [
-      "Custom LLM fine-tuning",
-      "Generative AI integration",
-      "Intelligent automation systems",
-    ],
+    tag: "Intelligence",
+    title: "AI & Machine Learning",
+    desc: "LLM integrations, computer vision, recommendation logic, and automation workflows shaped around your product.",
+    bullets: ["Custom LLM workflows", "Generative AI integration", "Intelligent automation"],
     cta: "Explore AI",
-    image: "/assets/Group 1000006262.png"
+    icon: Brain,
   },
   {
     num: "04",
-    tag: "Cloud",
-    title: "Cloud &\nInfrastructure.",
-    desc: "Modernize your infrastructure natively on top-tier cloud providers. We handle DevOps automation, IoT deployments, and complex hybrid cloud architectures.",
-    bullets: [
-      "AWS / Azure / GCP native",
-      "DevOps and CI/CD automation",
-      "Hybrid cloud security",
-    ],
-    cta: "Scale Now",
-    image: "/assets/Group 1000006262.png"
+    tag: "Infrastructure",
+    title: "Cloud & Infrastructure",
+    desc: "Cloud-native deployments, DevOps automation, and secure infrastructure for products that need to keep growing.",
+    bullets: ["AWS / Azure / GCP native", "CI/CD automation", "Hybrid cloud security"],
+    cta: "Plan infrastructure",
+    icon: Cloud,
   },
   {
     num: "05",
-    tag: "Design",
-    title: "Design &\nBranding.",
-    desc: "Craft exceptional user experiences. We weave stunning UI/UX design, motion graphics, and comprehensive branding identity into cohesive visual communications.",
-    bullets: [
-      "Bespoke UI/UX design",
-      "Comprehensive design systems",
-      "Interactive motion graphics",
-    ],
-    cta: "See Our Work",
-    image: "/assets/Group 1000006262.png"
+    tag: "Experience",
+    title: "Design & Branding",
+    desc: "High-quality UI/UX, brand systems, motion direction, and launch-ready visuals that make products feel trusted.",
+    bullets: ["Bespoke UI/UX", "Design systems", "Interactive motion"],
+    cta: "Shape the brand",
+    icon: PaintBrush,
   },
 ];
 
-/* ──────────────────────────────────────────────────────
-   Page Component
-   ────────────────────────────────────────────────────── */
+/* Extended services list */
+const moreServices = [
+  { icon: DeviceMobile, title: "Mobile App Development", desc: "Android, iOS, and cross-platform apps" },
+  { icon: Globe, title: "Web Application Development", desc: "Full-stack SaaS and web platforms" },
+  { icon: GameController, title: "Game Development", desc: "Unity and Unreal-based interactive experiences" },
+  { icon: Database, title: "Data Engineering", desc: "ETL pipelines, warehousing, and analytics" },
+  { icon: Megaphone, title: "Digital Marketing", desc: "SEO, social media, and growth campaigns" },
+  { icon: Cube, title: "3D & AR Experiences", desc: "Augmented reality and spatial computing" },
+  { icon: ShieldCheck, title: "Cybersecurity Consulting", desc: "Audits, compliance, and secure architecture" },
+  { icon: Headset, title: "IT Consulting & Support", desc: "Technical advisory and managed services" },
+  { icon: ChartLine, title: "Business Intelligence", desc: "Dashboards, reporting, and decision support" },
+  { icon: Gauge, title: "Performance Optimization", desc: "Speed audits, caching, and infrastructure tuning" },
+];
 
 export default function ServicesPage() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="bg-[var(--page-bg)]">
-      {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          HERO SECTION
-          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[var(--page-bg)]">
-        {/* Generous Apple-like whitespace & warm empty space, no heavy lines */}
-        
-        <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 py-32 sm:py-40 w-full">
+    <div>
+      {/* ── Header with subtle gradient ── */}
+      <section
+        className="relative pt-28 pb-12 md:pt-36 md:pb-16"
+        style={{
+          background: "linear-gradient(180deg, rgba(125,72,53,0.04) 0%, rgba(72,105,133,0.03) 40%, var(--page-bg) 100%)",
+        }}
+      >
+        <div className="grid-overlay" />
+        <div className="section-container relative z-10">
           <ScrollReveal>
-            <div className="text-center max-w-4xl mx-auto flex flex-col items-center">
-              
-              {/* Subtle Tag */}
-              <div 
-                className="inline-flex items-center gap-2 px-3 py-1.5 mb-8 rounded-[4px]"
-                style={{ 
-                  boxShadow: "rgba(0,0,0,0.075) 0px 0px 0px 0.5px inset",
-                  background: "transparent"
-                }}
-              >
-                <div className="h-1.5 w-1.5 rounded-full bg-black/40" />
-                <span className="text-[12px] font-medium tracking-normal text-black/60" style={{ letterSpacing: "0.14px" }}>
-                  Comprehensive Solutions
-                </span>
-              </div>
-
-              {/* ElevenLabs Light Display Typography */}
-              <h1 
-                className="mb-8 text-black" 
-                style={{ 
-                  fontSize: "clamp(2.5rem, 6vw, 4.5rem)", 
-                  lineHeight: "1.08", 
-                  letterSpacing: "-0.96px",
-                  fontFamily: "var(--font-waldenburg)",
-                  fontWeight: 300,
-                  whiteSpace: "pre-line"
-                }}
-              >
-                Intelligent services<br /><span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic" }}>for every challenge</span>
-              </h1>
-
-              {/* Sub copy: Inter with positive letter spacing */}
-              <p 
-                className="text-black/60 max-w-xl mx-auto text-pretty mb-14"
+            <div className="max-w-3xl">
+              <span className="chip mb-5">Services</span>
+              <h1
+                className="text-black text-balance"
                 style={{
-                  fontSize: "18px",
-                  lineHeight: "1.60",
-                  letterSpacing: "0.18px",
-                  fontFamily: "'Inter', sans-serif",
-                  fontWeight: 400
+                  fontFamily: "var(--font-waldenburg)",
+                  fontSize: "clamp(2rem, 4vw, 3.15rem)",
+                  fontWeight: 500,
+                  letterSpacing: "-0.03em",
+                  lineHeight: 1.08,
                 }}
               >
-                From AI development to digital transformation, we deliver cutting-edge
-                solutions that drive growth and innovation across industries.
+                Practical services for{" "}
+                <span className="serif-italic">focused execution.</span>
+              </h1>
+              <p
+                className="mt-5 max-w-2xl"
+                style={{ color: "rgba(0,0,0,0.50)", fontSize: "0.95rem", lineHeight: 1.65 }}
+              >
+                From planning to engineering, AI, infrastructure, and brand
+                experience, we help teams build clear systems without adding
+                unnecessary complexity.
               </p>
-
-              {/* ElevenLabs Primary CTAs */}
-              <div className="flex flex-wrap items-center justify-center gap-4">
-                {/* Warm Stone Pill CTA */}
+              <div className="mt-7 flex flex-wrap gap-3">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center justify-center"
-                  style={{
-                    background: "#000000",
-                    color: "#ffffff",
-                    padding: "12px 20px 12px 14px",
-                    borderRadius: "30px",
-                    fontFamily: "'Inter', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "15px",
-                    letterSpacing: "normal"
-                  }}
+                  className="btn btn-primary gap-2"
                 >
-                  <span className="inline-flex items-center gap-2">
-                    Schedule a Call
-                    <ChevronRight className="size-4 text-white/40" />
-                  </span>
+                  Schedule a Call
+                  <CaretRight weight="bold" className="size-3.5 text-white/52" />
                 </Link>
-
-               {/* White Pill (Shadow-bordered) Secondary CTA */}
                 <button
+                  type="button"
                   onClick={() => scrollRef.current?.scrollIntoView({ behavior: "smooth" })}
-                  className="inline-flex items-center gap-2 cursor-pointer"
-                  style={{
-                    background: "transparent",
-                    color: "#000000",
-                    padding: "12px 20px",
-                    borderRadius: "9999px",
-                    border: "1px solid var(--card-border)",
-                    fontFamily: "'Inter', sans-serif",
-                    fontWeight: 500,
-                    fontSize: "15px"
-                  }}
+                  className="btn btn-secondary gap-2"
                 >
                   View Services
-                  <ArrowDown className="size-4 text-black/40" />
+                  <ArrowDown weight="bold" className="size-3.5" />
                 </button>
               </div>
             </div>
           </ScrollReveal>
         </div>
+
+        {/* Dotted divider at bottom */}
+        <div className="section-container mt-12">
+          <div className="section-divider" />
+        </div>
       </section>
 
-      {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          SERVICE BLOCKS — Full-width with generous spacing
-          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <div ref={scrollRef} className="bg-[var(--page-bg)]">
-        {services.map((service, idx) => {
-          const isEven = idx % 2 === 0;
-
-          return (
-            <section
-              key={service.num}
-              className="relative py-24 lg:py-36 border-t"
-              style={{ borderColor: "rgba(0,0,0,0.05)" }}
-            >
-              <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
-                <div className={`grid lg:grid-cols-2 items-center gap-16 lg:gap-24 ${!isEven ? "direction-rtl" : ""}`}>
-
-                  {/* ── TEXT COLUMN ── */}
-                  <div className={`flex flex-col justify-center ${!isEven ? "lg:order-2 lg:pl-16" : "lg:pr-16"}`} style={{ direction: "ltr" }}>
-                    <ScrollReveal delay={0}>
-                      {/* Sub-label */}
-                      <span 
-                        className="block mb-6 text-black/40"
-                        style={{
-                          fontFamily: "var(--font-waldenburgFH), var(--font-waldenburg), sans-serif",
-                          fontWeight: 700,
-                          fontSize: "14px",
-                          letterSpacing: "0.7px",
-                          textTransform: "uppercase"
-                        }}
-                      >
-                        {service.num} — {service.tag}
-                      </span>
-
-                      {/* Display Heading at 36px (Section Heading rule) */}
-                      <h2 
-                        className="mb-8 text-[var(--heading-color)]" 
-                        style={{ 
-                          fontSize: "36px", 
-                          lineHeight: "1.17", 
-                          letterSpacing: "normal",
-                          fontFamily: "var(--font-waldenburg)", 
-                          fontWeight: 300,
-                          whiteSpace: "pre-line" 
-                        }}
-                      >
-                        {service.title}
-                      </h2>
-
-                      {/* Description - Airly readable body text */}
-                      <p 
-                        className="text-[#4e4e4e] text-pretty mb-12 max-w-md"
-                        style={{
-                          fontFamily: "'Inter', sans-serif",
-                          fontSize: "18px",
-                          lineHeight: "1.60",
-                          letterSpacing: "0.18px",
-                          fontWeight: 400
-                        }}
-                      >
-                        {service.desc}
-                      </p>
-
-                      {/* Checklist Features - White Cards with shadow-as-border */}
-                      <div className="flex flex-col gap-3 mb-14">
-                        {service.bullets.map((b, bIdx) => (
-                          <div
-                            key={bIdx}
-                            className="flex items-center justify-between max-w-[400px]"
-                            style={{ 
-                              background: "var(--card-bg)",
-                              borderRadius: "12px",
-                              padding: "14px 20px",
-                              border: "1px solid var(--card-border)"
-                            }}
-                          >
-                            <span 
-                              className="text-black/80"
-                              style={{
-                                fontFamily: "'Inter', sans-serif",
-                                fontSize: "15px",
-                                fontWeight: 500,
-                                letterSpacing: "0.15px"
-                              }}
-                            >
-                              {b}
-                            </span>
-                            <Check className="size-4 shrink-0 text-black/30" />
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* CTA button (Primary Black Pill) */}
-                      <Link
-                        href="/contact"
-                        className="group inline-flex items-center justify-center w-max"
-                        style={{
-                          background: "#000000",
-                          color: "#ffffff",
-                          padding: "10px 20px",
-                          borderRadius: "9999px",
-                          fontFamily: "'Inter', sans-serif",
-                          fontWeight: 500,
-                          fontSize: "15px",
-                        }}
-                      >
-                        {service.cta}
-                      </Link>
-                    </ScrollReveal>
-                  </div>
-
-                  {/* ── IMAGE / VISUAL COLUMN ── */}
-                  <div className={`flex items-center justify-center ${!isEven ? "lg:order-1" : ""}`} style={{ direction: "ltr" }}>
-                    <ScrollReveal delay={200}>
-                      {/* The generous padding and subtle background for images mimicking audio/product demo containers */}
-                      <div 
-                        className="relative w-full aspect-square max-w-lg lg:max-w-none flex items-center justify-center overflow-hidden"
-                        style={{
-                          background: "#ffffff",
-                          borderRadius: "24px",
-                          boxShadow: "rgba(0,0,0,0.075) 0px 0px 0px 0.5px inset"
-                        }}
-                      >
-                        <div className="relative w-4/5 h-4/5">
-                          <Image
-                            src={service.image}
-                            alt={service.title.replace("\n", " ")}
-                            fill
-                            className="object-contain drop-shadow-xl"
-                            sizes="(max-width: 1024px) 90vw, 45vw"
-                          />
-                        </div>
-                      </div>
-                    </ScrollReveal>
-                  </div>
-
-                </div>
-              </div>
-            </section>
-          );
-        })}
-      </div>
-
-      {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          BOTTOM CTA
-          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section className="relative py-32 md:py-48 px-5" style={{ background: "#ffffff", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
-        <div className="relative z-10 text-center max-w-3xl mx-auto flex flex-col items-center">
+      {/* ── Services — Human List Layout ── */}
+      <section ref={scrollRef} className="relative overflow-hidden py-14 md:py-20">
+        <div className="section-container">
           <ScrollReveal>
-            <span 
-              className="block mb-6 text-black/40"
-              style={{
-                fontFamily: "var(--font-waldenburgFH), var(--font-waldenburg), sans-serif",
-                fontWeight: 700,
-                fontSize: "14px",
-                letterSpacing: "0.7px",
-                textTransform: "uppercase"
-              }}
-            >
-              Ready to transform?
-            </span>
-            <h2 
-              className="mb-12 text-black" 
-              style={{ 
-                fontSize: "clamp(2rem, 5vw, 3.5rem)", 
-                lineHeight: "1.08", 
-                letterSpacing: "-0.96px",
-                fontFamily: "var(--font-waldenburg)",
-                fontWeight: 300
-              }}
-            >
-              Let&apos;s build something amazing.
-            </h2>
+            <div className="mb-12">
+              <span className="chip mb-4">What we do</span>
+              <h2 className="section-heading max-w-xl">
+                End-to-end capabilities,{" "}
+                <span className="serif-italic">restrained delivery.</span>
+              </h2>
+            </div>
+          </ScrollReveal>
 
-            <Link
-              href="/contact"
-              className="group inline-flex items-center justify-center"
+          <div className="flex flex-col gap-16">
+            {services.map((service, index) => (
+              <ScrollReveal key={service.num} delay={index * 20}>
+                <article className="grid gap-6 md:grid-cols-[0.8fr_1.2fr] border-l border-dotted border-black/[0.25] pl-6">
+                  {/* Left Column: Number & Title */}
+                  <div className="flex flex-col">
+                    <span className="text-[10px] font-semibold text-black/30 mb-2 tracking-widest">
+                      {service.num} · {service.tag}
+                    </span>
+                    <h2
+                      className="text-2xl mt-1"
+                      style={{
+                        fontFamily: "var(--font-waldenburg)",
+                        fontWeight: 500,
+                        letterSpacing: "-0.02em",
+                        lineHeight: 1.15,
+                        color: "var(--heading-color)"
+                      }}
+                    >
+                      {service.title}
+                    </h2>
+                  </div>
+
+                  {/* Right Column: Description & Bullets */}
+                  <div className="flex flex-col md:pl-8 md:border-l border-dotted border-black/[0.15]">
+                    <p className="text-black/60 mb-6" style={{ lineHeight: 1.65, fontSize: "0.95rem" }}>
+                      {service.desc}
+                    </p>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      {service.bullets.map((item) => (
+                        <div key={item} className="flex items-start gap-2">
+                          <service.icon weight="duotone" className="size-4 text-black/40 mt-1 shrink-0" />
+                          <span className="text-[13px] font-medium text-black/70 leading-relaxed">
+                            {item}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── More Services — Flat Text List ── */}
+      <section className="relative overflow-hidden py-14 md:py-20">
+        <div className="section-sep" />
+        <div className="section-container">
+          <ScrollReveal>
+            <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+              <div>
+                <span className="chip mb-4">Also available</span>
+                <h2 className="section-heading max-w-lg mb-0">
+                  Additional services and{" "}
+                  <span className="serif-italic">capabilities.</span>
+                </h2>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <div className="section-divider mb-10" />
+
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-x-12 gap-y-6">
+            {moreServices.map((service, index) => (
+              <ScrollReveal key={service.title} delay={index * 20}>
+                <div className="break-inside-avoid mb-6 flex items-start gap-3 border-l border-dotted border-black/[0.25] pl-4">
+                  <service.icon weight="duotone" className="size-4 text-black/40 mt-0.5 shrink-0" />
+                  <div className="min-w-0">
+                    <p
+                      className="text-[0.95rem] font-medium text-black/80"
+                      style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.015em" }}
+                    >
+                      {service.title}
+                    </p>
+                    <p className="text-[12.5px] text-black/50 mt-0.5 leading-relaxed">
+                      {service.desc}
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Bottom CTA ── */}
+      <section className="relative overflow-hidden pb-16 md:pb-20">
+        <div className="section-sep" />
+        <div className="section-container pt-16">
+          <ScrollReveal>
+            <div
+              className="relative isolate overflow-hidden rounded-2xl flex flex-col items-center text-center"
               style={{
-                background: "rgba(0,0,0,0.03)",
-                color: "#000000",
-                padding: "16px 28px",
-                borderRadius: "30px",
-                border: "1px solid var(--card-border)",
-                fontFamily: "'Inter', sans-serif",
-                fontWeight: 500,
-                fontSize: "16px",
-                letterSpacing: "normal"
+                background: "#080808",
+                backgroundImage: "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
+                backgroundSize: "28px 28px",
+                border: "1px solid rgba(255,255,255,0.08)",
+                padding: "80px 48px",
               }}
             >
-              Schedule a Call
-            </Link>
+              <span className="absolute top-0 left-0 w-8 h-px bg-white/20" />
+              <span className="absolute top-0 left-0 h-8 w-px bg-white/20" />
+              <span className="absolute bottom-0 right-0 w-8 h-px bg-white/20" />
+              <span className="absolute bottom-0 right-0 h-8 w-px bg-white/20" />
+              <div className="relative z-10 max-w-2xl mx-auto">
+                <span
+                  className="inline-flex items-center gap-2 mb-6 text-white/40"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "10px",
+                    letterSpacing: "1.4px",
+                    textTransform: "uppercase",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                    padding: "5px 14px",
+                    borderRadius: "3px",
+                  }}
+                >
+                  Ready to transform?
+                </span>
+                <h2
+                  className="text-white text-balance mb-4"
+                  style={{
+                    fontFamily: "var(--font-waldenburg)",
+                    fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+                    fontWeight: 400,
+                    letterSpacing: "-0.03em",
+                    lineHeight: 1.08,
+                    color:"white"
+                  }}
+                >
+                  Let&apos;s build something{" "}
+                  <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", background: "linear-gradient(135deg, #fdece2 0%, #c4b0f5 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>useful and beautiful.</span>
+                </h2>
+                <p className="text-white/45 mb-8" style={{ lineHeight: 1.7, fontSize: "0.95rem" }}>
+                  Book a structured consultation and see how careful product thinking can reshape your workflow.
+                </p>
+                <Link
+                  href="/contact"
+                  className="blueprint-btn"
+                >
+                  Schedule a Call
+                </Link>
+              </div>
+            </div>
           </ScrollReveal>
         </div>
       </section>
     </div>
   );
 }
-

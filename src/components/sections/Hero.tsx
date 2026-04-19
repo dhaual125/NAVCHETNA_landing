@@ -1,124 +1,134 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { ArrowRight, Sparkles } from "lucide-react";
-
-
+import Image from "next/image";
+import { ArrowRight } from "@phosphor-icons/react";
 
 export function Hero() {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-
   return (
-    <section className="relative min-h-[90dvh] flex flex-col justify-center overflow-hidden bg-transparent">
-      {/* Grid background */}
-      <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px)", backgroundSize: "56px 56px" }} />
-      <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(ellipse 70% 60% at 50% 40%, transparent 30%, var(--page-bg) 100%)" }} />
+    <section className="relative w-full h-screen min-h-[600px] flex flex-col justify-center overflow-hidden">
+      {/* Full-screen background image */}
+      <Image
+        src="/assets/hero background.png"
+        alt=""
+        fill
+        priority
+        quality={92}
+        className="object-cover object-center"
+        sizes="100vw"
+      />
+
+      {/* Layered overlays for legibility */}
       <div
-        className={`relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 pt-32 pb-20`}
-      >
-        <div className="flex flex-col items-center text-center">
-          {/* ── Pill badge ── */}
-          <div
-            className="inline-flex items-center gap-2 px-3 py-1.5 mb-10 rounded-full"
-            style={{
-              background: "transparent",
-              border: "1px solid var(--card-border)"
-            }}
-          >
-            <Sparkles className="size-3.5 text-black/50" />
-            <span className="type-xs font-medium text-black/60 uppercase tracking-widest">
-              Powering Innovation Across Industries
-            </span>
-          </div>
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.12) 38%, rgba(0,0,0,0.22) 65%, rgba(0,0,0,0.72) 100%)",
+        }}
+      />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 110% 80% at 50% 50%, transparent 20%, rgba(0,0,0,0.48) 100%)",
+        }}
+      />
 
-          {/* ── Display heading — massive, impactful ── */}
-          <h1
-            className="max-w-5xl text-balance"
+      {/* Content */}
+      {/* Structural Grid Overlay removed for Home Hero as requested */}
+
+
+      <div className="relative z-10 mx-auto w-full max-w-3xl px-5 sm:px-8 flex flex-col items-center text-center">
+        {/* Eyebrow chip removed as requested */}
+        <h1
+          style={{
+            fontSize: "clamp(2.1rem, 5vw, 3.75rem)",
+            lineHeight: "1.1",
+            letterSpacing: "-0.06em",
+            fontFamily: "var(--font-waldenburg)",
+            fontWeight: 500,
+            color: "#ffffff",
+            textShadow: "0 2px 40px rgba(0,0,0,0.45)",
+            textAlign: "center",
+          }}
+        >
+          Technology with Awareness,
+          <br />
+          <span
             style={{
-              fontSize: "clamp(2.5rem, 7.5vw, 5.5rem)",
-              lineHeight: "1.04",
-              letterSpacing: "-0.035em",
-              fontFamily: "var(--font-montserrat)",
+              fontFamily: "'Instrument Serif', serif",
+              fontStyle: "italic",
               fontWeight: 400,
+              color: "rgba(255,255,255,0.85)",
             }}
           >
-            Technology with
-            <br />
-            <span className="relative inline-block">
-              Awareness
-            </span>
-            , Built&nbsp;
-            <span
-              style={{
-                fontFamily: "'Instrument Serif', serif",
-                fontStyle: "italic",
-                fontWeight: 400,
-              }}
-            >
-              for Everyone.
-            </span>
-          </h1>
+            Built for everywhere.
+          </span>
+        </h1>
 
-          {/* ── Subheading ── */}
-          <p
-            className="mt-8 max-w-2xl text-balance text-warm-500"
+        <p
+          className="mt-8 max-w-md text-pretty"
+          style={{
+            fontSize: "clamp(0.9rem, 1.1vw, 1rem)",
+            lineHeight: "1.70",
+            color: "rgba(255,255,255,0.65)",
+            fontFamily: "var(--font-body)",
+            fontWeight: 400,
+            letterSpacing: "0",
+          }}
+        >
+          From education to enterprise — we empower growth through{" "}
+          <span style={{ color: "rgba(255,255,255,0.88)", fontWeight: 500 }}>
+            technology, creativity,
+          </span>{" "}
+          and conscious innovation.
+        </p>
+
+        <div className="mt-9 flex flex-wrap justify-center gap-3">
+          <Link
+            href="/contact"
+            className="group inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full transition-all duration-300 active:scale-95 hover:bg-white/90"
             style={{
-              fontSize: "clamp(1rem, 1.5vw, 1.25rem)",
-              lineHeight: "1.7",
-              letterSpacing: "0.01em",
+              height: "46px",
+              padding: "0 22px",
+              fontSize: "13.5px",
+              fontWeight: 600,
+              background: "#ffffff",
+              color: "#000000",
+              letterSpacing: "-0.01em",
             }}
           >
-            From education to enterprise, we empower growth through
-            technology, creativity, and conscious innovation. Powering
-            Osmium, Natraj, Aegis Auth, and enterprise-grade AI solutions.
-          </p>
-
-          <div className="mt-12 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contact"
-              className="group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-black text-white hover:bg-black/80"
-              style={{
-                height: "52px",
-                padding: "0 28px",
-                fontSize: "15px",
-                fontWeight: 500,
-              }}
-            >
-              Get started
-              <ArrowRight className="size-4" />
-            </Link>
-            <Link
-              href="/products"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-full hover:bg-black/5"
-              style={{
-                height: "52px",
-                padding: "0 28px",
-                fontSize: "15px",
-                fontWeight: 500,
-                background: "transparent",
-                color: "var(--page-text)",
-                border: "1px solid var(--card-border)",
-              }}
-            >
-              Explore products
-            </Link>
-          </div>
-
-
+            Get started
+            <ArrowRight weight="bold" className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+          </Link>
+          <Link
+            href="/products"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-full transition-all duration-300 active:scale-95 hover:bg-white/15"
+            style={{
+              height: "46px",
+              padding: "0 22px",
+              fontSize: "13.5px",
+              fontWeight: 500,
+              background: "rgba(255,255,255,0.08)",
+              color: "rgba(255,255,255,0.88)",
+              border: "1px solid rgba(255,255,255,0.22)",
+              backdropFilter: "blur(8px)",
+              WebkitBackdropFilter: "blur(8px)",
+              letterSpacing: "-0.01em",
+            }}
+          >
+            Explore products
+          </Link>
         </div>
       </div>
 
-      {/* ── Scroll indicator ── */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
         <div
-          className="w-[1px] h-8"
-          style={{
-            background:
-              "linear-gradient(to bottom, var(--page-text), transparent)",
-          }}
+          className="w-px h-10 opacity-25"
+          style={{ background: "linear-gradient(to bottom, transparent, #fff)" }}
         />
+        <div className="w-1 h-1 rounded-full bg-white/40" />
       </div>
     </section>
   );

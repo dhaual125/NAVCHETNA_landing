@@ -145,7 +145,7 @@ function ServiceTextBlock({
       </div>
       
       {/* Mobile media fallback (hidden on desktop) */}
-      <div className="mt-12 lg:hidden w-full aspect-video relative rounded-2xl overflow-hidden shadow-lg border border-black/5">
+      <div className="mt-10 lg:hidden w-full aspect-video relative rounded-[var(--panel-radius)] overflow-hidden shadow-lg border border-black/5">
         <Image
           src={images[index % images.length]}
           alt={s.title}

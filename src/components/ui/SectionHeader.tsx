@@ -23,7 +23,7 @@ export function SectionHeader({
       )}
       <h2 className="type-5xl text-black text-balance">{title}</h2>
       {description && (
-        <p className="mt-4 type-base text-warm-600 md:type-lg">{description}</p>
+        <p className="mt-3 type-base text-warm-600">{description}</p>
       )}
     </div>
   );

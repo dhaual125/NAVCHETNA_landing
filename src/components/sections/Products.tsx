@@ -1,90 +1,112 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight, ArrowUpRight } from "@phosphor-icons/react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const products = [
-  { name: "Osmium", tag: "Deep Learning", logo: "/assets/osmium.png" },
-  { name: "Natraj", tag: "AI + AR", logo: "/assets/natraj.png" },
-  { name: "Aegis Auth", tag: "Agentic AI", logo: "/assets/agegis.png" },
-  { name: "Kriya", tag: "Organizational AI", logo: "/assets/kriya.png" },
-  { name: "LM Lens", tag: "Vision AI", logo: "/assets/lm-lens.svg" },
-  { name: "NSL", tag: "Neural Systems", logo: "/assets/nsl.png" },
+  { name: "Osmium", tag: "Deep Learning", bg: "/assets/osmium (1).png", href: "https://osmium.co.in" },
+  { name: "Natraj", tag: "AI + AR", bg: "/assets/nataraj.png", href: "/products" },
+  { name: "Aegis Auth", tag: "Agentic AI", bg: "/assets/aegis1.png", href: "/products" },
+  { name: "Kriya", tag: "Organizational AI", bg: "/assets/kriya1.png", href: "/products" },
+  { name: "LM Lens", tag: "Text Extractor", bg: "/assets/lmlens.png", href: "/products" },
+  { name: "NSL", tag: "Smart Ledger", bg: "/assets/nsl.png", href: "/products" },
 ];
 
 export function Products() {
   return (
-    <section className="relative py-24 md:py-40 bg-[var(--page-bg)]">
-      {/* Grid background */}
-      <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px)", backgroundSize: "56px 56px" }} />
-      <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(ellipse 60% 70% at 80% 50%, transparent 40%, var(--page-bg) 100%)" }} />
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="grid items-center gap-16 lg:grid-cols-[1.2fr_1.5fr] lg:gap-24">
+    <section className="relative overflow-hidden py-10 md:py-14">
+      <div className="grid-overlay opacity-30" />
+      <div className="section-sep" />
 
-          {/* ── Left copy ── */}
+      <div className="section-container">
+        <div className="grid gap-12 lg:grid-cols-[minmax(260px,0.65fr)_minmax(0,1.35fr)]">
+          {/* Left copy — sticky */}
           <ScrollReveal>
-            <div className="pr-4 flex flex-col items-start text-left">
-              <span className="inline-flex items-center gap-2 px-3 py-1 mb-8 rounded-full bg-black/5 text-[11px] font-bold uppercase tracking-[0.2em] text-black/60">
-                From learning to living
-              </span>
-              <h2
-                className="text-black leading-[1.05] mb-8 max-w-lg"
-                style={{
-                  fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
-                  fontFamily: "'Inter', sans-serif",
-                  fontWeight: 400,
-                  letterSpacing: "-0.04em"
-                }}
-              >
-                Powered by<br />
-                <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", fontWeight: 400 }}>Conscious Intelligence.</span>
+            <div className="lg:sticky lg:top-28 lg:self-start">
+              <span className="chip mb-4">Products</span>
+              <h2 className="section-heading max-w-sm">
+                Powered by
+                {" "}
+                <span className="serif-italic">conscious intelligence.</span>
               </h2>
 
-              <p className="type-lg text-black/60 leading-relaxed text-pretty max-w-md mb-12">
-                Discover how conscious intelligence and advanced technology
-                unlock growth, creativity, and transformation across every
-                dimension of life. Experience the future today.
+              <div className="mb-6 flex flex-wrap gap-2">
+                {["Intelligence Redefined", "Fluid Collaboration", "Endless Possibilities"].map((step) => (
+                  <span
+                    key={step}
+                    className="text-[11px] font-medium text-black/54 uppercase tracking-widest"
+                  >
+                    {step} {step !== "Endless Possibilities" && "·"}
+                  </span>
+                ))}
+              </div>
+
+              {/* Dotted divider */}
+              <div className="section-divider mb-6" />
+
+              <p style={{ color: "rgba(0,0,0,0.48)", lineHeight: 1.65, fontSize: "0.88rem" }} className="mb-6">
+                Discover how conscious intelligence and advanced technology unlock growth,
+                creativity, and transformation across every dimension of life.
               </p>
 
-              <Link
-                href="/products"
-                className="group relative inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-medium overflow-hidden transition-all duration-300 active:scale-95 whitespace-nowrap bg-black text-white hover:bg-black/80"
-              >
-                <span className="z-10 relative">Explore Products Framework</span>
+              <Link href="/products" className="btn btn-secondary w-max">
+                Explore all products
+                <ArrowRight weight="bold" className="size-3.5" />
               </Link>
             </div>
           </ScrollReveal>
 
-          {/* ── Right floating product cards ── */}
-          <div className="relative">
-            <div className="grid grid-cols-2 gap-4 sm:gap-6 relative z-10">
-              {products.map((p, i) => (
-                <ScrollReveal key={p.name} delay={i * 80}>
-                  <div
-                    className="group relative flex flex-col items-center justify-center p-8 bg-[var(--card-bg)] rounded-3xl cursor-pointer"
-                    style={{
-                      border: "1px solid var(--card-border)"
-                    }}
-                  >
-                    <div className="mb-6 relative flex h-16 w-16 items-center justify-center">
-                      <img
-                        src={p.logo}
-                        alt={`${p.name} logo`}
-                        className="h-12 w-12 object-contain filter drop-shadow-md"
+          {/* Right — open product list */}
+          <div className="grid gap-x-8 gap-y-8 sm:grid-cols-2">
+            {products.map((product, index) => (
+              <ScrollReveal key={product.name} delay={index * 45}>
+                <Link
+                  href={product.href}
+                  className="group block"
+                  target={product.href.startsWith("http") ? "_blank" : undefined}
+                  rel={product.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                >
+                  <div className="relative mb-3 overflow-hidden rounded-sm bg-black/[0.02] border border-black/[0.08] transition-shadow duration-500 group-hover:shadow-sm">
+                    <Image
+                      src={product.bg}
+                      alt={product.name}
+                      width={320}
+                      height={220}
+                      loading={index < 3 ? "eager" : "lazy"}
+                      className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                      quality={84}
+                      style={{ maxHeight: "140px" }}
+                    />
+                  </div>
+
+                  <div className="flex items-center justify-between border-b border-dotted border-black/[0.25] pb-2">
+                    <h3
+                      style={{
+                        fontFamily: "var(--font-waldenburg)",
+                        fontSize: "1.1rem",
+                        fontWeight: 500,
+                        letterSpacing: "-0.015em",
+                        color: "var(--heading-color)"
+                      }}
+                    >
+                      {product.name}
+                    </h3>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-black/40">
+                        {product.tag}
+                      </span>
+                      <ArrowUpRight
+                        weight="bold"
+                        className="w-3.5 h-3.5 text-black/30 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-black/80"
                       />
                     </div>
-                    <h3 className="type-xl font-medium mb-2 text-black tracking-tight">
-                      {p.name}
-                    </h3>
-                    <p className="text-[11px] uppercase tracking-[0.15em] font-medium text-black/40">
-                      {p.tag}
-                    </p>
                   </div>
-                </ScrollReveal>
-              ))}
-            </div>
+                </Link>
+              </ScrollReveal>
+            ))}
           </div>
-
         </div>
       </div>
     </section>

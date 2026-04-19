@@ -1,64 +1,80 @@
 import Link from "next/link";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, EnvelopeSimple } from "@phosphor-icons/react/dist/ssr";
 
 export function CTA() {
   return (
-    <section className="py-24 md:py-40 bg-[var(--page-bg)] relative overflow-hidden">
-      {/* Grid background */}
-      <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px)", backgroundSize: "56px 56px" }} />
-      <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(ellipse 70% 60% at 50% 50%, transparent 30%, var(--page-bg) 100%)" }} />
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section className="relative overflow-hidden py-20 md:py-28">
+      <div className="section-sep" />
+
+      <div className="section-container">
         <ScrollReveal>
           <div
-            className="relative isolate overflow-hidden rounded-[3rem] px-6 sm:px-16 py-20 sm:py-32 flex flex-col items-center text-center"
+            className="relative isolate overflow-hidden rounded-2xl flex flex-col items-center text-center"
             style={{
-              background: "#111111"
+              background: "#080808",
+              backgroundImage: "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
+              backgroundSize: "28px 28px",
+              border: "1px solid rgba(255,255,255,0.08)",
+              padding: "80px 48px",
             }}
           >
-            {/* Ambient Background Glow Effect inside the card */}
-            <div className="absolute inset-0 z-0">
-              <div
-                className="absolute top-0 right-1/4 w-[30rem] h-[30rem] translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.15] blur-3xl pointer-events-none"
-                style={{ background: "radial-gradient(circle, #ffffff, transparent)" }}
-              />
-              <div className="absolute inset-0 bg-[#0a0a0a]/50 mix-blend-multiply" />
-            </div>
+            <span className="absolute top-0 left-0 w-8 h-px bg-white/20" />
+            <span className="absolute top-0 left-0 h-8 w-px bg-white/20" />
+            <span className="absolute bottom-0 right-0 w-8 h-px bg-white/20" />
+            <span className="absolute bottom-0 right-0 h-8 w-px bg-white/20" />
 
-            <div className="relative z-10 w-full max-w-3xl flex flex-col items-center">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full bg-white/10 text-xs font-semibold uppercase tracking-[0.2em] text-white">
-                Begin the Transformation
-              </span>
-
-              <h2
-                className="text-white text-balance mb-10 leading-[1.05]"
+            <div className="relative z-10 max-w-2xl mx-auto">
+              <span
+                className="inline-flex items-center gap-2 mb-6 text-white/40"
                 style={{
-                  fontSize: "clamp(2.5rem, 6vw, 5rem)",
                   fontFamily: "'Inter', sans-serif",
-                  fontWeight: 400,
-                  letterSpacing: "-0.04em"
+                  fontWeight: 700,
+                  fontSize: "10px",
+                  letterSpacing: "1.4px",
+                  textTransform: "uppercase",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  padding: "5px 14px",
+                  borderRadius: "3px",
                 }}
               >
-                Ready to elevate<br />
-                <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", fontWeight: 400 }}>your operations?</span>
+                Begin the transformation
+              </span>
+              <h2
+                className="mb-5 text-balance text-white"
+                style={{
+                  fontFamily: "var(--font-waldenburg)",
+                  fontSize: "clamp(2rem, 4vw, 3.2rem)",
+                  fontWeight: 400,
+                  lineHeight: 1.06,
+                  letterSpacing: "-0.03em",
+                  color: "white"
+                }}
+              >
+                Ready to elevate{" "}
+                <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", background: "linear-gradient(135deg, #fdece2 0%, #c4b0f5 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>your operations?</span>
               </h2>
-
-              <p className="type-xl text-white/50 text-pretty mb-14 max-w-xl">
-                Book a structured, zero-commitment technological consultation and discover precisely how precision engineering can revolutionize your entire workflow.
+              <p
+                className="mb-8 text-white/45"
+                style={{ lineHeight: 1.7, fontSize: "0.96rem", maxWidth: "520px", margin: "0 auto 2rem" }}
+              >
+                Book a structured, zero-commitment consultation and see how careful product
+                thinking and precision engineering can reshape your workflow.
               </p>
-
-              <div className="flex flex-wrap gap-4 justify-center">
+              <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white text-black h-14 px-8 type-base font-semibold"
+                  className="blueprint-btn"
                 >
-                  Schedule Consultation
-                  <ArrowRight className="size-4" />
+                  Schedule consultation
+                  <ArrowRight weight="bold" className="size-3.5" />
                 </Link>
-              </div>
-
-              <div className="mt-16 flex items-center justify-center gap-8 type-sm font-medium tracking-wide text-white/30 flex-wrap">
-                <a href="mailto:hello@navchetna.tech" className="hover:text-white transition-colors">
+                <a
+                  href="mailto:hello@navchetna.tech"
+                  className="inline-flex items-center justify-center gap-2 text-white/50 hover:text-white transition-colors"
+                  style={{ fontSize: "13px", fontWeight: 500 }}
+                >
+                  <EnvelopeSimple className="size-4" />
                   hello@navchetna.tech
                 </a>
               </div>
