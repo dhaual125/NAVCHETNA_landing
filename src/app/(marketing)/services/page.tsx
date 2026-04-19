@@ -127,6 +127,7 @@ export default function ServicesPage() {
                 <Link
                   href="/contact"
                   className="btn btn-primary gap-2"
+                  style={{ height: "2.5rem", padding: "0 1rem" }}
                 >
                   Schedule a Call
                   <CaretRight weight="bold" className="size-3.5 text-white/52" />
@@ -135,6 +136,7 @@ export default function ServicesPage() {
                   type="button"
                   onClick={() => scrollRef.current?.scrollIntoView({ behavior: "smooth" })}
                   className="btn btn-secondary gap-2"
+                  style={{ height: "2.5rem", padding: "0 1rem" }}
                 >
                   View Services
                   <ArrowDown weight="bold" className="size-3.5" />

@@ -1,15 +1,15 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 
 let css = fs.readFileSync('src/app/globals.css', 'utf8');
 
 // Remove ALL btn-primary blocks from line 762 onwards (the old appended ones)
 // Find the first block after line ~760 (the old sci-fi ones we added)
 // Strategy: find the marker comment and delete everything after it
-const markerStart = '\n/* ═══════════════════════════════════════════';
+const markerStart = '\n/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ';
 const idx = css.indexOf(markerStart);
 if (idx !== -1) {
   css = css.slice(0, idx);
-  console.log('✓ Removed appended btn-primary blocks');
+  console.log('Γ£ô Removed appended btn-primary blocks');
 }
 
 // Also remove any duplicate block at line ~335 (the one added by mistake in last tool call)
@@ -22,7 +22,7 @@ const dIdx = css.indexOf(dupStart);
 const dEndIdx = css.indexOf(dupEnd);
 if (dIdx !== -1 && dEndIdx !== -1 && dIdx < dEndIdx) {
   css = css.slice(0, dIdx) + '\n' + css.slice(dEndIdx);
-  console.log('✓ Removed early duplicate btn-primary block');
+  console.log('Γ£ô Removed early duplicate btn-primary block');
 }
 
 // Now ensure the canonical btn-primary at ~428 is the correct clean version
@@ -82,19 +82,19 @@ const newBtnBlock = `.btn-primary {
 
 if (css.includes(oldBtnBlock)) {
   css = css.replace(oldBtnBlock, newBtnBlock);
-  console.log('✓ Replaced main btn-primary block');
+  console.log('Γ£ô Replaced main btn-primary block');
 } else {
   console.log('! Main btn-primary block not found - will try regex...');
   // Replace via regex
   css = css.replace(/\.btn-primary \{[\s\S]*?\.btn-primary:hover::before \{[\s\S]*?\}\n/g, newBtnBlock + '\n');
-  console.log('✓ Replaced via regex');
+  console.log('Γ£ô Replaced via regex');
 }
 
 // Append blueprint-btn at the end
 const blueprintBtn = `
-/* ─────────────────────────────────────────────
-   BLUEPRINT BUTTON — for dark CTA cards only
-   ───────────────────────────────────────────── */
+/* ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+   BLUEPRINT BUTTON ΓÇö for dark CTA cards only
+   ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
 .blueprint-btn {
   display: inline-flex;
   align-items: center;
@@ -142,4 +142,4 @@ const blueprintBtn = `
 css += blueprintBtn;
 
 fs.writeFileSync('src/app/globals.css', css);
-console.log('✓ Done — CSS cleaned and blueprint-btn appended');
+console.log('Γ£ô Done ΓÇö CSS cleaned and blueprint-btn appended');

@@ -1,127 +1,98 @@
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import Image from "next/image";
 
 const testimonials = [
   {
     name: "Priya Kumari",
-    role: "JEE Student, Patna",
-    quote: "Osmium didn't feel like an exam prep app — it felt like someone who understood how I studied. The predictions were accurate, and I wasn't second-guessing myself the night before my exam.",
+    role: "Student, Patna",
+    quote: "I used Osmium for my JEE prep. Honestly, it felt less like an app and more like a study partner. The mock tests were scarily close to the actual exam pattern.",
     initial: "P",
   },
   {
     name: "Dr. Mehul Shah",
-    role: "Assistant Professor, Ahmedabad",
-    quote: "We integrated Natraj into our anatomy curriculum. Students who previously struggled with spatial understanding had a tangible breakthrough. That kind of impact is rare with any software.",
+    role: "Professor, Ahmedabad",
+    quote: "We tried Natraj in our college for managing course content. Usually, software means headaches, but this one was surprisingly smooth. Even my colleagues figured it out.",
     initial: "M",
   },
   {
     name: "Raghav Malhotra",
-    role: "Co-Founder, EdTech Startup, Delhi",
-    quote: "We needed a digital presence that matched how seriously we take our work. Navchetna delivered without hand-holding. Timeline was honest, delivery was solid.",
+    role: "Founder, New Delhi",
+    quote: "Our startup needed a website that did not look dated. Navchetna delivered something clean, modern, and genuinely easy to use. The process was entirely transparent.",
     initial: "R",
   },
   {
     name: "Arjun Nair",
-    role: "Product Manager, Bangalore",
-    quote: "What impressed me was that they pushed back on a few of our assumptions — in a good way. They genuinely understood our product goals, not just the spec sheet.",
+    role: "Professional, Bangalore",
+    quote: "I asked Navchetna for branding help and they made a logo so clear that even my mom finally understood what my company does. That is a real UX win.",
     initial: "A",
   },
   {
     name: "Sneha Desai",
-    role: "Director of Operations, Mumbai",
-    quote: "Kriya removed a layer of friction we didn't even know was costing us hours every week. The team's communication throughout was straightforward and no-nonsense.",
+    role: "HR Director, Mumbai",
+    quote: "Kriya changed how our team communicates. We completely dropped our old scattered tools. The difference in daily operational speed is night and day.",
     initial: "S",
   },
   {
     name: "Vikram Singh",
-    role: "Founder & CEO, Jaipur",
-    quote: "Most agencies optimize for their process. Navchetna optimized for our outcome. That distinction matters more than any portfolio or pitch deck.",
+    role: "CEO, Jaipur",
+    quote: "Finding a tech partner who actually listens is rare. They didn't just build the features we asked for, they helped us refine the actual business logic behind them.",
     initial: "V",
   },
 ];
 
 export function Testimonials() {
   return (
-    <section className="relative overflow-hidden py-20 md:py-28 bg-[var(--page-bg)]">
-      {/* Header */}
-      <div className="section-container mb-16">
+    <section className="relative overflow-hidden py-16 md:py-24 bg-[#FAFAFA]">
+      <div className="section-container text-center mb-14">
         <ScrollReveal>
-          <div className="max-w-2xl">
-            <span
-              className="inline-block mb-5 text-[10px] font-semibold uppercase tracking-[0.18em] text-black/40"
-              style={{ letterSpacing: "0.18em" }}
-            >
-              Client Perspectives
-            </span>
-            <h2
-              className="text-black text-balance"
-              style={{
-                fontFamily: "var(--font-waldenburg)",
-                fontSize: "clamp(2rem, 4vw, 3rem)",
-                fontWeight: 400,
-                letterSpacing: "-0.03em",
-                lineHeight: 1.1,
-              }}
-            >
-              Trusted by builders,{" "}
-              <span
-                style={{
-                  fontFamily: "'Instrument Serif', serif",
-                  fontStyle: "italic",
-                }}
-              >
-                educators &amp; founders.
-              </span>
-            </h2>
-            <p
-              className="mt-5 text-black/50"
-              style={{ fontSize: "0.95rem", lineHeight: 1.7, maxWidth: "480px" }}
-            >
-              A small collection of what people say after working with us or using our products.
-            </p>
+          <h2 className="text-black text-4xl md:text-5xl font-medium tracking-tight mb-4" style={{ fontFamily: "var(--font-waldenburg)" }}>
+            See why we're rated #1<br />in modern tech
+          </h2>
+          <div className="flex items-center justify-center gap-4 mt-6">
+            <div className="flex items-center gap-2 bg-black/[0.04] px-4 py-2 rounded-full border border-black/[0.05]">
+              <span className="text-[11px] font-semibold uppercase tracking-wider text-black/60">Rated #1 Engineering Partner</span>
+            </div>
           </div>
         </ScrollReveal>
       </div>
 
-      {/* Grid */}
       <div className="section-container">
         <ScrollReveal>
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-5 space-y-5 relative z-10 pb-24">
-            {testimonials.map((testimonial) => (
-              <div
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 relative z-10 pb-20">
+            {testimonials.map((testimonial, index) => (
+              <div 
                 key={testimonial.name}
-                className="break-inside-avoid flex flex-col rounded-2xl bg-white p-6 border border-black/[0.05]"
+                className="break-inside-avoid flex flex-col rounded-[16px] bg-white p-6 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-black/[0.03] transition-all hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)]"
               >
-                {/* Stars */}
-                <div
-                  className="mb-5 text-black/80"
-                  style={{ letterSpacing: "0.15em", fontSize: "13px" }}
-                >
+                <div className="text-black mb-4 tracking-[0.2em] text-[15px]">
                   ★★★★★
                 </div>
-
-                {/* Quote */}
                 <p
-                  className="mb-6 flex-1 text-black/70"
+                  className="mb-6 flex-1 text-black/80"
                   style={{
                     fontFamily: "var(--font-body)",
-                    fontSize: "0.925rem",
-                    lineHeight: 1.65,
+                    fontSize: "0.95rem",
+                    lineHeight: 1.6,
                   }}
                 >
-                  &ldquo;{testimonial.quote}&rdquo;
+                  {testimonial.quote}
                 </p>
 
-                {/* Author */}
-                <div className="flex items-center gap-3 pt-4 border-t border-black/[0.05]">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-black/[0.06] text-[12px] font-semibold text-black/70">
+                <div className="flex items-center gap-3">
+                  <div 
+                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#f0f0f0] text-[13px] font-medium text-black"
+                  >
                     {testimonial.initial}
                   </div>
                   <div>
-                    <p style={{ fontSize: "0.83rem", fontWeight: 600, color: "#111", lineHeight: 1.3 }}>
+                    <p
+                      style={{
+                        fontSize: "0.85rem",
+                        fontWeight: 600,
+                        color: "#000"
+                      }}
+                    >
                       {testimonial.name}
-                    </p>
-                    <p style={{ fontSize: "0.75rem", color: "rgba(0,0,0,0.4)", marginTop: "2px" }}>
-                      {testimonial.role}
                     </p>
                   </div>
                 </div>
@@ -130,15 +101,9 @@ export function Testimonials() {
           </div>
         </ScrollReveal>
       </div>
-
-      {/* Fade out bottom */}
-      <div
-        className="absolute bottom-0 left-0 right-0 pointer-events-none z-20"
-        style={{
-          height: "180px",
-          background: "linear-gradient(to top, var(--page-bg) 0%, var(--page-bg) 20%, transparent 100%)",
-        }}
-      />
+      
+      {/* Fade out bottom gradient */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#FAFAFA] to-transparent pointer-events-none z-20" />
     </section>
   );
 }

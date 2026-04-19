@@ -72,10 +72,10 @@ export default function CareerPage() {
               </div>
 
               <div className="mt-7 flex flex-wrap gap-3">
-                <a href="#positions" className="btn btn-primary">
+                <a href="#positions" className="inline-flex h-10 items-center justify-center rounded-full bg-black px-4 text-[13px] font-semibold text-white">
                   View positions
                 </a>
-                <Link href="/about" className="btn btn-secondary">
+                <Link href="/about" className="inline-flex h-10 items-center justify-center rounded-full border border-black/[0.10] px-4 text-[13px] font-semibold text-black/72">
                   Our story
                 </Link>
               </div>
@@ -261,7 +261,7 @@ export default function CareerPage() {
                   Don&apos;t see a role? Send us your <span className="serif-italic" style={{ background: "linear-gradient(135deg, #fdece2 0%, #d2b9f5 100%)", WebkitBackgroundClip: "text", color: "transparent" }}>work anyway.</span>
                 </h2>
               </div>
-              <Link href="/contact" className="blueprint-btn">
+              <Link href="/contact" className="inline-flex h-10 w-max items-center justify-center rounded-full bg-white px-4 text-[13px] font-semibold text-black">
                 Get in touch
               </Link>
             </div>

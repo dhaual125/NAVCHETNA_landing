@@ -273,7 +273,8 @@ export default function ProductsPage() {
                 </p>
                 <Link
                   href="/contact"
-                  className="mt-8 blueprint-btn"
+                  className="mt-8 btn btn-primary"
+                  style={{ height: "2.5rem", padding: "0 1.5rem" }}
                 >
                   Request Integration
                 </Link>
