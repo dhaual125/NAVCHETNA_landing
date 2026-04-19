@@ -247,7 +247,7 @@ function TeamCard({ member }: { member: (typeof team)[number] }) {
       }}
     >
       {/* Avatar */}
-      <Link href={(member as any).profileUrl || member.linkedin || "#"} className="relative block h-56 overflow-hidden bg-[#f5f3f1]">
+      <Link href={(member as any).profileUrl || member.linkedin || "#"} className="relative block h-56 overflow-hidden bg-[#f5f3f1] rounded-b-xl">
         <Image
           src={member.avatar}
           alt={member.name}
