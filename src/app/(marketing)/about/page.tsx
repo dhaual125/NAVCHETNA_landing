@@ -255,27 +255,6 @@ function TeamCard({ member }: { member: (typeof team)[number] }) {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent pointer-events-none" />
-
-        {/* Tag badge */}
-        <div
-          className="absolute top-3.5 left-3.5"
-        >
-          <span
-            className="inline-block px-2.5 py-1 rounded-full text-white/90"
-            style={{
-              background: "rgba(0,0,0,0.45)",
-              backdropFilter: "blur(8px)",
-              fontFamily: "'Inter', sans-serif",
-              fontSize: "10px",
-              fontWeight: 600,
-              letterSpacing: "0.5px",
-              textTransform: "uppercase",
-            }}
-          >
-            {member.tag}
-          </span>
-        </div>
       </Link>
 
       {/* Info */}

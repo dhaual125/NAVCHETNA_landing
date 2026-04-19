@@ -218,14 +218,14 @@ export default function ProductsPage() {
                     rel={p.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="group block"
                   >
-                    <div className="relative mb-4 overflow-hidden rounded-sm bg-black/[0.02] border border-black/[0.08]">
+                    <div className="relative mb-4 overflow-hidden rounded-sm border border-black/[0.08]">
                       <div className="relative aspect-[16/10] w-full overflow-hidden">
                         <Image
                           src={p.image}
                           alt={p.name}
                           fill
                           sizes="(max-width: 768px) 100vw, 50vw"
-                          className="object-contain p-2 sm:p-4 transition-transform duration-700 group-hover:scale-105"
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
                           quality={100} />
                         <div className="absolute inset-0 z-10 opacity-[0.15] mix-blend-overlay pointer-events-none transition-opacity duration-500 group-hover:opacity-[0.35]" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }} />
                         <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 bg-black/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
@@ -285,7 +285,7 @@ export default function ProductsPage() {
               {filteredUpcoming.map((p, index) => (
                 <ScrollReveal key={p.id} delay={index * 45}>
                   <div className="group block">
-                    <div className="relative mb-4 overflow-hidden rounded-sm bg-black/[0.02] border border-black/[0.08] opacity-80">
+                    <div className="relative mb-4 overflow-hidden rounded-sm border border-black/[0.08] opacity-80">
                       <div className="relative aspect-[16/10] w-full overflow-hidden grayscale">
                         <Image
                           src={p.image}
