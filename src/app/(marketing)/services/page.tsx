@@ -126,8 +126,7 @@ export default function ServicesPage() {
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
                   href="/contact"
-                  className="btn btn-primary gap-2"
-                  style={{ height: "2.5rem", padding: "0 1rem" }}
+                  className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-black px-5 text-[13px] font-semibold text-white transition-colors hover:bg-black/80"
                 >
                   Schedule a Call
                   <CaretRight weight="bold" className="size-3.5 text-white/52" />
@@ -135,8 +134,7 @@ export default function ServicesPage() {
                 <button
                   type="button"
                   onClick={() => scrollRef.current?.scrollIntoView({ behavior: "smooth" })}
-                  className="btn btn-secondary gap-2"
-                  style={{ height: "2.5rem", padding: "0 1rem" }}
+                  className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-black/10 px-5 text-[13px] font-semibold text-black/70 transition-colors hover:bg-black/5"
                 >
                   View Services
                   <ArrowDown weight="bold" className="size-3.5" />
