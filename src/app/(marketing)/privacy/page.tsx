@@ -52,7 +52,7 @@ const sections = [
 
 export default function PrivacyPage() {
   return (
-    <main className="bg-[var(--page-bg)] min-h-screen">
+    <main className="bg-white min-h-screen">
       <section className="relative border-b border-black/[0.12] pt-28 pb-12 md:pt-36 md:pb-16" style={{ background: "var(--quiet-gradient)" }}>
         <div className="grid-overlay" />
         <div className="section-container relative z-10 mx-auto">

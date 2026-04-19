@@ -36,7 +36,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable} ${instrumentSans.variable} ${instrumentSerif.variable}`} suppressHydrationWarning>
-      <body className="min-h-screen antialiased relative" style={{ backgroundColor: "var(--page-bg)", color: "var(--page-text)" }}>
+      <body className="min-h-screen antialiased relative" style={{ backgroundColor: "#ffffff", color: "var(--page-text)" }}>
         <SmoothScroll>
           <Navbar />
           <main id="content">{children}</main>

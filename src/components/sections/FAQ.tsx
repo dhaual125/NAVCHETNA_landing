@@ -17,7 +17,7 @@ export function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section className="relative overflow-hidden bg-[var(--page-bg)] py-10 md:py-14">
+    <section className="relative overflow-hidden bg-white py-8 md:py-14">
       <div className="section-sep" />
 
       <div className="section-container">
@@ -25,7 +25,7 @@ export function FAQ() {
           {/* Left panel — no wrapper */}
           <ScrollReveal>
             <div className="lg:sticky lg:top-28 lg:self-start">
-              <span className="chip mb-4">FAQ</span>
+              <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-black/36">FAQ</p>
               <h2 className="section-heading max-w-sm">
                 Common
                 {" "}

@@ -4,7 +4,7 @@ import { ArrowRight, EnvelopeSimple } from "@phosphor-icons/react/dist/ssr";
 
 export function CTA() {
   return (
-    <section className="relative overflow-hidden py-20 md:py-28">
+    <section className="relative overflow-hidden py-12 md:py-28">
       <div className="section-sep" />
 
       <div className="section-container">
@@ -16,7 +16,7 @@ export function CTA() {
               backgroundImage: "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
               backgroundSize: "28px 28px",
               border: "1px solid rgba(255,255,255,0.08)",
-              padding: "80px 48px",
+              padding: "clamp(3rem, 10vw, 5rem) clamp(1.25rem, 5vw, 3rem)",
             }}
           >
             <span className="absolute top-0 left-0 w-8 h-px bg-white/20" />

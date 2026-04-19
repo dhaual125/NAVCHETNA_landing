@@ -23,7 +23,7 @@ export function FeaturedServicesBlock({ featuredServices }: { featuredServices: 
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="py-20 md:py-32 relative bg-[var(--page-bg)]">
+    <section className="py-20 md:py-32 relative bg-white">
       {/* Top markers & border */}
       <div className="relative max-w-7xl mx-auto px-5 sm:px-8 mb-20 lg:mb-32">
         <ScrollTextReveal className="type-5xl text-black max-w-4xl leading-snug">
@@ -35,10 +35,10 @@ export function FeaturedServicesBlock({ featuredServices }: { featuredServices: 
         
         {/* Top Decorative Border line like in ElevenLabs */}
         <div className="relative border-t border-black/[0.08] w-full pt-0">
-          <div className="absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--page-bg)]">
+          <div className="absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-white">
             <div className="h-1.5 w-1.5 rounded-full bg-black/40"></div>
           </div>
-          <div className="absolute right-0 top-0 translate-x-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--page-bg)]">
+          <div className="absolute right-0 top-0 translate-x-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-white">
             <div className="h-1.5 w-1.5 rounded-full bg-black/40"></div>
           </div>
         </div>
@@ -89,10 +89,10 @@ export function FeaturedServicesBlock({ featuredServices }: { featuredServices: 
         
         {/* Bottom Decorative Border line */}
         <div className="relative border-b border-black/[0.08] w-full">
-          <div className="absolute left-0 bottom-0 -translate-x-1/2 translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--page-bg)]">
+          <div className="absolute left-0 bottom-0 -translate-x-1/2 translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-white">
             <div className="h-1.5 w-1.5 rounded-full bg-black/40"></div>
           </div>
-          <div className="absolute right-0 bottom-0 translate-x-1/2 translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--page-bg)]">
+          <div className="absolute right-0 bottom-0 translate-x-1/2 translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-white">
             <div className="h-1.5 w-1.5 rounded-full bg-black/40"></div>
           </div>
         </div>

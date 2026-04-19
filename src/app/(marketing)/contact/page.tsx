@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Clock } from "lucide-react";
 import { ContactForm } from "./ContactForm";
 
 export const metadata: Metadata = {
@@ -10,18 +10,18 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="bg-[var(--page-bg)] min-h-screen">
+    <div className="bg-white min-h-screen">
       {/* HERO */}
       <section 
         className="relative pt-32 pb-16 md:pt-40 md:pb-20" 
-        style={{ background: "linear-gradient(180deg, rgba(72,105,133,0.04) 0%, rgba(125,72,53,0.03) 40%, var(--page-bg) 100%)" }}
+        style={{ background: "linear-gradient(180deg, rgba(72,105,133,0.04) 0%, rgba(125,72,53,0.03) 40%, #ffffff 100%)" }}
       >
         <div className="grid-overlay" />
         <div className="section-container relative z-10">
           <div className="section-sep" />
           <ScrollReveal>
             <div className="max-w-4xl">
-              <span className="chip mb-6">Connect with us</span>
+              <p className="mb-6 text-[10px] font-semibold uppercase tracking-[0.16em] text-black/36">Connect with us</p>
 
               <h1
                 className="mb-6 text-black text-balance"
@@ -63,32 +63,60 @@ export default function ContactPage() {
                   </p>
                 </div>
 
-                <div className="flex flex-col gap-8 pl-6">
-                  <div className="flex items-start gap-4">
+                <div className="flex flex-col gap-8 pl-6 mt-4">
+                  {/* Address */}
+                  <div className="flex items-start gap-5">
+                    <div className="inline-flex size-10 shrink-0 items-center justify-center rounded-xl border border-black/[0.08]">
+                      <MapPin className="size-[18px] text-black/70 stroke-[1.5]" />
+                    </div>
                     <div>
-                      <span className="block text-black/40 mb-1.5 font-semibold text-[10px] tracking-widest uppercase">Email</span>
-                      <a href="mailto:hello@navchetna.tech" className="text-black hover:text-black/60 transition-colors font-medium text-[15px]" style={{ fontFamily: "var(--font-body)" }}>
+                      <h4 className="text-[1.05rem] font-semibold text-black mb-1.5" style={{ fontFamily: "var(--font-waldenburg)" }}>Address</h4>
+                      <address className="text-black/60 not-italic text-[0.92rem] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
+                        82-Malviya Nagar, AFS Area<br />
+                        Jodhpur, Rajasthan<br />
+                        342011, India
+                      </address>
+                    </div>
+                  </div>
+
+                  {/* Phone */}
+                  <div className="flex items-start gap-5">
+                    <div className="inline-flex size-10 shrink-0 items-center justify-center rounded-xl border border-black/[0.08]">
+                      <Phone className="size-[18px] text-black/70 stroke-[1.5]" />
+                    </div>
+                    <div>
+                      <h4 className="text-[1.05rem] font-semibold text-black mb-1.5" style={{ fontFamily: "var(--font-waldenburg)" }}>Phone</h4>
+                      <a href="tel:+918209199581" className="text-black/60 hover:text-black transition-colors text-[0.92rem] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
+                        +918209199581
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Email */}
+                  <div className="flex items-start gap-5">
+                    <div className="inline-flex size-10 shrink-0 items-center justify-center rounded-xl border border-black/[0.08]">
+                      <Mail className="size-[18px] text-black/70 stroke-[1.5]" />
+                    </div>
+                    <div>
+                      <h4 className="text-[1.05rem] font-semibold text-black mb-1.5" style={{ fontFamily: "var(--font-waldenburg)" }}>Email</h4>
+                      <a href="mailto:hello@navchetna.tech" className="text-black/60 hover:text-black transition-colors text-[0.92rem] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
                         hello@navchetna.tech
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div>
-                      <span className="block text-black/40 mb-1.5 font-semibold text-[10px] tracking-widest uppercase">Phone</span>
-                      <a href="tel:+919876543210" className="text-black hover:text-black/60 transition-colors font-medium text-[15px]" style={{ fontFamily: "var(--font-body)" }}>
-                        +91 98765 43210
-                      </a>
+                  {/* Business Hours */}
+                  <div className="flex items-start gap-5">
+                    <div className="inline-flex size-10 shrink-0 items-center justify-center rounded-xl border border-black/[0.08]">
+                      <Clock className="size-[18px] text-black/70 stroke-[1.5]" />
                     </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
                     <div>
-                      <span className="block text-black/40 mb-1.5 font-semibold text-[10px] tracking-widest uppercase">Office</span>
-                      <address className="text-black not-italic font-medium text-[15px]" style={{ fontFamily: "var(--font-body)", lineHeight: "1.6" }}>
-                        Navchetna Tech Hub<br />
-                        Jodhpur, Rajasthan &amp; Ahmedabad, India
-                      </address>
+                      <h4 className="text-[1.05rem] font-semibold text-black mb-1.5" style={{ fontFamily: "var(--font-waldenburg)" }}>Business Hours</h4>
+                      <p className="text-black/60 text-[0.92rem] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
+                        Monday - Friday: 9:00 AM - 6:00 PM<br />
+                        Saturday: 10:00 AM - 4:00 PM<br />
+                        Sunday: Closed
+                      </p>
                     </div>
                   </div>
                 </div>

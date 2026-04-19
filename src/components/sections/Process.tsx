@@ -42,15 +42,15 @@ export function Process() {
   const current = phases[active];
 
   return (
-    <section className="relative overflow-hidden py-10 md:py-14">
-      <div className="grid-overlay opacity-50" />
+    <section className="relative overflow-hidden py-8 md:py-14">
+
       <div className="section-sep" />
 
       <div className="section-container">
         {/* Header */}
         <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
-            <span className="chip mb-4">Process</span>
+            <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-black/36">Process</p>
             <h2 className="section-heading">Executing vision with <span className="serif-italic">steady precision.</span></h2>
           </div>
           <p

@@ -6,15 +6,26 @@ import { ArrowRight } from "@phosphor-icons/react";
 
 export function Hero() {
   return (
-    <section className="relative w-full h-screen min-h-[600px] flex flex-col justify-center overflow-hidden">
-      {/* Full-screen background image */}
+    <section className="relative w-full h-[100dvh] md:h-screen md:min-h-[600px] flex flex-col justify-center overflow-hidden">
+      {/* Mobile background image */}
+      <Image
+        src="/assets/hero backgroun mobile.png"
+        alt=""
+        fill
+        priority
+        quality={92}
+        className="md:hidden object-cover object-center"
+        sizes="100vw"
+      />
+      
+      {/* Desktop background image */}
       <Image
         src="/assets/hero background.png"
         alt=""
         fill
         priority
         quality={92}
-        className="object-cover object-center"
+        className="hidden md:block object-cover object-center"
         sizes="100vw"
       />
 
@@ -35,16 +46,12 @@ export function Hero() {
       />
 
       {/* Content */}
-      {/* Structural Grid Overlay removed for Home Hero as requested */}
-
-
       <div className="relative z-10 mx-auto w-full max-w-3xl px-5 sm:px-8 flex flex-col items-center text-center">
-        {/* Eyebrow chip removed as requested */}
         <h1
           style={{
-            fontSize: "clamp(2.1rem, 5vw, 3.75rem)",
-            lineHeight: "1.1",
-            letterSpacing: "-0.06em",
+            fontSize: "clamp(2rem, 10vw, 3.75rem)",
+            lineHeight: "1.08",
+            letterSpacing: "-0.05em",
             fontFamily: "var(--font-waldenburg)",
             fontWeight: 500,
             color: "#ffffff",

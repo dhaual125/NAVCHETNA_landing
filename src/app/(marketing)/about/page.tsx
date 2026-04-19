@@ -53,64 +53,64 @@ const team = [
     role: "Founder & CEO",
     desc: "One of the five friends who started this journey, passionate about making technology work for real people.",
     avatar: "/assets/ayushmaan.jpg",
-    linkedin: "https://www.linkedin.com/in/422h52219hsuya/",
+    linkedin: "https://www.linkedin.com/in/422h52219hsuya?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     tag: "Founder",
+    profileUrl: "/news/company-updates/ayushmaan-soni",
+    github: "https://github.com/Ayush91225",
   },
   {
     name: "Varun Kumar",
     role: "Co-Founder",
     desc: "Another founding member focused on innovation and bringing creative ideas to life through technology.",
     avatar: "/assets/varun.jpg",
-    linkedin: "https://www.linkedin.com/in/varun-yadav-Navchetna Technology/",
+    linkedin: "https://www.linkedin.com/in/varun-yadav-navchetna?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     tag: "Co-Founder",
+    github: "https://github.com/varun-ya",
   },
   {
     name: "Swastik Khatua",
     role: "Co-Founder",
     desc: "Part of the founding team, bringing technical expertise and innovative solutions to complex challenges.",
     avatar: "/assets/swastik.jpg",
-    linkedin: "https://www.linkedin.com/in/swastik-khatua-84798631b/",
+    linkedin: "https://www.linkedin.com/in/swastik-khatua-84798631b?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     tag: "Co-Founder",
+    profileUrl: "/news/company-updates/swastik-khatua",
+    github: "https://github.com/Swastik400",
   },
   {
     name: "Dhraval Narsinha",
     role: "Co-Founder",
     desc: "Founding member dedicated to building scalable solutions and driving product excellence.",
     avatar: "/assets/dhraval.jpg",
-    linkedin: "https://www.linkedin.com/in/dhraval-narsinha-Navchetna Technology125/",
+    linkedin: "https://www.linkedin.com/in/dhraval-narsinha-navchetna125?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     tag: "Co-Founder",
+    github: "https://github.com/dhaual125",
   },
   {
     name: "Suman Yadav",
     role: "Co-Founder & HOD",
     desc: "Part of the founding team, leading product development and ensuring quality in everything we build.",
     avatar: "/assets/suman.jpg",
-    linkedin: "https://www.linkedin.com/in/suman-yadav-bb5516322/",
+    linkedin: "https://www.linkedin.com/in/suman-yadav-bb5516322?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     tag: "Co-Founder",
-  },
-  {
-    name: "Aman Gupta",
-    role: "Executive",
-    desc: "Strategic executive focused on business development and operational excellence.",
-    avatar: "/ref/voice-bg-02.png",
-    linkedin: "#",
-    tag: "Executive",
-  },
-  {
-    name: "Kuldeep Thakar",
-    role: "Executive",
-    desc: "Dedicated team member contributing to innovative solutions and technical excellence.",
-    avatar: "/assets/kuldeep.jpg",
-    linkedin: "#",
-    tag: "Executive",
+    profileUrl: "/news/company-updates/suman-yadav",
+    github: "https://github.com/Suman1214129",
   },
   {
     name: "Tanmay",
-    role: "Team Member",
+    role: "Intern",
     desc: "Dedicated team member contributing to innovative solutions and technical excellence.",
-    avatar: "/ref/voice-bg-08.png",
+    avatar: "/assets/tanmay.jpg",
     linkedin: "#",
-    tag: "Team",
+    tag: "Intern",
+  },
+  {
+    name: "Divyansh Singh",
+    role: "Intern",
+    desc: "Enthusiastic intern bringing fresh perspectives and energy to the team.",
+    avatar: "/assets/divyansh.jpg",
+    linkedin: "https://www.linkedin.com/in/divyansh-singh-747b55379?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    tag: "Intern",
   },
 ];
 
@@ -239,20 +239,19 @@ function StatCard({
 function TeamCard({ member }: { member: (typeof team)[number] }) {
   return (
     <div
-      className="group relative isolate h-full overflow-hidden rounded-3xl bg-white transition-all duration-300 hover:-translate-y-1"
+      className="group relative isolate h-full overflow-hidden rounded-3xl bg-white"
       style={{
         border: "1px solid rgba(0,0,0,0.07)",
-        boxShadow: "0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.03)",
       }}
     >
       {/* Avatar */}
-      <div className="relative h-56 overflow-hidden bg-[#f5f3f1]">
+      <Link href={(member as any).profileUrl || member.linkedin || "#"} className="relative block h-56 overflow-hidden bg-[#f5f3f1]">
         <Image
           src={member.avatar}
           alt={member.name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent pointer-events-none" />
 
@@ -275,7 +274,7 @@ function TeamCard({ member }: { member: (typeof team)[number] }) {
             {member.tag}
           </span>
         </div>
-      </div>
+      </Link>
 
       {/* Info */}
       <div className="p-5">
@@ -319,13 +318,13 @@ function TeamCard({ member }: { member: (typeof team)[number] }) {
 
         {/* LinkedIn */}
         <div
-          className="pt-4"
+          className="pt-4 flex items-center gap-3"
           style={{ borderTop: "1px solid rgba(0,0,0,0.05)" }}
         >
-          <a
-            href={member.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href={(member as any).profileUrl || member.linkedin || "#"}
+            target={(member as any).profileUrl ? undefined : "_blank"}
+            rel={(member as any).profileUrl ? undefined : "noopener noreferrer"}
             className="inline-flex items-center gap-1.5 text-black/35 hover:text-black transition-colors duration-200"
             style={{
               fontFamily: "'Inter', sans-serif",
@@ -338,6 +337,19 @@ function TeamCard({ member }: { member: (typeof team)[number] }) {
             </svg>
             View Profile
             <ChevronRight className="size-3 opacity-50" />
+          </Link>
+
+          {/* GitHub icon */}
+          <a
+            href={(member as any).github || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-auto inline-flex items-center justify-center w-7 h-7 rounded-full border border-black/[0.08] text-black/30 hover:text-black hover:border-black/20 transition-colors duration-200"
+            aria-label="GitHub"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" className="size-3.5">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+            </svg>
           </a>
         </div>
       </div>
@@ -378,12 +390,12 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 export default function AboutPage() {
   return (
-    <div className="bg-[var(--page-bg)]">
+    <div className="bg-white">
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           HERO — Immersive full-height
           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section className="relative flex items-center justify-center overflow-hidden border-b border-black/[0.12]" style={{ paddingTop: "160px", paddingBottom: "100px", background: "var(--quiet-gradient)" }}>
+      <section className="relative flex items-center justify-center overflow-hidden border-b border-black/[0.12] pt-32 pb-14 md:pt-40 md:pb-24" style={{ background: "var(--quiet-gradient)" }}>
         <div className="grid-overlay" />
 
         <div className="section-container px-6 sm:px-12 md:px-24 relative z-10 w-full">
@@ -540,27 +552,18 @@ export default function AboutPage() {
             <div className="mb-16">
               <SectionLabel>Our Journey</SectionLabel>
               <div className="mt-5 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-                <h2
-                  style={{
-                    fontFamily: "var(--font-waldenburg)",
-                    fontWeight: 500,
-                    fontSize: "clamp(2rem, 4vw, 3.15rem)",
-                    letterSpacing: "-0.03em",
-                    lineHeight: 1.08,
-                    color: "#000",
-                  }}
-                >
+                <h2 className="section-heading max-w-sm">
                   Every great journey starts with a{" "}
-                  <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", fontWeight: 400 }}>
+                  <span className="serif-italic">
                     simple idea
                   </span>
                 </h2>
                 <p
+                  className="mb-6 text-pretty"
                   style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontSize: "14px",
-                    lineHeight: "1.75",
-                    color: "rgba(0,0,0,0.4)",
+                    color: "rgba(0, 0, 0, 0.48)",
+                    lineHeight: 1.65,
+                    fontSize: "0.88rem",
                     maxWidth: "280px",
                     flexShrink: 0,
                   }}
@@ -580,11 +583,10 @@ export default function AboutPage() {
                 className="relative flex flex-col overflow-hidden rounded-2xl bg-white h-full"
                 style={{
                   border: "1px solid rgba(0,0,0,0.07)",
-                  boxShadow: "0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04)",
                 }}
               >
                 <div className="relative h-64 overflow-hidden flex-shrink-0">
-                  <Image src="/assets/friends.jpg.jpeg" alt="The founding team - Navchetna" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-top" />
+                  <Image src="/assets/friends.jpg" alt="The founding team - Navchetna" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-top" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                   <span className="absolute bottom-4 left-5" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "13px", fontWeight: 400, color: "rgba(255,255,255,0.5)", letterSpacing: "0.5px" }}>01</span>
                 </div>
@@ -612,11 +614,10 @@ export default function AboutPage() {
                 className="relative flex flex-col overflow-hidden rounded-2xl bg-white h-full"
                 style={{
                   border: "1px solid rgba(0,0,0,0.07)",
-                  boxShadow: "0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04)",
                 }}
               >
                 <div className="relative h-64 overflow-hidden flex-shrink-0">
-                  <Image src="/assets/20260419_015219.jpg.jpeg" alt="Navchetna is born - light painting" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-center" />
+                  <Image src="/assets/20260419_015219.jpeg" alt="Navchetna is born - light painting" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-center" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                   <span className="absolute bottom-4 left-5" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "13px", fontWeight: 400, color: "rgba(255,255,255,0.5)", letterSpacing: "0.5px" }}>02</span>
                 </div>
@@ -642,7 +643,7 @@ export default function AboutPage() {
             <ScrollReveal delay={160}>
               <div
                 className="relative flex flex-col overflow-hidden rounded-2xl h-full"
-                style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04)", minHeight: "420px" }}
+                style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.07)", minHeight: "420px" }}
               >
                 {/* Giant ghost number */}
                 <span
@@ -725,157 +726,68 @@ export default function AboutPage() {
       </section>
 
       
-      <section className="py-28 md:py-36 relative">
-        <div className="absolute top-0 left-0 right-0 dotted-line-x" />
+      <section className="py-24 md:py-32 relative bg-[#F8F8F7]">
+        <div className="section-sep" />
         <div className="section-container px-6 sm:px-12 md:px-24">
           <ScrollReveal>
-            <div className="grid lg:grid-cols-2 gap-14 lg:gap-24 items-start">
-              {/* Left: headline */}
-              <div>
-                <SectionLabel>Our Culture</SectionLabel>
-                <h2
-                  className="text-black mt-5 mb-7"
-                  style={{
-                    fontFamily: "var(--font-waldenburg)",
-                    fontWeight: 500,
-                    fontSize: "clamp(2rem, 4vw, 3.15rem)",
-                    letterSpacing: "-0.03em",
-                    lineHeight: 1.08,
-                  }}
-                >
-                  More Than Just{" "}
-                  <span
-                    style={{
-                      fontFamily: "'Instrument Serif', serif",
-                      fontStyle: "italic",
-                      fontWeight: 400,
-                    }}
-                  >
-                    Code
-                  </span>
-                </h2>
-                <p
-                  className="text-black/50 text-pretty mb-10"
-                  style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontSize: "17px",
-                    lineHeight: "1.7",
-                    maxWidth: "420px",
-                  }}
-                >
-                  We&apos;re friendly, approachable, and obsessed with making technology
-                  work for real people. Every idea we work on comes from the heart.
-                </p>
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <SectionLabel>Our Culture</SectionLabel>
+              <h2 className="section-heading mt-6 mb-6">
+                More Than Just <span className="serif-italic">Code.</span>
+              </h2>
+              <p
+                className="mx-auto"
+                style={{
+                  color: "rgba(0, 0, 0, 0.48)",
+                  lineHeight: 1.65,
+                  fontSize: "1.05rem",
+                  maxWidth: "520px",
+                }}
+              >
+                We're friendly, approachable, and obsessed with making technology
+                work for real people. Every idea we work on comes from the heart.
+              </p>
+            </div>
+          </ScrollReveal>
 
-                {/* Decorative rule */}
-                <div className="flex items-center gap-4">
-                  <div className="h-px flex-1 max-w-[80px]" style={{ background: "rgba(0,0,0,0.1)" }} />
-                  <span
-                    className="text-black/25"
-                    style={{ fontFamily: "'Inter', sans-serif", fontSize: "11px", letterSpacing: "1px", textTransform: "uppercase" }}
-                  >
-                    Since 2024
-                  </span>
-                </div>
-              </div>
-
-              {/* Right: two dotted-border cards */}
-              <div className="space-y-0">
-                {/* Card A — From Dreamers to Builders */}
-                <div
-                  className="rounded-2xl p-8"
-                  style={{
-                    border: "1.5px dashed rgba(0,0,0,0.15)",
-                    borderBottom: "none",
-                    borderRadius: "16px 16px 0 0",
-                  }}
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <span
-                      className="inline-flex size-7 items-center justify-center rounded-full"
-                      style={{ background: "rgba(0,0,0,0.04)", border: "1px dashed rgba(0,0,0,0.15)" }}
-                    >
-                      <span style={{ fontFamily: "var(--font-waldenburg)", fontSize: "11px", fontWeight: 400, color: "rgba(0,0,0,0.35)" }}>01</span>
-                    </span>
-                    <h3
-                      className="text-black"
-                      style={{
-                        fontFamily: "var(--font-waldenburg)",
-                        fontWeight: 400,
-                        fontSize: "19px",
-                        letterSpacing: "-0.02em",
-                      }}
-                    >
-                      From Dreamers to Builders
-                    </h3>
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+            <ScrollReveal>
+              <div className="bg-white rounded-2xl p-8 md:p-10 h-full flex flex-col justify-between" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
+                <div>
+                  <div className="size-12 rounded-full flex items-center justify-center mb-6" style={{ background: "rgba(0,0,0,0.03)" }}>
+                    <Flame className="size-5 text-black/60" />
                   </div>
-                  <p
-                    style={{
-                      fontFamily: "'Inter', sans-serif",
-                      fontSize: "14.5px",
-                      lineHeight: "1.78",
-                      color: "rgba(0,0,0,0.48)",
-                    }}
-                  >
+                  <h3 className="text-[1.35rem] text-black mb-4 leading-tight" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>
+                    From Dreamers to Builders
+                  </h3>
+                  <p className="text-black/50 text-[0.95rem] leading-relaxed">
                     Back then, we were just a bunch of dreamers with laptops and big ideas.
                     No fancy offices, no investors, no roadmap — just a shared vision and a
                     lot of determination. We wanted to create solutions that actually help
                     learners and make learning exciting, not just another tech project.
                   </p>
                 </div>
+              </div>
+            </ScrollReveal>
 
-                {/* Dotted connector line */}
-                <div
-                  className="mx-8 flex items-center justify-center"
-                  style={{ height: "28px", borderLeft: "1.5px dashed rgba(0,0,0,0.13)", borderRight: "1.5px dashed rgba(0,0,0,0.13)", borderTop: "none", borderBottom: "none" }}
-                >
-                  <div className="w-full h-px" style={{ borderTop: "1.5px dashed rgba(0,0,0,0.1)" }} />
-                </div>
-
-                {/* Card B — Today's Reality */}
-                <div
-                  className="rounded-2xl p-8"
-                  style={{
-                    border: "1.5px dashed rgba(0,0,0,0.15)",
-                    borderTop: "none",
-                    borderRadius: "0 0 16px 16px",
-                  }}
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <span
-                      className="inline-flex size-7 items-center justify-center rounded-full"
-                      style={{ background: "rgba(0,0,0,0.04)", border: "1px dashed rgba(0,0,0,0.15)" }}
-                    >
-                      <span style={{ fontFamily: "var(--font-waldenburg)", fontSize: "11px", fontWeight: 400, color: "rgba(0,0,0,0.35)" }}>02</span>
-                    </span>
-                    <h3
-                      className="text-black"
-                      style={{
-                        fontFamily: "var(--font-waldenburg)",
-                        fontWeight: 400,
-                        fontSize: "19px",
-                        letterSpacing: "-0.02em",
-                      }}
-                    >
-                      Today&apos;s Reality
-                    </h3>
+            <ScrollReveal delay={100}>
+              <div className="bg-white rounded-2xl p-8 md:p-10 h-full flex flex-col justify-between" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
+                <div>
+                  <div className="size-12 rounded-full flex items-center justify-center mb-6" style={{ background: "rgba(0,0,0,0.03)" }}>
+                    <Heart className="size-5 text-black/60" />
                   </div>
-                  <p
-                    style={{
-                      fontFamily: "'Inter', sans-serif",
-                      fontSize: "14.5px",
-                      lineHeight: "1.78",
-                      color: "rgba(0,0,0,0.48)",
-                    }}
-                  >
-                    Today, we&apos;ve grown from five friends to a core team of six and a
+                  <h3 className="text-[1.35rem] text-black mb-4 leading-tight" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>
+                    Today's Reality
+                  </h3>
+                  <p className="text-black/50 text-[0.95rem] leading-relaxed">
+                    Today, we've grown from five friends to a core team of six and a
                     family of 15 passionate people. Our growth has always been powered by
-                    curiosity, creativity, and a love for building things that matter.
+                    curiosity, creativity, and a love for building things that matter. The scale changed, but the heart remains the same.
                   </p>
                 </div>
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
@@ -893,35 +805,19 @@ export default function AboutPage() {
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
               <div>
                 <SectionLabel>Our Team</SectionLabel>
-                <h2
-                  className="text-black text-balance mt-5"
-                  style={{
-                    fontFamily: "var(--font-waldenburg)",
-                    fontWeight: 500,
-                    fontSize: "clamp(2rem, 4vw, 3.15rem)",
-                    letterSpacing: "-0.03em",
-                    lineHeight: 1.08,
-                    maxWidth: "400px",
-                  }}
-                >
+                <h2 className="section-heading max-w-sm mt-5 mb-0 text-balance">
                   The people{" "}
-                  <span
-                    style={{
-                      fontFamily: "'Instrument Serif', serif",
-                      fontStyle: "italic",
-                      fontWeight: 400,
-                    }}
-                  >
+                  <span className="serif-italic">
                     behind Navchetna
                   </span>
                 </h2>
               </div>
               <p
-                className="text-black/40 max-w-xs text-pretty"
+                className="mb-6 max-w-xs text-pretty"
                 style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: "14px",
-                  lineHeight: "1.7",
+                  color: "rgba(0, 0, 0, 0.48)",
+                  lineHeight: 1.65,
+                  fontSize: "0.88rem",
                 }}
               >
                 From five friends with a shared dream to a core team of six
@@ -957,7 +853,7 @@ export default function AboutPage() {
                 backgroundImage: "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
                 backgroundSize: "28px 28px",
                 border: "1px solid rgba(255,255,255,0.08)",
-                padding: "72px 48px",
+                padding: "clamp(3rem, 10vw, 5rem) clamp(1.25rem, 5vw, 3rem)",
               }}
             >
               {/* corner accents */}

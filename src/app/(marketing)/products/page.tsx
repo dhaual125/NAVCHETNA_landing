@@ -1,60 +1,105 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { ArrowUpRight } from "@phosphor-icons/react";
 
-const allProducts = [
+const launchedProducts = [
   {
     id: "osmium",
     name: "Osmium",
-    tag: "Deep Learning",
+    tag: "EdTech Platform",
+    category: "Education",
     image: "/assets/osmium-mockup.png",
-    desc: "AI-powered education and career guidance built from thousands of past papers, with intelligent exam prediction.",
+    desc: "AI-Powered Learning That Feels Personal. Combines AI-guided courses, smart test analysis, and adaptive learning into one seamless experience.",
     href: "https://osmium.co.in",
     isFlagship: true,
   },
   {
     id: "natraj",
     name: "Natraj",
-    tag: "AI + AR",
+    tag: "AR Anatomy Learning",
+    category: "Education",
     image: "/assets/nataraj_mockup.png",
-    desc: "Immersive augmented reality platform. Point your phone at a body part and view realistic 3D models in place.",
-    href: "/news/product/natraj",
+    desc: "AR + AI-powered anatomy learning platform designed to make human biology interactive and accessible with real-time body scanning.",
+    href: "/products",
   },
   {
     id: "aegis",
     name: "Aegis Auth",
-    tag: "Agentic AI",
+    tag: "Identity Management",
+    category: "Enterprise",
     image: "/assets/aegis1.png",
-    desc: "Intelligent autonomous agents that understand, learn, and execute complex tasks with human-like reasoning.",
-    href: "/news/product/aegis",
-  },
-  {
-    id: "kriya",
-    name: "Kriya",
-    tag: "Organizational AI",
-    image: "/assets/kriya1.png",
-    desc: "Organizational intelligence platform that streamlines workflows and drives productivity across teams.",
-    href: "/news/product/kriya",
-  },
-  {
-    id: "lmlens",
-    name: "LM Lens",
-    tag: "Vision AI",
-    image: "/assets/lmlens.png",
-    desc: "Intelligent data extraction that converts unstructured documents into actionable data using advanced OCR.",
-    href: "/news/product/lmlens",
+    desc: "A unified identity management system providing memory-safe Rust-based authentication. Consolidation of disparate identity providers into a single canonical source.",
+    href: "/products",
   },
   {
     id: "nsl",
     name: "NSL",
-    tag: "Smart Billing",
+    tag: "Smart Ledger",
+    category: "Enterprise",
     image: "/assets/nsl.png",
-    desc: "Intelligent billing and ledger management system that automates the entire billing lifecycle.",
-    href: "/news/product/nsl",
+    desc: "Our own ledger manages transaction, bills, invoices, subscriptions, and all monitoring stuffs.",
+    href: "/products",
   },
+  {
+    id: "lmlens",
+    name: "LM Lens",
+    tag: "Data Extraction",
+    category: "AI & Tools",
+    image: "/assets/lmlens.png",
+    desc: "Intelligently extracts the texts and images efficiently and effectively.",
+    href: "/products",
+  }
+];
+
+const comingSoonProducts = [
+  {
+    id: "vajra",
+    name: "Vajra",
+    tag: "Serverless GPU Cloud",
+    category: "AI & Tools",
+    image: "/assets/osmium (1).png",
+    desc: "AWS Lambda for AI, a sovereign serverless GPU cloud designed to solve the industry's utilization crisis with sub-500ms cold starts.",
+    href: "#",
+  },
+  {
+    id: "crm",
+    name: "CRM",
+    tag: "Customer Relationship",
+    category: "Enterprise",
+    image: "/assets/Frame 110.png",
+    desc: "Advanced Customer Relationship Management tailored for seamless interactions and data insights.",
+    href: "#",
+  },
+  {
+    id: "kriya",
+    name: "Kriya",
+    tag: "AI Builder",
+    category: "AI & Tools",
+    image: "/assets/kriya1.png",
+    desc: "A platform where you describe what you want in plain English, and it builds it—code, websites, APIs, marketing campaigns, everything.",
+    href: "#",
+  },
+  {
+    id: "agentic_sde",
+    name: "Agentic SDE",
+    tag: "Developer AI",
+    category: "AI & Tools",
+    image: "/assets/Frame 112.png",
+    desc: "Next-generation software engineering platform driven by agentic AI capabilities.",
+    href: "#",
+  },
+  {
+    id: "unified_storage",
+    name: "Unified Storage",
+    tag: "Storage Platform",
+    category: "Enterprise",
+    image: "/assets/Frame 113.png",
+    desc: "Unified synced storage platform with inbuilt version control.",
+    href: "#",
+  }
 ];
 
 const pillars = [
@@ -64,20 +109,26 @@ const pillars = [
 ];
 
 export default function ProductsPage() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const categories = ["All", "Education", "Enterprise", "AI & Tools"];
+
+  const filteredLaunched = launchedProducts.filter(p => activeCategory === "All" || p.category === activeCategory);
+  const filteredUpcoming = comingSoonProducts.filter(p => activeCategory === "All" || p.category === activeCategory);
+
   return (
     <>
       {/* ── Header with subtle gradient ── */}
       <section
         className="relative pt-28 sm:pt-32 md:pt-36 pb-10"
         style={{
-          background: "linear-gradient(180deg, rgba(72,105,133,0.04) 0%, rgba(125,72,53,0.03) 40%, var(--page-bg) 100%)",
+          background: "linear-gradient(180deg, rgba(72,105,133,0.04) 0%, rgba(125,72,53,0.03) 40%, #ffffff 100%)",
         }}
       >
         <div className="grid-overlay" />
         <div className="section-container relative z-10">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <span className="chip mb-5">Product Directory</span>
               <h1
                 className="text-black text-balance"
                 style={{
@@ -107,72 +158,186 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* ── Product Grid — Flat, human editorial layout ── */}
-      <section className="relative overflow-hidden py-14 md:py-20">
-        <div className="section-container">
-          <div className="grid gap-x-8 gap-y-16 sm:grid-cols-2">
-            {allProducts.map((p, index) => (
-              <ScrollReveal key={p.id} delay={index * 45}>
-                <Link
-                  href={p.href}
-                  target={p.href.startsWith("http") ? "_blank" : undefined}
-                  rel={p.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="group block"
-                >
-                  <div className="relative mb-4 overflow-hidden rounded-sm bg-black/[0.02] border border-black/[0.08]">
-                    <div className="relative aspect-[16/10] w-full overflow-hidden">
-                      <Image
-                        src={p.image}
-                        alt={p.name}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                        quality={84} />
-                      <div className="absolute inset-0 z-10 opacity-[0.15] mix-blend-overlay pointer-events-none transition-opacity duration-500 group-hover:opacity-[0.35]" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }} />
-                      <div className="absolute inset-0 z-20 bg-black/0 transition-colors duration-500 group-hover:bg-black/[0.03] pointer-events-none" />
-                    </div>
-                  </div>
+      {/* ── Launched Products Grid ── */}
+      {filteredLaunched.length > 0 && (
+        <section className="relative overflow-hidden py-8 md:py-14">
+          <div className="section-container">
+            <div className="mb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+              <div>
+                <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-black/36">Our Products</p>
+                <h2 className="section-heading">Launched Products</h2>
+              </div>
 
-                  <div className="flex flex-col border-b border-dotted border-black/[0.25] pb-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2">
-                        <h3
-                          style={{
-                            fontFamily: "var(--font-waldenburg)",
-                            fontSize: "1.1rem",
-                            fontWeight: 500,
-                            letterSpacing: "-0.015em",
-                            color: "var(--heading-color)"
-                          }}
+              {/* ── Segmented filter control ── */}
+              <div className="flex">
+                <div
+                  className="relative flex rounded-full p-1"
+                  style={{
+                    background: "rgba(0,0,0,0.03)",
+                    boxShadow: "inset 0 0 0 1px rgba(0,0,0,0.07)",
+                  }}
+                >
+                  <div className="flex gap-0.5">
+                    {categories.map((cat) => {
+                      const isActive = activeCategory === cat;
+                      return (
+                        <button
+                          key={cat}
+                          onClick={() => setActiveCategory(cat)}
+                          className="isolate relative flex items-center justify-center cursor-pointer shrink-0 outline-none rounded-full h-8 px-4 transition-all duration-200"
+                          style={{ fontFamily: "'Inter', sans-serif" }}
                         >
-                          {p.name}
-                        </h3>
-                        {p.isFlagship && (
-                          <span className="rounded-full bg-[rgba(125,72,53,0.06)] px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-[var(--color-brand)]">
-                            Flagship
+                          {isActive && (
+                            <div
+                              className="absolute inset-0 -z-10 rounded-full"
+                              style={{
+                                background: "#ffffff",
+                                boxShadow: "0 0 0 1px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.07)",
+                              }}
+                            />
+                          )}
+                          <span
+                            className="relative text-[12.5px] font-medium tracking-tight transition-colors duration-200"
+                            style={{ color: isActive ? "#000000" : "rgba(0,0,0,0.40)" }}
+                          >
+                            {cat}
                           </span>
-                        )}
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-black/40">
-                          {p.tag}
-                        </span>
-                        <ArrowUpRight
-                          weight="bold"
-                          className="w-3.5 h-3.5 text-black/30"
-                        />
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-6 sm:gap-y-10 sm:grid-cols-2">
+              {filteredLaunched.map((p, index) => (
+                <ScrollReveal key={p.id} delay={index * 45}>
+                  <Link
+                    href={p.href}
+                    target={p.href.startsWith("http") ? "_blank" : undefined}
+                    rel={p.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="group block"
+                  >
+                    <div className="relative mb-4 overflow-hidden rounded-sm bg-black/[0.02] border border-black/[0.08]">
+                      <div className="relative aspect-[16/10] w-full overflow-hidden">
+                        <Image
+                          src={p.image}
+                          alt={p.name}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          quality={84} />
+                        <div className="absolute inset-0 z-10 opacity-[0.15] mix-blend-overlay pointer-events-none transition-opacity duration-500 group-hover:opacity-[0.35]" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }} />
+                        <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 bg-black/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                          <p className="text-white/90 text-[13px] leading-relaxed translate-y-4 transition-transform duration-500 group-hover:translate-y-0">
+                            {p.desc}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                    <p className="text-[13px] leading-relaxed text-black/50 pr-4">
-                      {p.desc}
-                    </p>
-                  </div>
-                </Link>
-              </ScrollReveal>
-            ))}
+
+                    <div className="flex flex-col pb-4 pt-2">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-1 sm:gap-0">
+                        <div className="flex items-center gap-2">
+                          <h3
+                            style={{
+                              fontFamily: "var(--font-waldenburg)",
+                              fontSize: "clamp(0.85rem, 2.5vw, 1.1rem)",
+                              fontWeight: 500,
+                              letterSpacing: "-0.015em",
+                              color: "var(--heading-color)",
+                              lineHeight: 1.2
+                            }}
+                          >
+                            {p.name}
+                          </h3>
+                          {p.isFlagship && (
+                            <span className="rounded-full bg-[rgba(125,72,53,0.06)] px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-[var(--color-brand)]">
+                              Flagship
+                            </span>
+                          )}
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-[7.5px] sm:text-[10px] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.16em] text-black/40">
+                            {p.tag}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {/* ── Coming Soon Products Grid ── */}
+      {filteredUpcoming.length > 0 && (
+        <section className="relative overflow-hidden py-8 md:py-14">
+          <div className="section-container">
+            <div className="mb-12">
+              <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-black/36">In Development</p>
+              <h2 className="section-heading">Coming Soon</h2>
+              <div className="section-divider mt-6" />
+            </div>
+            <div className="grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-6 sm:gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+              {filteredUpcoming.map((p, index) => (
+                <ScrollReveal key={p.id} delay={index * 45}>
+                  <div className="group block">
+                    <div className="relative mb-4 overflow-hidden rounded-sm bg-black/[0.02] border border-black/[0.08] opacity-80">
+                      <div className="relative aspect-[16/10] w-full overflow-hidden grayscale">
+                        <Image
+                          src={p.image}
+                          alt={p.name}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          quality={84} />
+                        <div className="absolute inset-0 z-10 opacity-[0.15] mix-blend-overlay pointer-events-none transition-opacity duration-500 group-hover:opacity-[0.35]" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }} />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/10 backdrop-blur-[2px] transition-opacity duration-500 group-hover:opacity-0">
+                          <span className="rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-black/80 shadow-sm">
+                            Upcoming
+                          </span>
+                        </div>
+                        <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 bg-black/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                          <p className="text-white/90 text-[13px] leading-relaxed translate-y-4 transition-transform duration-500 group-hover:translate-y-0">
+                            {p.desc}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col pb-4 pt-2">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-1 sm:gap-0">
+                        <div className="flex items-center gap-2">
+                          <h3
+                            style={{
+                              fontFamily: "var(--font-waldenburg)",
+                              fontSize: "clamp(0.85rem, 2.5vw, 1.1rem)",
+                              fontWeight: 500,
+                              letterSpacing: "-0.015em",
+                              color: "var(--heading-color)",
+                              lineHeight: 1.2
+                            }}
+                          >
+                            {p.name}
+                          </h3>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-[7.5px] sm:text-[10px] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.16em] text-black/40">
+                            {p.tag}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── Core Pillars — Flat typographic list ── */}
       <section className="relative overflow-hidden py-10 md:py-14">
@@ -180,7 +345,7 @@ export default function ProductsPage() {
         <div className="section-container">
           <ScrollReveal>
             <div className="mb-12">
-              <span className="chip mb-4">Core Pillars</span>
+              <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-black/36">Core Pillars</p>
               <h2 className="section-heading max-w-sm">
                 Built for the{" "}
                 <span className="serif-italic">future.</span>

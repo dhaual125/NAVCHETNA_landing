@@ -53,7 +53,7 @@
    ═══════════════════════════════════════════ */
 :root {
   /* ── Core surfaces ── */
-  --background: 0 0% 98.4%;          /* #FAFAFA  */
+  --background: 0 0% 100%;          /* #FFFFFF  */
   --foreground: 0 0% 3.9%;           /* #0A0A0A  */
   --card: 0 0% 100%;                 /* #FFFFFF  */
   --card-foreground: 0 0% 3.9%;
@@ -75,7 +75,7 @@
   --radius: 0.625rem;                /* shadcn base radius */
 
   /* ── ElevenLabs-inspired semantic vars ── */
-  --page-bg: #FAFAFA;
+  --page-bg: #ffffff;
   --page-text: #0A0A0A;
   --card-bg: #FFFFFF;
   --card-border: rgba(0,0,0,0.07);
@@ -156,7 +156,7 @@
 }
 
 body {
-  background-color: var(--page-bg);
+  background-color: #ffffff;
   color: var(--page-text);
   font-family: var(--font-body), system-ui, sans-serif;
   font-weight: 400;
@@ -181,29 +181,29 @@ h1, h2, h3, h4, h5, h6 {
 .type-display {
   font-family: var(--font-waldenburg);
   font-weight: 500;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-size: clamp(2.2rem, 8vw, 4.5rem);
   line-height: 1.03;
   letter-spacing: -0.04em;
 }
 .type-6xl {
   font-family: var(--font-waldenburg);
   font-weight: 500;
-  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
-  line-height: 1.08;
+  font-size: clamp(1.6rem, 5vw, 2.5rem);
+  line-height: 1.1;
   letter-spacing: -0.03em;
 }
 .type-5xl {
   font-family: var(--font-waldenburg);
   font-weight: 500;
-  font-size: clamp(1.35rem, 2.4vw, 1.9rem);
-  line-height: 1.12;
+  font-size: clamp(1.25rem, 4vw, 1.9rem);
+  line-height: 1.15;
   letter-spacing: -0.025em;
 }
 .type-4xl {
   font-family: var(--font-waldenburg);
   font-weight: 500;
-  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
-  line-height: 1.18;
+  font-size: clamp(1.1rem, 3.5vw, 1.45rem);
+  line-height: 1.2;
   letter-spacing: -0.02em;
 }
 .type-3xl {
@@ -294,10 +294,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-inline: auto;
   width: 100%;
   max-width: 64rem;
-  padding-inline: 1.25rem;
+  padding-inline: 1rem;
 }
 @media (min-width: 640px) {
-  .section-container { padding-inline: 2.5rem; }
+  .section-container { padding-inline: 2rem; }
 }
 @media (min-width: 1024px) {
   .section-container { padding-inline: 4rem; }
@@ -459,12 +459,12 @@ h1, h2, h3, h4, h5, h6 {
 .section-heading {
   font-family: var(--font-waldenburg);
   font-weight: 500;
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  line-height: 1.07;
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  line-height: 1.1;
   letter-spacing: -0.025em;
   color: var(--heading-color);
   text-wrap: balance;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .section-subheading {
@@ -596,6 +596,15 @@ h1, h2, h3, h4, h5, h6 {
 /* ── Hide footer on news page ── */
 body:has([data-hide-footer]) #global-footer {
   display: none !important;
+}
+
+/* ── Modal open — hide navbar, lock scroll ── */
+html.modal-open {
+  overflow: hidden;
+}
+html.modal-open header {
+  visibility: hidden;
+  pointer-events: none;
 }
 
 /* ═══════════════════════════════════════════
@@ -759,4 +768,101 @@ body:has([data-hide-footer]) #global-footer {
 .blueprint-btn:hover::before {
   left: 150%;
   transition: left 0.7s ease-in-out;
+}
+
+/* Utilities */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ═══════════════════════════════════════════
+   GLOBAL RESPONSIVE — prevent horizontal overflow
+   ═══════════════════════════════════════════ */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Ensure images never overflow their containers */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Section container responsive tightening ── */
+@media (max-width: 480px) {
+  .section-container {
+    padding-inline: 1rem;
+  }
+
+  .section-heading {
+    font-size: clamp(1.35rem, 7vw, 2rem);
+  }
+
+  /* Profile pages — stack layout on very small screens */
+  .profile-header-grid {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  /* Reduce hero padding on tiny screens */
+  .hero-content {
+    padding-inline: 1.25rem;
+  }
+}
+
+/* ── Tablet (640–1024) ── */
+@media (max-width: 1024px) {
+  /* Products bento grid — go single column */
+  .bento-products-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Ensure cards don't overflow on small screens ── */
+@media (max-width: 640px) {
+  /* Team cards grid → 1 col */
+  .team-grid-row {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Testimonials → 1 col */
+  .testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Service cards → 1 col */
+  .services-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Profile page sidebar → stack below content */
+  .profile-sidebar {
+    order: -1;
+  }
+
+  /* Button text size */
+  .btn-primary, .btn-secondary {
+    font-size: 0.7rem !important;
+  }
+}
+
+/* ── Fix table/grid bleed on mobile ── */
+@media (max-width: 768px) {
+  /* Prevent tag pills from wrapping ugly */
+  .chip {
+    font-size: 9px;
+    padding: 0.18rem 0.5rem;
+  }
+
+  /* Profile pull-quote sizing */
+  .profile-pull-quote {
+    font-size: 1rem !important;
+    padding-left: 1.5rem !important;
+  }
 }

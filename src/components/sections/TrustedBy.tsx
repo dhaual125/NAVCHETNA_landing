@@ -17,7 +17,7 @@ const logos = [
 
 export function TrustedBy() {
   return (
-    <section className="relative overflow-hidden py-14 md:py-16" style={{ backgroundColor: "var(--page-bg)" }}>
+    <section className="relative overflow-hidden py-14 md:py-16" style={{ backgroundColor: "#ffffff" }}>
       <div className="section-sep" />
 
       <div className="section-container">

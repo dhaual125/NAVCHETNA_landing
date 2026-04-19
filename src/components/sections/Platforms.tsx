@@ -1,15 +1,19 @@
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { MonitorSmartphone, Bot, Lightbulb } from "lucide-react";
 
 const pillars = [
   {
+    icon: MonitorSmartphone,
     title: "Product Development",
     desc: "Web, mobile, desktop, and game experiences built with a clear product plan. We focus on scalable architecture and seamless user experiences across all devices.",
   },
   {
+    icon: Bot,
     title: "AI & Automation",
     desc: "LLM workflows, recommendation systems, and automation that reduce manual effort. We integrate intelligent agents that learn and adapt to your organizational needs.",
   },
   {
+    icon: Lightbulb,
     title: "Strategy & Management",
     desc: "Research, planning, cloud direction, and execution support for growing teams. We provide the technical leadership necessary to guide complex projects to completion.",
   },
@@ -23,24 +27,20 @@ const capabilities = [
 
 export function Platforms() {
   return (
-    <section className="relative overflow-hidden py-10 md:py-14">
-      <div className="section-sep" />
-
-      <div className="section-container">
+    <section className="relative overflow-hidden py-16 md:py-24 bg-white">
+      <div className="section-container relative z-10">
+        
         {/* Header */}
         <ScrollReveal>
-          <div className="mb-12 grid gap-6 md:grid-cols-[0.9fr_1fr] md:items-end">
-            <div>
-              <span className="chip mb-4">Services</span>
-              <h2 className="section-heading max-w-xl">
-                Practical systems,
-                {" "}
-                <span className="serif-italic">shaped with restraint.</span>
-              </h2>
-            </div>
+          <div className="mb-12">
+            <h2 className="section-heading max-w-xl mb-6">
+              Practical systems,
+              {" "}
+              <span className="serif-italic">shaped with restraint.</span>
+            </h2>
             <p
-              className="max-w-md md:justify-self-end"
-              style={{ color: "rgba(0,0,0,0.48)", lineHeight: 1.68, fontSize: "0.94rem" }}
+              className="max-w-xl"
+              style={{ color: "rgba(0,0,0,0.50)", lineHeight: 1.68, fontSize: "0.98rem" }}
             >
               We keep the workflow focused: understand the problem, shape the experience,
               engineer the system, and support the launch with disciplined iteration.
@@ -48,51 +48,35 @@ export function Platforms() {
           </div>
         </ScrollReveal>
 
-        {/* Dotted divider */}
-        <div className="section-divider mb-10" />
-
-        {/* Core Services — open typographic layout */}
-        <div className="grid gap-10 md:grid-cols-3 mb-16">
-          {pillars.map((pillar, index) => (
-            <ScrollReveal key={pillar.title} delay={index * 60}>
-              <div className="flex flex-col">
-                <span className="text-[10px] font-semibold text-black/30 mb-4 tracking-widest">
-                  0{index + 1}
-                </span>
-                <h3
-                  className="mb-3"
-                  style={{
-                    fontFamily: "var(--font-waldenburg)",
-                    fontSize: "1.15rem",
-                    fontWeight: 500,
-                    letterSpacing: "-0.01em",
-                  }}
-                >
+        {/* Core Services — image-inspired layout */}
+        <ScrollReveal delay={100}>
+          <div className="grid md:grid-cols-3 border-y border-black/[0.08] mb-16">
+            {pillars.map((pillar, index) => (
+              <div key={pillar.title} className={`p-6 md:p-10 ${index !== 2 ? 'border-b md:border-b-0 md:border-r border-black/[0.08]' : ''}`}>
+                <div className="inline-flex size-10 items-center justify-center rounded-xl border border-black/[0.08] mb-6">
+                  <pillar.icon className="size-[18px] text-black/70 stroke-[1.5]" />
+                </div>
+                <h3 className="mb-3 text-[1.15rem] text-black font-medium leading-tight tracking-tight">
                   {pillar.title}
                 </h3>
-                <p style={{ color: "rgba(0,0,0,0.5)", lineHeight: 1.65, fontSize: "0.88rem" }}>
+                <p className="text-[0.92rem] leading-[1.65] text-black/50" style={{ fontFamily: "'Inter', sans-serif" }}>
                   {pillar.desc}
                 </p>
               </div>
-            </ScrollReveal>
-          ))}
-        </div>
+            ))}
+          </div>
+        </ScrollReveal>
 
         {/* Additional capabilities — simple text list instead of chips */}
         <ScrollReveal delay={200}>
-          <div className="border-t border-dotted border-black/[0.15] pt-8">
-            <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-12">
+          <div className="pt-2">
+            <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8">
               <h4 
-                className="whitespace-nowrap"
-                style={{ 
-                  fontFamily: "var(--font-waldenburg)", 
-                  fontSize: "0.95rem",
-                  color: "var(--heading-color)"
-                }}
+                className="whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.16em] text-black/40 shrink-0"
               >
                 Also delivering:
               </h4>
-              <p className="text-[0.88rem] leading-relaxed text-black/60">
+              <p className="text-[13px] leading-relaxed text-black/50 font-medium" style={{ fontFamily: "'Inter', sans-serif" }}>
                 {capabilities.join(" · ")}
               </p>
             </div>

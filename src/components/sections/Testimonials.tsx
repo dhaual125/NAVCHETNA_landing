@@ -1,120 +1,201 @@
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
+"use client";
+
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 
 const testimonials = [
   {
     name: "Priya Kumari",
-    role: "Student, Patna",
-    quote: "I used Osmium for my JEE prep. Honestly, it felt less like an app and more like a study partner. The mock tests were scarily close to the actual exam pattern.",
-    initial: "P",
+    role: "Engineering Student, Jodhpur",
+    quote:
+      "Osmium helped me understand exactly where I was going wrong in calculus, not just what the right answer was. My mock test scores improved steadily over the course of a month. It genuinely felt like having a patient tutor who never gets tired.",
+    avatar: "/assets/avatar-priya.jpg",
   },
   {
     name: "Dr. Mehul Shah",
-    role: "Professor, Ahmedabad",
-    quote: "We tried Natraj in our college for managing course content. Usually, software means headaches, but this one was surprisingly smooth. Even my colleagues figured it out.",
-    initial: "M",
+    role: "Professor of Anatomy",
+    quote:
+      "We introduced Natraj in our practical sessions and the difference was immediate. Students could explore anatomical structures in 3D on their own devices instead of crowding around a single model. The engagement in class has never been higher.",
+    avatar: "/assets/avatar-mehul.jpg",
   },
   {
     name: "Raghav Malhotra",
-    role: "Founder, New Delhi",
-    quote: "Our startup needed a website that did not look dated. Navchetna delivered something clean, modern, and genuinely easy to use. The process was entirely transparent.",
-    initial: "R",
+    role: "Co-founder, LoopStack",
+    quote:
+      "Setting up Aegis Auth took us less than a day. We went from patching together different auth providers to one clean, fast system. We have not had a single login-related support ticket since the switch.",
+    avatar: "/assets/avatar-raghav.jpg",
   },
   {
     name: "Arjun Nair",
-    role: "Professional, Bangalore",
-    quote: "I asked Navchetna for branding help and they made a logo so clear that even my mom finally understood what my company does. That is a real UX win.",
-    initial: "A",
+    role: "Director, Pixel & Thread Agency",
+    quote:
+      "Navchetna built our internal project tracker using Kriya. We explained our process in plain language and they shaped the tool around it exactly. It handles the complicated routing our old spreadsheets never could.",
+    avatar: "/assets/avatar-arjun.jpg",
   },
   {
     name: "Sneha Desai",
-    role: "HR Director, Mumbai",
-    quote: "Kriya changed how our team communicates. We completely dropped our old scattered tools. The difference in daily operational speed is night and day.",
-    initial: "S",
+    role: "Finance Head, Meridian Group",
+    quote:
+      "NSL removed the invoice disputes that had been a recurring headache for our accounts team. The automated ledger is transparent enough that clients rarely ask for clarifications anymore. It has made our month-end process noticeably calmer.",
+    avatar: "/assets/avatar-sneha.jpg",
   },
   {
     name: "Vikram Singh",
-    role: "CEO, Jaipur",
-    quote: "Finding a tech partner who actually listens is rare. They didn't just build the features we asked for, they helped us refine the actual business logic behind them.",
-    initial: "V",
+    role: "Operations Manager, Vantage Logistics",
+    quote:
+      "LM Lens reads our handwritten vendor invoices and logs the data faster and more accurately than manual entry ever was. It handled edge cases we were worried about without any special configuration from our side.",
+    avatar: "/assets/avatar-vikram.jpg",
   },
 ];
 
 export function Testimonials() {
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll the track
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    let animId: number;
+    let pos = 0;
+    const speed = 0.6; // px per frame
+
+    const step = () => {
+      pos += speed;
+      // Reset when the first clone set is fully scrolled past
+      const half = track.scrollWidth / 2;
+      if (pos >= half) pos = 0;
+      track.style.transform = `translateX(-${pos}px)`;
+      animId = requestAnimationFrame(step);
+    };
+
+    animId = requestAnimationFrame(step);
+
+    // Pause on hover
+    const pause = () => cancelAnimationFrame(animId);
+    const resume = () => { animId = requestAnimationFrame(step); };
+    track.addEventListener("mouseenter", pause);
+    track.addEventListener("mouseleave", resume);
+    track.parentElement?.addEventListener("touchstart", pause, { passive: true });
+    track.parentElement?.addEventListener("touchend", resume, { passive: true });
+
+    return () => {
+      cancelAnimationFrame(animId);
+      track.removeEventListener("mouseenter", pause);
+      track.removeEventListener("mouseleave", resume);
+    };
+  }, []);
+
+  const cards = [...testimonials, ...testimonials]; // duplicate for seamless loop
+
   return (
-    <section className="relative overflow-hidden py-16 md:py-24 bg-[#FAFAFA]">
-      <div className="section-container text-center mb-16">
-        <ScrollReveal>
-          <div className="mb-4 inline-flex items-center gap-2">
-            <span className="block h-px w-6 bg-black/20" />
-            <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-black/40">
-              Community & Feedback
-            </span>
-            <span className="block h-px w-6 bg-black/20" />
-          </div>
-          <h2 className="text-black text-3xl md:text-4xl lg:text-[2.75rem] font-medium tracking-tight leading-tight" style={{ fontFamily: "var(--font-waldenburg)" }}>
-            Genuine impact.<br className="hidden md:block" />
-            <span className="serif-italic">Real stories.</span>
-          </h2>
-        </ScrollReveal>
+    <section className="relative overflow-hidden py-10 md:py-14 bg-white">
+      <div className="section-sep" />
+
+      {/* Section header — centred */}
+      <div className="section-container text-center mb-10">
+        <p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.16em] text-black/36">Testimonials</p>
+        <h2
+          className="text-black"
+          style={{
+            fontFamily: "var(--font-waldenburg)",
+            fontSize: "clamp(1.65rem, 4vw, 2.6rem)",
+            fontWeight: 500,
+            letterSpacing: "-0.03em",
+            lineHeight: 1.1,
+          }}
+        >
+          What our clients{" "}
+          <span className="serif-italic">are saying</span>
+        </h2>
+        <p
+          className="mt-3 mx-auto"
+          style={{
+            color: "rgba(0,0,0,0.46)",
+            fontSize: "0.9rem",
+            lineHeight: 1.65,
+            maxWidth: "38ch",
+          }}
+        >
+          Real teams. Genuine results. No marketing fluff.
+        </p>
       </div>
 
-      <div className="section-container relative z-10">
-        <ScrollReveal>
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 pb-32">
-            {testimonials.map((testimonial, index) => (
-              <div 
-                key={testimonial.name}
-                className="break-inside-avoid flex flex-col rounded-[16px] bg-black/[0.02] p-7 border border-black/[0.06]"
+      {/* Carousel wrapper with left/right fade masks */}
+      <div
+        className="relative w-full overflow-hidden"
+        style={{
+          maskImage:
+            "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+        }}
+      >
+        {/* Scrolling track — inline-flex so cards stay on one row */}
+        <div
+          ref={trackRef}
+          className="flex gap-5 w-max"
+          style={{ willChange: "transform" }}
+        >
+          {cards.map((t, i) => (
+            <div
+              key={`${t.name}-${i}`}
+              className="flex flex-col justify-between rounded-2xl bg-white border border-black/[0.07] p-7 shrink-0"
+              style={{
+                width: "clamp(280px, 30vw, 380px)",
+                minHeight: "220px",
+              }}
+            >
+              {/* Quote */}
+              <p
+                className="text-black/70 leading-relaxed"
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.875rem",
+                  lineHeight: 1.72,
+                }}
               >
-                <div className="flex items-center gap-0.5 text-black/80 mb-5 text-[14px]">
-                  ★★★★★
-                </div>
-                <p
-                  className="mb-8 flex-1 text-black/70"
-                  style={{
-                    fontFamily: "var(--font-body)",
-                    fontSize: "0.9375rem",
-                    lineHeight: 1.65,
-                  }}
-                >
-                  "{testimonial.quote}"
-                </p>
+                {t.quote}
+              </p>
 
-                <div className="flex items-center gap-3">
-                  <div 
-                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-black/[0.05] text-[13px] font-medium text-black/70"
+              {/* Author */}
+              <div className="flex items-center gap-3 mt-6 pt-5 border-t border-dotted border-black/[0.12]">
+                <div className="relative h-10 w-10 shrink-0 rounded-full overflow-hidden bg-black/[0.04] border border-black/[0.07]">
+                  <Image
+                    src={t.avatar}
+                    alt={t.name}
+                    fill
+                    sizes="40px"
+                    className="object-cover object-top"
+                  />
+                </div>
+                <div>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-waldenburg)",
+                      fontSize: "0.93rem",
+                      fontWeight: 500,
+                      letterSpacing: "-0.01em",
+                      color: "#0A0A0A",
+                    }}
                   >
-                    {testimonial.initial}
-                  </div>
-                  <div>
-                    <p
-                      style={{
-                        fontSize: "0.85rem",
-                        fontWeight: 600,
-                        color: "#000"
-                      }}
-                    >
-                      {testimonial.name}
-                    </p>
-                    <p
-                      style={{
-                        fontSize: "0.75rem",
-                        color: "rgba(0,0,0,0.5)"
-                      }}
-                    >
-                      {testimonial.role}
-                    </p>
-                  </div>
+                    {t.name}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: "0.73rem",
+                      color: "rgba(0,0,0,0.44)",
+                      marginTop: "1px",
+                    }}
+                  >
+                    {t.role}
+                  </p>
                 </div>
               </div>
-            ))}
-          </div>
-        </ScrollReveal>
+            </div>
+          ))}
+        </div>
       </div>
-      
-      {/* Enhanced fade out bottom gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[#FAFAFA] via-[#FAFAFA]/90 to-transparent pointer-events-none z-20" />
     </section>
   );
 }

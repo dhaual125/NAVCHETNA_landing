@@ -36,7 +36,7 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <footer id="global-footer" className="relative overflow-hidden bg-[var(--page-bg)]">
+    <footer id="global-footer" className="relative overflow-hidden bg-white">
       {/* Warm glow at the bottom edge */}
       <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 h-[32rem] w-[140%] opacity-[0.85] mix-blend-multiply" style={{ background: "radial-gradient(ellipse at bottom, rgba(245, 190, 145, 0.35) 0%, rgba(185, 165, 230, 0.15) 35%, transparent 70%)" }} />
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#fdece2]/30 to-transparent mix-blend-multiply" />

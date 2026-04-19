@@ -39,7 +39,7 @@ export function Navbar() {
         <div
           className="overflow-hidden transition-all duration-500 ease-in-out"
           style={{
-            borderRadius: scrolled ? "9999px" : "0px",
+            borderRadius: open ? "24px" : scrolled ? "9999px" : "0px",
             background: scrolled
               ? "rgba(250,250,250,0.90)"
               : white
