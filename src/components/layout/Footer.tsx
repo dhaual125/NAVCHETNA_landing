@@ -48,8 +48,8 @@ export function Footer() {
           <div className="col-span-2 sm:col-span-2">
             <span className="type-3xl text-black font-medium tracking-tight">Navchetna Technologies</span>
             <p className="mt-5 type-sm text-black/50 leading-relaxed max-w-[280px]">
-              Technology with Awareness,<br />
-              Built for Everyone.
+              Based in India, For India,<br />
+              By Students of India.
             </p>
             
           </div>

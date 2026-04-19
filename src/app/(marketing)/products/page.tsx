@@ -389,51 +389,51 @@ export default function ProductsPage() {
         <div className="section-container">
           <ScrollReveal>
             <div
-              className="relative isolate overflow-hidden rounded-2xl flex flex-col items-center text-center"
-              style={{
-                background: "#080808",
-                backgroundImage: "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
-                backgroundSize: "28px 28px",
-                border: "1px solid rgba(255,255,255,0.08)",
-                padding: "80px 48px",
-              }}
-            >
-              {/* corner accents */}
-              <span className="absolute top-0 left-0 w-8 h-px bg-white/20" />
-              <span className="absolute top-0 left-0 h-8 w-px bg-white/20" />
-              <span className="absolute bottom-0 right-0 w-8 h-px bg-white/20" />
-              <span className="absolute bottom-0 right-0 h-8 w-px bg-white/20" />
-              <div className="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto">
-                <span
-                  className="inline-flex items-center gap-2 mb-6 text-white/40"
-                  style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontWeight: 700,
-                    fontSize: "10px",
-                    letterSpacing: "1.4px",
-                    textTransform: "uppercase",
-                    border: "1px solid rgba(255,255,255,0.1)",
-                    padding: "5px 14px",
-                    borderRadius: "3px",
-                  }}
-                >
-                  Explore Products
-                </span>
-                <h2
-                  className="mb-4 text-balance text-white"
-                  style={{
-                    fontFamily: "var(--font-waldenburg)",
-                    fontSize: "clamp(1.6rem, 3vw, 2.35rem)",
-                    fontWeight: 500,
-                    lineHeight: 1.08,
-                    letterSpacing: "-0.03em",
-                    color: "#fff"
+            className="relative isolate overflow-hidden rounded-2xl flex flex-col items-center text-center shadow-[0_20px_40px_-10px_rgba(0,0,0,0.04)]"
+            style={{
+              background: "linear-gradient(180deg, #FFFFFF 0%, #F6F6F5 100%)",
+              backgroundImage: "linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)",
+              backgroundSize: "28px 28px",
+              border: "1px solid rgba(0,0,0,0.06)",
+              padding: "80px 48px",
+            }}
+          >
+            {/* corner accents */}
+            <span className="absolute top-0 left-0 w-8 h-px bg-black/10" />
+            <span className="absolute top-0 left-0 h-8 w-px bg-black/10" />
+            <span className="absolute bottom-0 right-0 w-8 h-px bg-black/10" />
+            <span className="absolute bottom-0 right-0 h-8 w-px bg-black/10" />
+            <div className="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto">
+              <span
+                className="inline-flex items-center gap-2 mb-6 text-black/50 bg-black/[0.02]"
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "10px",
+                  letterSpacing: "1.4px",
+                  textTransform: "uppercase",
+                  border: "1px solid rgba(0,0,0,0.06)",
+                  padding: "5px 14px",
+                  borderRadius: "9999px",
+                }}
+              >
+                Explore Products
+              </span>
+              <h2
+                className="mb-4 text-balance text-black"
+                style={{
+                  fontFamily: "var(--font-waldenburg)",
+                  fontSize: "clamp(1.6rem, 3vw, 2.35rem)",
+                  fontWeight: 500,
+                  lineHeight: 1.08,
+                  letterSpacing: "-0.03em",
+                  color: "#000"
                   }}
                 >
                   Ready to experience{" "}
-                  <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", background: "linear-gradient(135deg, #fdece2 0%, #c4b0f5 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>conscious intelligence?</span>
+                  <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", color: "#000" }}>conscious intelligence?</span>
                 </h2>
-                <p className="max-w-xl mt-3" style={{ color: "rgba(255,255,255,0.45)", lineHeight: 1.7, fontSize: "0.95rem" }}>
+                <p className="max-w-xl mt-3" style={{ color: "rgba(0,0,0,0.5)", lineHeight: 1.7, fontSize: "0.95rem" }}>
                   Discover how our AI-powered products can transform your workflow and unlock new possibilities.
                 </p>
                 <Link
