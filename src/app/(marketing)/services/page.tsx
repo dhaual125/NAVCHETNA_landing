@@ -438,7 +438,6 @@ export default function ServicesPage() {
                 backgroundSize: "100% 100%, 32px 32px, 32px 32px",
                 border: "1px solid rgba(0,0,0,0.08)",
                 padding: "80px 48px",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.8)",
               }}
             >
               <span className="absolute top-0 left-0 w-12 h-px bg-gradient-to-r from-black/15 to-transparent" />
@@ -448,14 +447,14 @@ export default function ServicesPage() {
               <div className="absolute top-0 left-1/4 w-64 h-64 bg-gradient-radial from-purple-200/20 to-transparent blur-3xl opacity-40" />
               <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-gradient-radial from-orange-200/20 to-transparent blur-3xl opacity-40" />
               <div className="relative z-10 max-w-2xl mx-auto">
-                <span className="inline-flex items-center gap-2 mb-6 text-black/50" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: "10px", letterSpacing: "1.4px", textTransform: "uppercase", border: "1px solid rgba(0,0,0,0.12)", padding: "5px 14px", borderRadius: "3px", background: "rgba(255,255,255,0.6)", backdropFilter: "blur(8px)" }}>
+                <span className="inline-flex items-center gap-2 mb-7 text-black/50" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: "10px", letterSpacing: "1.4px", textTransform: "uppercase", border: "1px solid rgba(0,0,0,0.12)", padding: "5px 14px", borderRadius: "3px", background: "rgba(255,255,255,0.6)", backdropFilter: "blur(8px)" }}>
                   Ready to transform?
                 </span>
-                <h2 className="text-balance mb-4" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 400, letterSpacing: "-0.03em", lineHeight: 1.08, color: "#000" }}>
+                <h2 className="text-balance mb-6" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 400, letterSpacing: "-0.03em", lineHeight: 1.15, color: "#000" }}>
                   Let&apos;s build something{" "}
                   <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", background: "linear-gradient(135deg, #d4845a 0%, #8b6bc7 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>useful and beautiful.</span>
                 </h2>
-                <p className="text-black/60 mb-8" style={{ lineHeight: 1.7, fontSize: "0.95rem" }}>
+                <p className="text-black/60 mb-9" style={{ lineHeight: 1.8, fontSize: "0.95rem" }}>
                   Book a structured consultation and see how careful product thinking can reshape your workflow.
                 </p>
                 <Link href="/contact" className="mt-8 btn btn-primary" style={{ height: "2.5rem", padding: "0 1.5rem" }}>

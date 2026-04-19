@@ -754,15 +754,21 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
             <ScrollReveal>
-              <div className="bg-white rounded-2xl p-8 md:p-10 h-full flex flex-col justify-between" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
-                <div>
-                  <div className="size-12 rounded-full flex items-center justify-center mb-6" style={{ background: "rgba(0,0,0,0.03)" }}>
+              <div className="relative bg-white rounded-3xl p-8 md:p-10 h-full flex flex-col justify-between overflow-hidden" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
+                {/* Decorative elements */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-100/40 to-transparent rounded-bl-full" />
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-purple-100/30 to-transparent rounded-tr-full" />
+                <div className="absolute top-1/2 right-8 w-2 h-2 rounded-full bg-black/5" />
+                <div className="absolute top-1/3 right-16 w-1.5 h-1.5 rounded-full bg-black/5" />
+                
+                <div className="relative z-10">
+                  <div className="size-12 rounded-2xl flex items-center justify-center mb-6" style={{ background: "linear-gradient(135deg, rgba(245,190,145,0.12) 0%, rgba(185,165,230,0.08) 100%)" }}>
                     <Flame className="size-5 text-black/60" />
                   </div>
-                  <h3 className="text-[1.35rem] text-black mb-4 leading-tight" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>
+                  <h3 className="text-[1.35rem] text-black mb-5 leading-tight" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>
                     From Dreamers to Builders
                   </h3>
-                  <p className="text-black/50 text-[0.95rem] leading-relaxed">
+                  <p className="text-black/50 text-[0.95rem] leading-[1.75]">
                     Back then, we were just a bunch of dreamers with laptops and big ideas.
                     No fancy offices, no investors, no roadmap — just a shared vision and a
                     lot of determination. We wanted to create solutions that actually help
@@ -773,15 +779,21 @@ export default function AboutPage() {
             </ScrollReveal>
 
             <ScrollReveal delay={100}>
-              <div className="bg-white rounded-2xl p-8 md:p-10 h-full flex flex-col justify-between" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
-                <div>
-                  <div className="size-12 rounded-full flex items-center justify-center mb-6" style={{ background: "rgba(0,0,0,0.03)" }}>
+              <div className="relative bg-white rounded-3xl p-8 md:p-10 h-full flex flex-col justify-between overflow-hidden" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
+                {/* Decorative elements */}
+                <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-bl from-purple-100/40 to-transparent rounded-br-full" />
+                <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-orange-100/30 to-transparent rounded-tl-full" />
+                <div className="absolute bottom-1/3 left-8 w-2 h-2 rounded-full bg-black/5" />
+                <div className="absolute bottom-1/2 left-16 w-1.5 h-1.5 rounded-full bg-black/5" />
+                
+                <div className="relative z-10">
+                  <div className="size-12 rounded-2xl flex items-center justify-center mb-6" style={{ background: "linear-gradient(135deg, rgba(185,165,230,0.12) 0%, rgba(245,190,145,0.08) 100%)" }}>
                     <Heart className="size-5 text-black/60" />
                   </div>
-                  <h3 className="text-[1.35rem] text-black mb-4 leading-tight" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>
+                  <h3 className="text-[1.35rem] text-black mb-5 leading-tight" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>
                     Today's Reality
                   </h3>
-                  <p className="text-black/50 text-[0.95rem] leading-relaxed">
+                  <p className="text-black/50 text-[0.95rem] leading-[1.75]">
                     Today, we've grown from five friends to a core team of six and a
                     family of 15 passionate people. Our growth has always been powered by
                     curiosity, creativity, and a love for building things that matter. The scale changed, but the heart remains the same.
@@ -856,7 +868,6 @@ export default function AboutPage() {
                 backgroundSize: "100% 100%, 32px 32px, 32px 32px",
                 border: "1px solid rgba(0,0,0,0.08)",
                 padding: "clamp(3rem, 10vw, 5rem) clamp(1.25rem, 5vw, 3rem)",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.8)",
               }}
             >
               {/* corner accents */}
@@ -868,7 +879,7 @@ export default function AboutPage() {
               <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-gradient-radial from-orange-200/20 to-transparent blur-3xl opacity-40" />
 
               <span
-                className="inline-flex items-center gap-2 mb-6 text-black/50"
+                className="inline-flex items-center gap-2 mb-7 text-black/50"
                 style={{
                   fontFamily: "'Inter', sans-serif",
                   fontWeight: 700,
@@ -886,13 +897,13 @@ export default function AboutPage() {
                 Join Our Growing Family
               </span>
               <h3
-                className="text-black mb-5 text-balance text-center mx-auto"
+                className="text-black mb-6 text-balance text-center mx-auto"
                 style={{
                   fontFamily: "var(--font-waldenburg)",
                   fontWeight: 50,
                   fontSize: "clamp(1.6rem, 3vw, 2.4rem)",
                   letterSpacing: "-0.025em",
-                  lineHeight: 1.15,
+                  lineHeight: 1.2,
                   maxWidth: "520px",
                   color: "#000"
                 }}
@@ -915,7 +926,7 @@ export default function AboutPage() {
                 style={{
                   fontFamily: "'Inter', sans-serif",
                   fontSize: "15px",
-                  lineHeight: "1.7",
+                  lineHeight: "1.8",
                 }}
               >
                 Dreaming big, working hard, and believing that learning and innovation

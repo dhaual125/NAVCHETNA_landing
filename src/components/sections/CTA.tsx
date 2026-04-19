@@ -17,7 +17,6 @@ export function CTA() {
               backgroundSize: "100% 100%, 32px 32px, 32px 32px",
               border: "1px solid rgba(0,0,0,0.08)",
               padding: "clamp(3rem, 10vw, 5rem) clamp(1.25rem, 5vw, 3rem)",
-              boxShadow: "0 8px 32px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.8)",
             }}
           >
             {/* Premium corner accents */}
@@ -32,7 +31,7 @@ export function CTA() {
 
             <div className="relative z-10 max-w-2xl mx-auto">
               <span
-                className="inline-flex items-center gap-2 mb-6 text-black/50"
+                className="inline-flex items-center gap-2 mb-7 text-black/50"
                 style={{
                   fontFamily: "'Inter', sans-serif",
                   fontWeight: 700,
@@ -49,12 +48,12 @@ export function CTA() {
                 Begin the transformation
               </span>
               <h2
-                className="mb-5 text-balance"
+                className="mb-6 text-balance"
                 style={{
                   fontFamily: "var(--font-waldenburg)",
                   fontSize: "clamp(2rem, 4vw, 3.2rem)",
                   fontWeight: 400,
-                  lineHeight: 1.06,
+                  lineHeight: 1.15,
                   letterSpacing: "-0.03em",
                   color: "#000"
                 }}
@@ -63,8 +62,8 @@ export function CTA() {
                 <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", background: "linear-gradient(135deg, #d4845a 0%, #8b6bc7 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>your operations?</span>
               </h2>
               <p
-                className="mb-8 text-black/60"
-                style={{ lineHeight: 1.7, fontSize: "0.96rem", maxWidth: "520px", margin: "0 auto 2rem" }}
+                className="mb-9 text-black/60"
+                style={{ lineHeight: 1.8, fontSize: "0.96rem", maxWidth: "520px", margin: "0 auto 2.25rem" }}
               >
                 Book a structured, zero-commitment consultation and see how careful product
                 thinking and precision engineering can reshape your workflow.

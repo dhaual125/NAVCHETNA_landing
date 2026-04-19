@@ -396,7 +396,6 @@ export default function ProductsPage() {
                 backgroundSize: "100% 100%, 32px 32px, 32px 32px",
                 border: "1px solid rgba(0,0,0,0.08)",
                 padding: "80px 48px",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.8)",
               }}
             >
               {/* corner accents */}
@@ -408,7 +407,7 @@ export default function ProductsPage() {
               <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-gradient-radial from-orange-200/20 to-transparent blur-3xl opacity-40" />
               <div className="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto">
                 <span
-                  className="inline-flex items-center gap-2 mb-6 text-black/50"
+                  className="inline-flex items-center gap-2 mb-7 text-black/50"
                   style={{
                     fontFamily: "'Inter', sans-serif",
                     fontWeight: 700,
@@ -425,12 +424,12 @@ export default function ProductsPage() {
                   Explore Products
                 </span>
                 <h2
-                  className="mb-4 text-balance"
+                  className="mb-6 text-balance"
                   style={{
                     fontFamily: "var(--font-waldenburg)",
                     fontSize: "clamp(1.6rem, 3vw, 2.35rem)",
                     fontWeight: 500,
-                    lineHeight: 1.08,
+                    lineHeight: 1.15,
                     letterSpacing: "-0.03em",
                     color: "#000"
                   }}
@@ -438,7 +437,7 @@ export default function ProductsPage() {
                   Ready to experience{" "}
                   <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", background: "linear-gradient(135deg, #d4845a 0%, #8b6bc7 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>conscious intelligence?</span>
                 </h2>
-                <p className="max-w-xl mt-3" style={{ color: "rgba(0,0,0,0.60)", lineHeight: 1.7, fontSize: "0.95rem" }}>
+                <p className="max-w-xl mt-3" style={{ color: "rgba(0,0,0,0.60)", lineHeight: 1.8, fontSize: "0.95rem", marginBottom: "2.25rem" }}>
                   Discover how our AI-powered products can transform your workflow and unlock new possibilities.
                 </p>
                 <Link
