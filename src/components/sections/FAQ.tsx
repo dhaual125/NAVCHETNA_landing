@@ -6,11 +6,14 @@ import { Plus, Minus, ArrowUpRight } from "@phosphor-icons/react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const faqs = [
-  { q: "What is Navchetna Technology and who do you work with?", a: "Navchetna Technology is a creative tech company that blends design, innovation, and engineering to solve real problems. We work with students, startups, institutions, and enterprises looking to scale thoughtfully with technology." },
-  { q: "What primary services do you provide?", a: "We build across Android, iOS, web apps, AI and ML systems, custom LLM workflows, UI and UX design, branding, and cloud deployment. The focus is practical execution, not inflated process." },
-  { q: "Do you provide modular standalone services?", a: "Yes. We can step in for a focused redesign, product strategy sprint, API architecture, or a specific implementation stream when that is the better fit." },
-  { q: "What makes your approach uniquely efficient?", a: "We favor direct collaboration, clear ownership, and a restrained delivery model. That keeps the work fast without sacrificing technical depth or product quality." },
-  { q: "Can you consult with us on an hourly basis?", a: "Yes. Our team supports technical discovery, architecture validation, and advisory work for organizations that need focused guidance before committing to a larger build." },
+  { q: "What is Navchetna and who do you work with?", a: "Navchetna is a creative tech company that blends design, innovation, and engineering to solve real problems. We work with students, startups, institutions, and enterprises, anyone looking to grow with the right use of technology." },
+  { q: "What services does Navchetna provide?", a: "We offer product development, AI & automation, design & branding, and strategy & management services. Our focus is on delivering end-to-end solutions that combine technical excellence with thoughtful design." },
+  { q: "Do you provide design separately or only with development?", a: "Yes, design can be taken as a standalone service. Many clients only need UI/UX or creative assets like logos and posters, and we're happy to provide that without full development." },
+  { q: "What makes Navchetna different from others?", a: "We believe in being a one-stop partner for tech and design needs. Our focus is on affordability, transparency, and long-term support, customization, maintenance, and guidance even after launch." },
+  { q: "What is Osmium and how does it help students?", a: "Osmium is our AI-powered learning platform. It helps students prepare smarter by generating personalized study material, quizzes, mock tests, and even career guidance, like a mentor that adapts to your learning style." },
+  { q: "What is Natraj and who can use it?", a: "Natraj is an AR/AI-based product for learning anatomy. By pointing your phone's camera at a body part, you can view realistic 3D models of bones or organs in place. Medical students, biology learners, or educators can use it to make complex concepts more interactive and engaging." },
+  { q: "How do you charge for services?", a: "Pricing depends on the scope and type of project. We keep it flexible, whether for individuals, startups, or enterprises, so clients only pay for what they really need." },
+  { q: "How can I contact Navchetna for projects or support?", a: "You can reach us through our website or email. We respond quickly and also provide documentation, training, and ongoing support whenever required." },
 ];
 
 export function FAQ() {
@@ -35,7 +38,7 @@ export function FAQ() {
                 className="mb-8 max-w-sm"
                 style={{ color: "rgba(0,0,0,0.48)", lineHeight: 1.65, fontSize: "0.9rem" }}
               >
-                Questions around engagement, delivery, and technical scope usually start here.
+                Find answers to common questions about our services, products, and how we work.
               </p>
 
               <div className="section-divider mb-6" />
@@ -50,16 +53,16 @@ export function FAQ() {
                     letterSpacing: "-0.015em",
                   }}
                 >
-                  Need more clarity?
+                  Still have questions?
                 </h3>
                 <p className="mb-5 text-sm text-black/46">
-                  Speak directly with our architectural and product team.
+                  Get in touch with our team for personalized assistance.
                 </p>
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-black/78 transition-opacity hover:opacity-70"
                 >
-                  Reach out immediately
+                  Reach out to us
                   <ArrowUpRight weight="bold" className="size-3.5" />
                 </Link>
               </div>

@@ -170,32 +170,61 @@ export default function CareerPage() {
       <section className="pb-16 md:pb-20">
         <div className="section-container">
           <div
-            className="relative isolate overflow-hidden rounded-2xl p-8 md:p-12 text-white"
+            className="relative isolate overflow-hidden rounded-2xl flex flex-col items-center text-center"
             style={{
-              background: "#080808",
-              backgroundImage: "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
-              backgroundSize: "28px 28px",
-              border: "1px solid rgba(255,255,255,0.08)",
+              background: "linear-gradient(135deg, #fdfbf7 0%, #f8f6ff 50%, #fef9f5 100%)",
+              backgroundImage: "linear-gradient(135deg, #fdfbf7 0%, #f8f6ff 50%, #fef9f5 100%), linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px)",
+              backgroundSize: "100% 100%, 32px 32px, 32px 32px",
+              border: "1px solid rgba(0,0,0,0.08)",
+              padding: "clamp(3rem, 10vw, 5rem) clamp(1.25rem, 5vw, 3rem)",
             }}
           >
-            <span className="absolute top-0 left-0 w-8 h-px bg-white/20" />
-            <span className="absolute top-0 left-0 h-8 w-px bg-white/20" />
-            <span className="absolute bottom-0 right-0 w-8 h-px bg-white/20" />
-            <span className="absolute bottom-0 right-0 h-8 w-px bg-white/20" />
+            <span className="absolute top-0 left-0 w-12 h-px bg-gradient-to-r from-black/15 to-transparent" />
+            <span className="absolute top-0 left-0 h-12 w-px bg-gradient-to-b from-black/15 to-transparent" />
+            <span className="absolute bottom-0 right-0 w-12 h-px bg-gradient-to-l from-black/15 to-transparent" />
+            <span className="absolute bottom-0 right-0 h-12 w-px bg-gradient-to-t from-black/15 to-transparent" />
+            <div className="absolute top-0 left-1/4 w-64 h-64 bg-gradient-radial from-purple-200/20 to-transparent blur-3xl opacity-40" />
+            <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-gradient-radial from-orange-200/20 to-transparent blur-3xl opacity-40" />
             <ScrollReveal>
-              <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-                <div>
-                  <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/50">
-                    Stay connected
-                  </p>
-                  <h2
-                    className="section-heading max-w-xl text-white"
-                    style={{ color: "#fff" }}
-                  >
-                    Don&apos;t see a role? Send us your <span className="serif-italic" style={{ background: "linear-gradient(135deg, #fdece2 0%, #d2b9f5 100%)", WebkitBackgroundClip: "text", color: "transparent" }}>work anyway.</span>
-                  </h2>
-                </div>
-                <Link href="/contact" className="inline-flex h-10 w-max items-center justify-center rounded-full bg-white px-4 text-[13px] font-semibold text-black">
+              <div className="relative z-10 max-w-2xl mx-auto">
+                <span
+                  className="inline-flex items-center gap-2 mb-7 text-black/50"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "10px",
+                    letterSpacing: "1.4px",
+                    textTransform: "uppercase",
+                    border: "1px solid rgba(0,0,0,0.12)",
+                    padding: "5px 14px",
+                    borderRadius: "3px",
+                    background: "rgba(255,255,255,0.6)",
+                    backdropFilter: "blur(8px)",
+                  }}
+                >
+                  Stay connected
+                </span>
+                <h2
+                  className="mb-6 text-balance"
+                  style={{
+                    fontFamily: "var(--font-waldenburg)",
+                    fontSize: "clamp(2rem, 4vw, 3.2rem)",
+                    fontWeight: 400,
+                    lineHeight: 1.15,
+                    letterSpacing: "-0.03em",
+                    color: "#000"
+                  }}
+                >
+                  Don&apos;t see a role? Send us your{" "}
+                  <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", background: "linear-gradient(135deg, #d4845a 0%, #8b6bc7 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>work anyway.</span>
+                </h2>
+                <p
+                  className="mb-9 text-black/60"
+                  style={{ lineHeight: 1.8, fontSize: "0.96rem", maxWidth: "520px", margin: "0 auto 2.25rem" }}
+                >
+                  We are always open to meeting thoughtful builders who care about product, design, engineering, and impact.
+                </p>
+                <Link href="/contact" className="btn btn-primary" style={{ height: "2.5rem", padding: "0 1.5rem" }}>
                   Get in touch
                 </Link>
               </div>
