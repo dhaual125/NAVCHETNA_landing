@@ -395,7 +395,7 @@ export default function ProductsPage() {
                 backgroundImage: "linear-gradient(135deg, #fdfbf7 0%, #f8f6ff 50%, #fef9f5 100%), linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px)",
                 backgroundSize: "100% 100%, 32px 32px, 32px 32px",
                 border: "1px solid rgba(0,0,0,0.08)",
-                padding: "80px 48px",
+                padding: "clamp(2.5rem, 8vw, 3.5rem) clamp(1.5rem, 5vw, 3rem)",
               }}
             >
               {/* corner accents */}
@@ -406,30 +406,13 @@ export default function ProductsPage() {
               <div className="absolute top-0 left-1/4 w-64 h-64 bg-gradient-radial from-purple-200/20 to-transparent blur-3xl opacity-40" />
               <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-gradient-radial from-orange-200/20 to-transparent blur-3xl opacity-40" />
               <div className="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto">
-                <span
-                  className="inline-flex items-center gap-2 mb-7 text-black/50"
-                  style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontWeight: 700,
-                    fontSize: "10px",
-                    letterSpacing: "1.4px",
-                    textTransform: "uppercase",
-                    border: "1px solid rgba(0,0,0,0.12)",
-                    padding: "5px 14px",
-                    borderRadius: "3px",
-                    background: "rgba(255,255,255,0.6)",
-                    backdropFilter: "blur(8px)",
-                  }}
-                >
-                  Explore Products
-                </span>
                 <h2
-                  className="mb-6 text-balance"
+                  className="mb-4 text-balance"
                   style={{
                     fontFamily: "var(--font-waldenburg)",
-                    fontSize: "clamp(1.6rem, 3vw, 2.35rem)",
-                    fontWeight: 500,
-                    lineHeight: 1.15,
+                    fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
+                    fontWeight: 400,
+                    lineHeight: 1.1,
                     letterSpacing: "-0.03em",
                     color: "#000"
                   }}
@@ -437,13 +420,13 @@ export default function ProductsPage() {
                   Ready to experience{" "}
                   <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", background: "linear-gradient(135deg, #d4845a 0%, #8b6bc7 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>conscious intelligence?</span>
                 </h2>
-                <p className="max-w-xl mt-3" style={{ color: "rgba(0,0,0,0.60)", lineHeight: 1.8, fontSize: "0.95rem", marginBottom: "2.25rem" }}>
+                <p className="max-w-xl" style={{ color: "rgba(0,0,0,0.60)", lineHeight: 1.65, fontSize: "0.92rem", marginBottom: "1.75rem" }}>
                   Discover how our AI-powered products can transform your workflow and unlock new possibilities.
                 </p>
                 <Link
                   href="/contact"
-                  className="mt-8 btn btn-primary"
-                  style={{ height: "2.5rem", padding: "0 1.5rem" }}
+                  className="inline-flex items-center justify-center rounded-full bg-black px-6 text-sm font-semibold text-white hover:bg-black/80 transition-colors"
+                  style={{ height: "2.5rem" }}
                 >
                   Request Integration
                 </Link>

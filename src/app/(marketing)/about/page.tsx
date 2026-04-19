@@ -413,7 +413,7 @@ export default function AboutPage() {
                 <span
                   style={{ letterSpacing: "0.3px", fontFamily: "'Inter', sans-serif", color: "rgba(0,0,0,0.45)", fontSize: "11px", fontWeight: 600 }}
                 >
-                  Our Story — Est. September 2024
+                  Our Story - Est. September 2024
                 </span>
               </div>
 
@@ -867,7 +867,7 @@ export default function AboutPage() {
                 backgroundImage: "linear-gradient(135deg, #fdfbf7 0%, #f8f6ff 50%, #fef9f5 100%), linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px)",
                 backgroundSize: "100% 100%, 32px 32px, 32px 32px",
                 border: "1px solid rgba(0,0,0,0.08)",
-                padding: "clamp(3rem, 10vw, 5rem) clamp(1.25rem, 5vw, 3rem)",
+                padding: "clamp(2.5rem, 8vw, 3.5rem) clamp(1.5rem, 5vw, 3rem)",
               }}
             >
               {/* corner accents */}
@@ -878,32 +878,14 @@ export default function AboutPage() {
               <div className="absolute top-0 left-1/4 w-64 h-64 bg-gradient-radial from-purple-200/20 to-transparent blur-3xl opacity-40" />
               <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-gradient-radial from-orange-200/20 to-transparent blur-3xl opacity-40" />
 
-              <span
-                className="inline-flex items-center gap-2 mb-7 text-black/50"
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "10px",
-                  letterSpacing: "1.4px",
-                  textTransform: "uppercase",
-                  border: "1px solid rgba(0,0,0,0.12)",
-                  padding: "5px 14px",
-                  borderRadius: "3px",
-                  background: "rgba(255,255,255,0.6)",
-                  backdropFilter: "blur(8px)",
-                }}
-              >
-                <Users className="size-3" />
-                Join Our Growing Family
-              </span>
               <h3
-                className="text-black mb-6 text-balance text-center mx-auto"
+                className="text-black mb-4 text-balance text-center mx-auto"
                 style={{
                   fontFamily: "var(--font-waldenburg)",
-                  fontWeight: 50,
-                  fontSize: "clamp(1.6rem, 3vw, 2.4rem)",
-                  letterSpacing: "-0.025em",
-                  lineHeight: 1.2,
+                  fontWeight: 400,
+                  fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
+                  letterSpacing: "-0.03em",
+                  lineHeight: 1.1,
                   maxWidth: "520px",
                   color: "#000"
                 }}
@@ -922,11 +904,12 @@ export default function AboutPage() {
                 </span>
               </h3>
               <p
-                className="text-black/55 max-w-lg mx-auto mb-10 text-pretty"
+                className="text-black/55 max-w-lg mx-auto mb-7"
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: "15px",
-                  lineHeight: "1.8",
+                  fontSize: "0.92rem",
+                  lineHeight: "1.65",
+                  marginBottom: "1.75rem",
                 }}
               >
                 Dreaming big, working hard, and believing that learning and innovation
@@ -934,12 +917,10 @@ export default function AboutPage() {
               </p>
               <Link
                 href="/career"
-                className="mt-8 btn btn-primary inline-flex items-center gap-2"
-                style={{ height: "2.5rem", padding: "0 1.5rem" }}
+                className="inline-flex items-center justify-center rounded-full bg-black px-6 text-sm font-semibold text-white hover:bg-black/80 transition-colors"
+                style={{ height: "2.5rem" }}
               >
-                <Users className="size-3.5" />
                 View Open Positions
-                <ArrowRight className="size-3.5 text-white/50" />
               </Link>
             </div>
           </ScrollReveal>

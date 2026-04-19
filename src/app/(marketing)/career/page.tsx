@@ -176,7 +176,7 @@ export default function CareerPage() {
               backgroundImage: "linear-gradient(135deg, #fdfbf7 0%, #f8f6ff 50%, #fef9f5 100%), linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px)",
               backgroundSize: "100% 100%, 32px 32px, 32px 32px",
               border: "1px solid rgba(0,0,0,0.08)",
-              padding: "clamp(3rem, 10vw, 5rem) clamp(1.25rem, 5vw, 3rem)",
+              padding: "clamp(2.5rem, 8vw, 3.5rem) clamp(1.5rem, 5vw, 3rem)",
             }}
           >
             <span className="absolute top-0 left-0 w-12 h-px bg-gradient-to-r from-black/15 to-transparent" />
@@ -187,30 +187,13 @@ export default function CareerPage() {
             <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-gradient-radial from-orange-200/20 to-transparent blur-3xl opacity-40" />
             <ScrollReveal>
               <div className="relative z-10 max-w-2xl mx-auto">
-                <span
-                  className="inline-flex items-center gap-2 mb-7 text-black/50"
-                  style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontWeight: 700,
-                    fontSize: "10px",
-                    letterSpacing: "1.4px",
-                    textTransform: "uppercase",
-                    border: "1px solid rgba(0,0,0,0.12)",
-                    padding: "5px 14px",
-                    borderRadius: "3px",
-                    background: "rgba(255,255,255,0.6)",
-                    backdropFilter: "blur(8px)",
-                  }}
-                >
-                  Stay connected
-                </span>
                 <h2
-                  className="mb-6 text-balance"
+                  className="mb-4 text-balance"
                   style={{
                     fontFamily: "var(--font-waldenburg)",
-                    fontSize: "clamp(2rem, 4vw, 3.2rem)",
+                    fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
                     fontWeight: 400,
-                    lineHeight: 1.15,
+                    lineHeight: 1.1,
                     letterSpacing: "-0.03em",
                     color: "#000"
                   }}
@@ -219,12 +202,12 @@ export default function CareerPage() {
                   <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", background: "linear-gradient(135deg, #d4845a 0%, #8b6bc7 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>work anyway.</span>
                 </h2>
                 <p
-                  className="mb-9 text-black/60"
-                  style={{ lineHeight: 1.8, fontSize: "0.96rem", maxWidth: "520px", margin: "0 auto 2.25rem" }}
+                  className="mb-7 text-black/60"
+                  style={{ lineHeight: 1.65, fontSize: "0.92rem", maxWidth: "480px", margin: "0 auto 1.75rem" }}
                 >
                   We are always open to meeting thoughtful builders who care about product, design, engineering, and impact.
                 </p>
-                <Link href="/contact" className="btn btn-primary" style={{ height: "2.5rem", padding: "0 1.5rem" }}>
+                <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-black px-6 text-sm font-semibold text-white hover:bg-black/80 transition-colors" style={{ height: "2.5rem" }}>
                   Get in touch
                 </Link>
               </div>
