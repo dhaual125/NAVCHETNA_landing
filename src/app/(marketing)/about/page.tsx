@@ -65,6 +65,7 @@ const team = [
     avatar: "/assets/varun.jpg",
     linkedin: "https://www.linkedin.com/in/varun-yadav-navchetna?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     tag: "Co-Founder",
+    profileUrl: "/news/company-updates/varun-yadav",
     github: "https://github.com/varun-ya",
   },
   {
@@ -84,6 +85,7 @@ const team = [
     avatar: "/assets/dhraval.jpg",
     linkedin: "https://www.linkedin.com/in/dhraval-narsinha-navchetna125?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     tag: "Co-Founder",
+    profileUrl: "/news/company-updates/dhraval-narsinha",
     github: "https://github.com/dhaual125",
   },
   {
@@ -827,7 +829,7 @@ export default function AboutPage() {
           </ScrollReveal>
 
           {/* Row 1 — Co-founders */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {team.slice(0, 4).map((m, i) => (
               <ScrollReveal key={m.name} delay={i * 80}>
                 <TeamCard member={m} />
@@ -836,7 +838,7 @@ export default function AboutPage() {
           </div>
 
           {/* Row 2 — Team */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
             {team.slice(4).map((m, i) => (
               <ScrollReveal key={m.name} delay={(i + 4) * 80}>
                 <TeamCard member={m} />

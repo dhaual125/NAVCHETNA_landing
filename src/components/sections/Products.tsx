@@ -73,8 +73,8 @@ export function Products() {
                         fill
                         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                         loading={index < 2 ? "eager" : "lazy"}
-                        className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                        quality={84}
+                        className="object-contain p-2 sm:p-4 transition-transform duration-700 group-hover:scale-[1.03]"
+                        quality={100}
                       />
                     </div>
 
