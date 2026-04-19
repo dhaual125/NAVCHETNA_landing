@@ -241,13 +241,13 @@ function StatCard({
 function TeamCard({ member }: { member: (typeof team)[number] }) {
   return (
     <div
-      className="group relative isolate h-full overflow-hidden rounded-3xl bg-white"
+      className="group relative isolate h-full overflow-hidden rounded-xl bg-white"
       style={{
         border: "1px solid rgba(0,0,0,0.07)",
       }}
     >
       {/* Avatar */}
-      <Link href={(member as any).profileUrl || member.linkedin || "#"} className="relative block h-56 overflow-hidden bg-[#f5f3f1] rounded-b-xl">
+      <Link href={(member as any).profileUrl || member.linkedin || "#"} className="relative block h-56 overflow-hidden bg-[#f5f3f1] rounded-xl">
         <Image
           src={member.avatar}
           alt={member.name}
