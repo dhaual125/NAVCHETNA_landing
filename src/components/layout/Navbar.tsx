@@ -30,14 +30,14 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-[10000] w-full">
       <div
-        className="mx-auto w-full transition-all duration-500 ease-in-out"
+        className="mx-auto w-full"
         style={{
           maxWidth: scrolled ? "1140px" : "100%",
           padding: scrolled ? "0.875rem 1.25rem 0" : "0",
         }}
       >
         <div
-          className="overflow-hidden transition-all duration-500 ease-in-out"
+          className="overflow-hidden"
           style={{
             borderRadius: open ? "24px" : scrolled ? "9999px" : "0px",
             background: scrolled
