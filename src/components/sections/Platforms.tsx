@@ -20,11 +20,7 @@ const pillars = [
   },
 ];
 
-const capabilities = [
-  "Digital Marketing", "Brand Strategy", "Market Research", 
-  "Content Creation", "Data Engineering", "Cybersecurity", 
-  "Cloud Infrastructure", "3D & AR Experiences"
-];
+
 
 export function Platforms() {
   return (
@@ -68,29 +64,11 @@ export function Platforms() {
           </div>
         </ScrollReveal>
 
-        {/* Additional capabilities — simple text list instead of chips */}
         <ScrollReveal delay={200}>
-          <div className="pt-0">
-            <div className="flex flex-col md:flex-row md:items-center gap-6 justify-between">
-              <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
-                <h4 
-                  className="whitespace-nowrap text-[13px] font-semibold uppercase tracking-[0.12em] text-black/40 shrink-0"
-                >
-                  Also delivering:
-                </h4>
-                <p className="text-[13.5px] leading-relaxed text-black/45 font-medium" style={{ fontFamily: "'Inter', sans-serif" }}>
-                  {capabilities.join(" · ")}
-                </p>
-              </div>
-              
-              <Link 
-                href="/services" 
-                className="inline-flex items-center gap-2 text-[13px] font-semibold text-black/60 hover:text-black transition-colors shrink-0 group"
-              >
-                View all services
-                <span className="transition-transform group-hover:translate-x-0.5">→</span>
-              </Link>
-            </div>
+          <div className="flex justify-start">
+            <Link href="/services" className="btn btn-secondary w-max">
+              View all services
+            </Link>
           </div>
         </ScrollReveal>
 
