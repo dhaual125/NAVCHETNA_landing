@@ -40,7 +40,9 @@ export function Navbar() {
           className="overflow-hidden"
           style={{
             borderRadius: open ? "0px" : scrolled ? "9999px" : "0px",
-            background: scrolled
+            background: open 
+              ? "rgba(255,255,255,0.75)"
+              : scrolled
               ? "rgba(250,250,250,0.90)"
               : white
                 ? "transparent"
@@ -50,13 +52,15 @@ export function Navbar() {
               : white
                 ? "0 solid transparent"
                 : "0 solid transparent",
-            borderBottom: scrolled
+            borderBottom: open
+              ? "1px solid rgba(0,0,0,0.08)"
+              : scrolled
               ? undefined
               : white
                 ? "1px solid rgba(255,255,255,0.12)"
                 : "1px solid rgba(0,0,0,0.05)",
-            backdropFilter: scrolled ? "blur(24px) saturate(1.8)" : white ? "none" : "blur(16px)",
-            WebkitBackdropFilter: scrolled ? "blur(24px) saturate(1.8)" : white ? "none" : "blur(16px)",
+            backdropFilter: open ? "blur(32px) saturate(2)" : scrolled ? "blur(24px) saturate(1.8)" : white ? "none" : "blur(16px)",
+            WebkitBackdropFilter: open ? "blur(32px) saturate(2)" : scrolled ? "blur(24px) saturate(1.8)" : white ? "none" : "blur(16px)",
             boxShadow: scrolled ? "0 8px 32px -16px rgba(0,0,0,0.18)" : "none",
           }}
         >
@@ -175,20 +179,15 @@ export function Navbar() {
 
             <div
               className="overflow-hidden"
-              style={{ 
-                display: open ? "block" : "none",
-                background: "rgba(255,255,255,0.92)",
-                backdropFilter: "blur(20px)",
-                WebkitBackdropFilter: "blur(20px)",
-              }}
+              style={{ display: open ? "block" : "none" }}
             >
-              <div className="flex flex-col gap-1 px-6 pb-10 pt-4">
+              <div className="flex flex-col gap-1 px-5 pb-8 pt-4">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="block py-4 text-[16px] font-bold uppercase tracking-[0.05em] text-black transition-opacity hover:opacity-60"
+                    className="block rounded-xl px-4 py-3 text-[14px] font-medium text-black/80 transition-colors hover:bg-black/[0.05] hover:text-black"
                   >
                     {link.label}
                   </Link>
@@ -196,7 +195,7 @@ export function Navbar() {
                 <Link
                   href="/contact"
                   onClick={() => setOpen(false)}
-                  className="mt-6 flex h-12 items-center justify-center bg-black text-[14px] font-bold uppercase tracking-wider text-white"
+                  className="mt-4 flex h-11 items-center justify-center rounded-full bg-black text-[14px] font-medium text-white"
                 >
                   Get Started
                 </Link>
