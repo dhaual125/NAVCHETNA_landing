@@ -145,12 +145,12 @@ export function Navbar() {
                   style={{
                     color: white ? "#ffffff" : "#0A0A0A",
                     fontFamily: "var(--font-body)",
-                    fontSize: "11px",
+                    fontSize: "10px",
                     fontWeight: 700,
-                    letterSpacing: "0.08em",
+                    letterSpacing: "0.1em",
                   }}
                 >
-                  NAVCHETNA TECHNOLOGIES
+                  NAVCHETNA
                 </span>
               </Link>
 
@@ -158,17 +158,16 @@ export function Navbar() {
                 type="button"
                 aria-label="Toggle navigation"
                 aria-expanded={open}
-                className="flex size-8 flex-col items-center justify-center gap-[5px] rounded-full"
-                style={{ background: white ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.05)" }}
+                className="flex size-9 flex-col items-center justify-center gap-[4px] rounded-full"
                 onClick={() => setOpen((v) => !v)}
               >
                 <span
-                  className="h-[1.5px] w-4"
-                  style={{ background: white ? "#ffffff" : "#0A0A0A" }}
+                  className="h-[1.2px] w-4.5 transition-all duration-300"
+                  style={{ background: white ? "#ffffff" : "#0A0A0A", width: open ? "18px" : "18px", transform: open ? "translateY(2.5px) rotate(45deg)" : "none" }}
                 />
                 <span
-                  className="h-[1.5px] w-4"
-                  style={{ background: white ? "#ffffff" : "#0A0A0A" }}
+                  className="h-[1.2px] w-4.5 transition-all duration-300"
+                  style={{ background: white ? "#ffffff" : "#0A0A0A", width: open ? "18px" : "18px", transform: open ? "translateY(-2.5px) rotate(-45deg)" : "none" }}
                 />
               </button>
             </div>
@@ -177,29 +176,18 @@ export function Navbar() {
               className="overflow-hidden"
               style={{ display: open ? "block" : "none" }}
             >
-              <div className="px-4 pb-5 pt-1">
-                <div
-                  className="rounded-2xl bg-white p-2"
-                  style={{ boxShadow: "0 8px 32px -12px rgba(0,0,0,0.22)", border: "1px solid rgba(0,0,0,0.06)" }}
-                >
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setOpen(false)}
-                      className="block rounded-xl px-4 py-3 text-[13.5px] font-medium text-black/65 transition-colors hover:bg-black/[0.035] hover:text-black"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
+              <div className="flex flex-col gap-1 px-5 pb-8 pt-2">
+                {navLinks.map((link, idx) => (
                   <Link
-                    href="/contact"
+                    key={link.href}
+                    href={link.href}
                     onClick={() => setOpen(false)}
-                    className="mt-2 flex h-10 items-center justify-center rounded-full bg-black text-[13.5px] font-medium text-white"
+                    className="block py-3.5 text-[15px] font-medium tracking-tight text-black transition-opacity hover:opacity-60"
                   >
-                    Get Started
+                    <span className="mr-4 text-[10px] font-bold opacity-20">0{idx + 1}</span>
+                    {link.label}
                   </Link>
-                </div>
+                ))}
               </div>
             </div>
           </div>
