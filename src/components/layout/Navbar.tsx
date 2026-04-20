@@ -73,13 +73,6 @@ export function Navbar() {
                   >
                     <span className="z-10 relative">Get Started</span>
                   </Link>
-                  <Link 
-                    className="group relative inline-flex items-center justify-center rounded-full px-5 py-2.5 text-[13px] font-medium bg-white text-black overflow-hidden transition-all duration-500 active:scale-95 whitespace-nowrap" 
-                    style={{ boxShadow: "inset 0 0 12px rgba(0,0,0,0.06), 0px 0px 1px rgba(0,0,0,0.2)" }}
-                    href="/contact"
-                  >
-                    <span className="z-10 relative">Talk to Us</span>
-                  </Link>
                 </div>
               </div>
             </nav>
@@ -134,14 +127,6 @@ export function Navbar() {
                       onClick={() => setOpen(false)}
                     >
                       Get Started
-                    </Link>
-                    <Link 
-                      className="flex-1 inline-flex items-center justify-center rounded-full bg-white text-black px-5 py-3 text-[13px] font-medium active:scale-95 transition-transform" 
-                      style={{ boxShadow: "inset 0 0 12px rgba(0,0,0,0.06), 0px 0px 1px rgba(0,0,0,0.2)" }}
-                      href="/contact"
-                      onClick={() => setOpen(false)}
-                    >
-                      Talk to Us
                     </Link>
                   </div>
                 </div>
