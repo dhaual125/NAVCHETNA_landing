@@ -138,19 +138,19 @@ export function Navbar() {
 
           {/* Mobile */}
           <div className="lg:hidden">
-            <div className="flex h-[64px] items-center justify-between px-6">
+            <div className="flex h-[58px] items-center justify-between px-5">
               <Link href="/" onClick={() => setOpen(false)} className="transition-opacity hover:opacity-75">
                 <span
                   className="whitespace-nowrap uppercase"
                   style={{
                     color: white ? "#ffffff" : "#0A0A0A",
                     fontFamily: "var(--font-body)",
-                    fontSize: "12px",
+                    fontSize: "11px",
                     fontWeight: 700,
-                    letterSpacing: "0.1em",
+                    letterSpacing: "0.08em",
                   }}
                 >
-                  NAVCHETNA
+                  NAVCHETNA TECHNOLOGIES
                 </span>
               </Link>
 
@@ -158,62 +158,52 @@ export function Navbar() {
                 type="button"
                 aria-label="Toggle navigation"
                 aria-expanded={open}
-                className="flex size-10 items-center justify-center rounded-full"
+                className="flex size-8 flex-col items-center justify-center gap-[5px] rounded-full"
+                style={{ background: white ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.05)" }}
                 onClick={() => setOpen((v) => !v)}
               >
-                <div className="relative flex h-5 w-5 items-center justify-center">
-                  <span
-                    className="absolute h-[1.5px] w-5 transition-transform duration-300"
-                    style={{ background: white ? "#ffffff" : "#0A0A0A", transform: open ? "rotate(45deg)" : "translateY(-3px)" }}
-                  />
-                  <span
-                    className="absolute h-[1.5px] w-5 transition-transform duration-300"
-                    style={{ background: white ? "#ffffff" : "#0A0A0A", transform: open ? "rotate(-45deg)" : "translateY(3px)" }}
-                  />
-                </div>
+                <span
+                  className="h-[1.5px] w-4"
+                  style={{ background: white ? "#ffffff" : "#0A0A0A" }}
+                />
+                <span
+                  className="h-[1.5px] w-4"
+                  style={{ background: white ? "#ffffff" : "#0A0A0A" }}
+                />
               </button>
             </div>
 
-            {/* Fullscreen-ish Menu Overlay */}
             <div
-              className="fixed inset-x-0 top-[64px] z-[9999] overflow-hidden bg-[#fdfbf7] transition-all duration-300 ease-in-out"
-              style={{ 
-                height: open ? "calc(100vh - 64px)" : "0px",
-                opacity: open ? 1 : 0,
-                pointerEvents: open ? "auto" : "none"
-              }}
+              className="overflow-hidden"
+              style={{ display: open ? "block" : "none" }}
             >
-              <div className="flex h-full flex-col px-8 pt-10 pb-12">
-                <nav className="flex flex-col gap-8">
+              <div 
+                className="px-6 py-10"
+                style={{ 
+                  background: "rgba(250,250,250,0.95)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                }}
+              >
+                <div className="flex flex-col gap-8">
                   {navLinks.map((link) => (
                     <Link
                       key={link.href}
                       href={link.href}
                       onClick={() => setOpen(false)}
-                      className="text-[22px] font-bold uppercase tracking-wider text-black transition-opacity hover:opacity-60"
+                      className="text-[20px] font-bold uppercase tracking-[0.08em] text-black transition-opacity hover:opacity-50"
                       style={{ fontFamily: "var(--font-body)" }}
                     >
                       {link.label}
                     </Link>
                   ))}
-                </nav>
-
-                <div className="mt-auto">
-                  <div className="mb-8 h-px w-full bg-black/[0.06]" />
-                  <div className="flex flex-col gap-3">
+                  <div className="mt-4 pt-8 border-t border-black/5">
                     <Link
                       href="/contact"
                       onClick={() => setOpen(false)}
-                      className="flex h-14 items-center justify-center rounded-full bg-black text-[15px] font-bold text-white shadow-lg shadow-black/5 active:scale-[0.98] transition-transform"
+                      className="inline-flex h-12 items-center justify-center bg-black px-8 text-[14px] font-bold uppercase tracking-wider text-white"
                     >
                       Get Started
-                    </Link>
-                    <Link
-                      href="/contact"
-                      onClick={() => setOpen(false)}
-                      className="flex h-14 items-center justify-center rounded-full border border-black/10 bg-white text-[15px] font-bold text-black active:scale-[0.98] transition-transform"
-                    >
-                      Contact Us
                     </Link>
                   </div>
                 </div>
