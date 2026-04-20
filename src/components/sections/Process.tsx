@@ -142,7 +142,7 @@ export function Process() {
                       {item.title}
                     </p>
                   </div>
-                  <div className="section-divider opacity-80" />
+                  <div className="pt-1" />
                   <p style={{ color: "rgba(0,0,0,0.5)", lineHeight: 1.6, fontSize: "0.85rem" }}>
                     {item.desc}
                   </p>

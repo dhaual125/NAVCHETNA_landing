@@ -163,19 +163,19 @@ export function Navbar() {
                 onClick={() => setOpen((v) => !v)}
               >
                 <span
-                  className={`h-[1.5px] w-4 transition-all duration-200 ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
+                  className="h-[1.5px] w-4"
                   style={{ background: white ? "#ffffff" : "#0A0A0A" }}
                 />
                 <span
-                  className={`h-[1.5px] w-4 transition-all duration-200 ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
+                  className="h-[1.5px] w-4"
                   style={{ background: white ? "#ffffff" : "#0A0A0A" }}
                 />
               </button>
             </div>
 
             <div
-              className="overflow-hidden transition-all duration-300 ease-in-out"
-              style={{ maxHeight: open ? "380px" : "0px" }}
+              className="overflow-hidden"
+              style={{ display: open ? "block" : "none" }}
             >
               <div className="px-4 pb-5 pt-1">
                 <div

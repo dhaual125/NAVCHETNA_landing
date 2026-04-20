@@ -82,7 +82,7 @@ export function Products() {
                       <h3
                         style={{
                           fontFamily: "var(--font-waldenburg)",
-                          fontSize: "clamp(0.85rem, 2.5vw, 1.05rem)",
+                          fontSize: "clamp(0.95rem, 3vw, 1.15rem)",
                           fontWeight: 500,
                           letterSpacing: "-0.015em",
                           color: "var(--heading-color)",
@@ -92,7 +92,7 @@ export function Products() {
                         {product.name}
                       </h3>
                       <div className="flex items-center gap-2">
-                        <span className="text-[7.5px] sm:text-[9px] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.16em] text-black/40">
+                        <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.16em] text-black/40">
                           {product.tag}
                         </span>
                       </div>
