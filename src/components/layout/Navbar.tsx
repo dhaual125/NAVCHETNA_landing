@@ -184,8 +184,11 @@ export function Navbar() {
             </div>
 
             <div
-              className="overflow-hidden"
-              style={{ display: open ? "block" : "none" }}
+              className="overflow-hidden transition-all duration-500 ease-in-out"
+              style={{ 
+                maxHeight: open ? "500px" : "0px",
+                opacity: open ? 1 : 0,
+              }}
             >
               <div className="flex flex-col gap-1 px-5 pb-8 pt-4">
                 {navLinks.map((link) => (
