@@ -70,7 +70,7 @@ export function Platforms() {
 
         {/* Additional capabilities — simple text list instead of chips */}
         <ScrollReveal delay={200}>
-          <div className="pt-8 border-t border-black/[0.04]">
+          <div className="pt-8">
             <div className="flex flex-col md:flex-row md:items-center gap-6 justify-between">
               <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
                 <h4 
