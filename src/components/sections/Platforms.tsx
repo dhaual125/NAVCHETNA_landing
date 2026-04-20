@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { MonitorSmartphone, Bot, Lightbulb } from "lucide-react";
+import { MonitorSmartphone, Bot, Lightbulb, ChevronRight } from "lucide-react";
 
 const pillars = [
   {
@@ -85,10 +85,10 @@ export function Platforms() {
               
               <Link 
                 href="/services" 
-                className="inline-flex items-center gap-2 text-[13px] font-semibold text-black/60 hover:text-black transition-colors shrink-0 group"
+                className="inline-flex items-center gap-1.5 text-[12px] font-medium text-black/40 hover:text-black transition-all duration-300 shrink-0 group"
               >
                 View all services
-                <span className="transition-transform group-hover:translate-x-0.5">→</span>
+                <ChevronRight className="size-3.5 opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
               </Link>
             </div>
           </div>
