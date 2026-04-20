@@ -184,30 +184,28 @@ export function Navbar() {
             </div>
 
             <div
-              className="overflow-hidden transition-all duration-500 ease-in-out"
-              style={{ 
-                maxHeight: open ? "500px" : "0px",
-                opacity: open ? 1 : 0,
-              }}
+              className={`grid transition-all duration-500 ease-in-out ${open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
             >
-              <div className="flex flex-col gap-1 px-5 pb-8 pt-4">
-                {navLinks.map((link) => (
+              <div className="overflow-hidden">
+                <div className="flex flex-col gap-1 px-5 pb-8 pt-4">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setOpen(false)}
+                      className="block rounded-xl px-4 py-3 text-[14px] font-medium text-black/80 transition-colors hover:bg-black/[0.05] hover:text-black"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
                   <Link
-                    key={link.href}
-                    href={link.href}
+                    href="/contact"
                     onClick={() => setOpen(false)}
-                    className="block rounded-xl px-4 py-3 text-[14px] font-medium text-black/80 transition-colors hover:bg-black/[0.05] hover:text-black"
+                    className="mt-4 flex h-11 items-center justify-center rounded-full bg-black text-[14px] font-medium text-white"
                   >
-                    {link.label}
+                    Get Started
                   </Link>
-                ))}
-                <Link
-                  href="/contact"
-                  onClick={() => setOpen(false)}
-                  className="mt-4 flex h-11 items-center justify-center rounded-full bg-black text-[14px] font-medium text-white"
-                >
-                  Get Started
-                </Link>
+                </div>
               </div>
             </div>
           </div>
