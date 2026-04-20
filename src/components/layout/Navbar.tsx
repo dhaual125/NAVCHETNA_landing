@@ -162,17 +162,23 @@ export function Navbar() {
                 type="button"
                 aria-label="Toggle navigation"
                 aria-expanded={open}
-                className="flex size-8 flex-col items-center justify-center gap-[5px] rounded-full"
-                style={{ background: white ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.05)" }}
+                className="relative flex size-9 items-center justify-center rounded-full transition-colors"
+                style={{ background: white ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.04)" }}
                 onClick={() => setOpen((v) => !v)}
               >
                 <span
-                  className="h-[1.5px] w-4"
-                  style={{ background: white ? "#ffffff" : "#0A0A0A" }}
+                  className="absolute h-[1.5px] w-[16px] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                  style={{ 
+                    background: white ? "#ffffff" : "#0A0A0A",
+                    transform: open ? "rotate(45deg)" : "translateY(-3.5px)" 
+                  }}
                 />
                 <span
-                  className="h-[1.5px] w-4"
-                  style={{ background: white ? "#ffffff" : "#0A0A0A" }}
+                  className="absolute h-[1.5px] w-[16px] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                  style={{ 
+                    background: white ? "#ffffff" : "#0A0A0A",
+                    transform: open ? "rotate(-45deg)" : "translateY(3.5px)" 
+                  }}
                 />
               </button>
             </div>
@@ -181,21 +187,24 @@ export function Navbar() {
               className="overflow-hidden"
               style={{ display: open ? "block" : "none" }}
             >
-              <div className="flex flex-col gap-1 px-5 pb-8 pt-4">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className="block rounded-xl px-4 py-3 text-[14px] font-medium text-black/80 transition-colors hover:bg-black/[0.05] hover:text-black"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+              <div className="flex flex-col px-6 pb-10 pt-4">
+                <nav className="flex flex-col">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setOpen(false)}
+                      className="group flex items-center justify-between border-b border-black/[0.04] py-4.5 text-[15px] font-medium text-black/80 transition-colors hover:text-black"
+                    >
+                      <span style={{ letterSpacing: "-0.01em" }}>{link.label}</span>
+                      <span className="text-[14px] font-light text-black/30 transition-transform group-hover:translate-x-1">→</span>
+                    </Link>
+                  ))}
+                </nav>
                 <Link
                   href="/contact"
                   onClick={() => setOpen(false)}
-                  className="mt-4 flex h-11 items-center justify-center rounded-full bg-black text-[14px] font-medium text-white"
+                  className="mt-6 flex h-[46px] w-full items-center justify-center bg-black text-[14.5px] font-medium tracking-wide text-white shadow-sm transition-transform active:scale-[0.98]"
                 >
                   Get Started
                 </Link>
