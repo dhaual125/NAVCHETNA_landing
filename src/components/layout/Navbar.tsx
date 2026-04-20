@@ -178,8 +178,6 @@ export function Navbar() {
                 />
               </button>
             </div>
-
-            </div>
           </div>
         </div>
 
@@ -208,7 +206,6 @@ export function Navbar() {
               Get Started
             </Link>
           </div>
-        </div>
         </div>
       </div>
     </header>
