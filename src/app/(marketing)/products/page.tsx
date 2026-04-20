@@ -13,7 +13,7 @@ const launchedProducts = [
     category: "Education",
     image: "/assets/osmium-mockup.png",
     desc: "AI-Powered Learning That Feels Personal. Combines AI-guided courses, smart test analysis, and adaptive learning into one seamless experience.",
-    href: "https://osmium.co.in",
+    href: "https://www.osmium.co.in/",
     isFlagship: true,
   },
   {
@@ -23,7 +23,7 @@ const launchedProducts = [
     category: "Education",
     image: "/assets/nataraj_mockup.png",
     desc: "AR + AI-powered anatomy learning platform designed to make human biology interactive and accessible with real-time body scanning.",
-    href: "/products",
+    href: "https://natraj.navchetna.tech/",
   },
   {
     id: "aegis",
@@ -32,7 +32,7 @@ const launchedProducts = [
     category: "Enterprise",
     image: "/assets/aegis1.png",
     desc: "A unified identity management system providing memory-safe Rust-based authentication. Consolidation of disparate identity providers into a single canonical source.",
-    href: "/products",
+    href: "https://aegis.navchetna.tech/",
   },
   {
     id: "nsl",
@@ -80,7 +80,7 @@ const comingSoonProducts = [
     category: "AI & Tools",
     image: "/assets/kriya1.png",
     desc: "A platform where you describe what you want in plain English, and it builds it—code, websites, APIs, marketing campaigns, everything.",
-    href: "#",
+    href: "https://kriya.navchetna.tech/",
   },
   {
     id: "agentic_sde",

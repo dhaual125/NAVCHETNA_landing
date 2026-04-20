@@ -3,15 +3,11 @@ import { Sparkles } from "lucide-react";
 
 const productLinks = [
   { href: "/products", label: "All Products" },
-  { href: "https://osmium.co.in", label: "Osmium", external: true },
-  { href: "/products", label: "Natraj" },
-  { href: "/products", label: "Aegis Auth" },
-  { href: "/products", label: "Kriya" },
+  { href: "https://www.osmium.co.in/", label: "Osmium", external: true },
+  { href: "https://natraj.navchetna.tech/", label: "Natraj", external: true },
+  { href: "https://aegis.navchetna.tech/", label: "Aegis Auth", external: true },
+  { href: "https://kriya.navchetna.tech/", label: "Kriya", external: true },
   { href: "/products", label: "LM Lens" },
-  { href: "/products", label: "NSL" },
-  { href: "/products", label: "Vajra" },
-  { href: "/products", label: "CRM" },
-  { href: "/products", label: "Agentic SDE" },
 ];
 
 const companyLinks = [
@@ -21,7 +17,12 @@ const companyLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-
+const serviceLinks = [
+  { href: "/services", label: "Product Development" },
+  { href: "/services", label: "AI & Automation" },
+  { href: "/services", label: "Design & Branding" },
+  { href: "/services", label: "Strategy & Management" },
+];
 
 const socialLinks = [
   { href: "https://www.linkedin.com/company/Navchetna Technology/", label: "LinkedIn" },
@@ -42,7 +43,7 @@ export function Footer() {
 
       <div className="relative z-10 mx-auto max-w-[80rem] px-5 sm:px-8">
         {/* Main grid */}
-        <div className="grid grid-cols-2 gap-x-8 gap-y-12 py-16 sm:grid-cols-4 md:py-20">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-12 py-16 sm:grid-cols-5 md:py-20">
           {/* Brand */}
           <div className="col-span-2 sm:col-span-2">
             <span className="type-3xl text-black font-medium tracking-tight">Navchetna Technologies</span>
@@ -69,7 +70,17 @@ export function Footer() {
             </ul>
           </div>
 
-
+          {/* Services */}
+          <div>
+            <p className="type-2xs font-semibold uppercase tracking-wider text-black/40 mb-5">Services</p>
+            <ul className="space-y-3.5">
+              {serviceLinks.map((l) => (
+                <li key={l.label}>
+                  <Link href={l.href} className="type-sm text-black/60 transition-colors hover:text-black font-medium">{l.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {/* Company */}
           <div>

@@ -5,10 +5,10 @@ import Link from "next/link";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const importantProducts = [
-  { name: "Osmium", tag: "EdTech Platform", bg: "/assets/osmium (1).png", href: "https://osmium.co.in" },
-  { name: "Natraj", tag: "AR Anatomy", bg: "/assets/nataraj.png", href: "/products" },
-  { name: "Aegis Auth", tag: "Identity Management", bg: "/assets/aegis1.png", href: "/products" },
-  { name: "Kriya", tag: "Organizational AI", bg: "/assets/kriya1.png", href: "/products" },
+  { name: "Osmium", tag: "EdTech Platform", bg: "/assets/osmium (1).png", href: "https://www.osmium.co.in/" },
+  { name: "Natraj", tag: "AR Anatomy", bg: "/assets/nataraj.png", href: "https://natraj.navchetna.tech/" },
+  { name: "Aegis Auth", tag: "Identity Management", bg: "/assets/aegis1.png", href: "https://aegis.navchetna.tech/" },
+  { name: "Kriya", tag: "Organizational AI", bg: "/assets/kriya1.png", href: "https://kriya.navchetna.tech/" },
 ];
 
 export function Products() {
