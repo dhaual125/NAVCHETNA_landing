@@ -30,14 +30,14 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-[10000] w-full">
       <div
-        className="mx-auto w-full transition-all duration-500 ease-in-out"
+        className="mx-auto w-full transition-all duration-300 ease-in-out"
         style={{
           maxWidth: scrolled ? "1140px" : "100%",
           padding: scrolled ? "0.875rem 1.25rem 0" : "0",
         }}
       >
         <div
-          className="overflow-hidden transition-all duration-500 ease-in-out"
+          className="overflow-hidden transition-all duration-300 ease-in-out"
           style={{
             borderRadius: open ? (scrolled ? "24px" : "0px") : scrolled ? "9999px" : "0px",
             background: open
@@ -184,7 +184,7 @@ export function Navbar() {
             </div>
 
             <div
-              className={`grid transition-all duration-500 ease-in-out ${open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+              className={`grid transition-all duration-300 ease-in-out ${open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
             >
               <div className="overflow-hidden">
                 <div className="flex flex-col gap-1 px-5 pb-8 pt-4">
