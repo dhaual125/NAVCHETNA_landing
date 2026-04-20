@@ -423,9 +423,12 @@ h1, h2, h3, h4, h5, h6 {
 .btn-secondary {
   background: transparent;
   color: rgba(0,0,0,0.75);
-  padding: 0.4375rem 0.9375rem;
-  height: 2.25rem;
-  border: 1px solid rgba(0,0,0,0.10);
+  padding: 0 1.375rem;
+  height: 2.875rem; /* 46px */
+  font-size: 13.5px;
+  font-weight: 500;
+  border: 1px solid rgba(0,0,0,0.12);
+  letter-spacing: -0.01em;
 }
 .btn-secondary:hover {
   background: rgba(0,0,0,0.04);

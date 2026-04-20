@@ -49,7 +49,7 @@ export function Products() {
               </p>
 
               <Link href="/products" className="btn btn-secondary w-max">
-                Explore all products
+                View all products
               </Link>
             </div>
           </ScrollReveal>
