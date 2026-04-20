@@ -243,7 +243,7 @@ export default function ProductsPage() {
                           <h3
                             style={{
                               fontFamily: "var(--font-waldenburg)",
-                              fontSize: "clamp(0.85rem, 2.5vw, 1.1rem)",
+                              fontSize: "clamp(1.05rem, 2.5vw, 1.25rem)",
                               fontWeight: 500,
                               letterSpacing: "-0.015em",
                               color: "var(--heading-color)",
@@ -259,7 +259,7 @@ export default function ProductsPage() {
                           )}
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="text-[7.5px] sm:text-[10px] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.16em] text-black/40">
+                          <span className="text-[9.5px] sm:text-[11px] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.16em] text-black/40">
                             {p.tag}
                           </span>
                         </div>
@@ -315,7 +315,7 @@ export default function ProductsPage() {
                           <h3
                             style={{
                               fontFamily: "var(--font-waldenburg)",
-                              fontSize: "clamp(0.85rem, 2.5vw, 1.1rem)",
+                              fontSize: "clamp(1.05rem, 2.5vw, 1.25rem)",
                               fontWeight: 500,
                               letterSpacing: "-0.015em",
                               color: "var(--heading-color)",
@@ -326,7 +326,7 @@ export default function ProductsPage() {
                           </h3>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="text-[7.5px] sm:text-[10px] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.16em] text-black/40">
+                          <span className="text-[9.5px] sm:text-[11px] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.16em] text-black/40">
                             {p.tag}
                           </span>
                         </div>
