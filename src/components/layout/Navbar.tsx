@@ -39,7 +39,7 @@ export function Navbar() {
         <div
           className="overflow-hidden"
           style={{
-            borderRadius: open ? "24px" : scrolled ? "9999px" : "0px",
+            borderRadius: open ? "0px" : scrolled ? "9999px" : "0px",
             background: scrolled
               ? "rgba(250,250,250,0.90)"
               : white
@@ -175,38 +175,31 @@ export function Navbar() {
 
             <div
               className="overflow-hidden"
-              style={{ display: open ? "block" : "none" }}
+              style={{ 
+                display: open ? "block" : "none",
+                background: "rgba(255,255,255,0.92)",
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
+              }}
             >
-              <div 
-                className="px-6 py-10"
-                style={{ 
-                  background: "rgba(250,250,250,0.95)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                }}
-              >
-                <div className="flex flex-col gap-8">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setOpen(false)}
-                      className="text-[20px] font-bold uppercase tracking-[0.08em] text-black transition-opacity hover:opacity-50"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                  <div className="mt-4 pt-8 border-t border-black/5">
-                    <Link
-                      href="/contact"
-                      onClick={() => setOpen(false)}
-                      className="inline-flex h-12 items-center justify-center bg-black px-8 text-[14px] font-bold uppercase tracking-wider text-white"
-                    >
-                      Get Started
-                    </Link>
-                  </div>
-                </div>
+              <div className="flex flex-col gap-1 px-6 pb-10 pt-4">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className="block py-4 text-[16px] font-bold uppercase tracking-[0.05em] text-black transition-opacity hover:opacity-60"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <Link
+                  href="/contact"
+                  onClick={() => setOpen(false)}
+                  className="mt-6 flex h-12 items-center justify-center bg-black text-[14px] font-bold uppercase tracking-wider text-white"
+                >
+                  Get Started
+                </Link>
               </div>
             </div>
           </div>
