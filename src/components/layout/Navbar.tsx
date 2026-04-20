@@ -37,10 +37,12 @@ export function Navbar() {
         }}
       >
         <div
-          className="transition-all duration-300 ease-in-out relative z-50"
+          className="overflow-hidden transition-all duration-300 ease-in-out"
           style={{
-            borderRadius: scrolled ? "9999px" : "0px",
-            background: scrolled
+            borderRadius: open ? (scrolled ? "24px" : "0px") : scrolled ? "9999px" : "0px",
+            background: open
+              ? "rgba(255,255,255,0.75)"
+              : scrolled
                 ? "rgba(250,250,250,0.90)"
                 : white
                   ? "transparent"
@@ -50,13 +52,15 @@ export function Navbar() {
               : white
                 ? "0 solid transparent"
                 : "0 solid transparent",
-            borderBottom: scrolled
-              ? undefined
-              : white
-                ? "1px solid rgba(255,255,255,0.12)"
-                : "1px solid rgba(0,0,0,0.05)",
-            backdropFilter: scrolled ? "blur(24px) saturate(1.8)" : white ? "none" : "blur(16px)",
-            WebkitBackdropFilter: scrolled ? "blur(24px) saturate(1.8)" : white ? "none" : "blur(16px)",
+            borderBottom: open
+              ? "1px solid rgba(0,0,0,0.08)"
+              : scrolled
+                ? undefined
+                : white
+                  ? "1px solid rgba(255,255,255,0.12)"
+                  : "1px solid rgba(0,0,0,0.05)",
+            backdropFilter: open ? "blur(32px) saturate(2)" : scrolled ? "blur(24px) saturate(1.8)" : white ? "none" : "blur(16px)",
+            WebkitBackdropFilter: open ? "blur(32px) saturate(2)" : scrolled ? "blur(24px) saturate(1.8)" : white ? "none" : "blur(16px)",
             boxShadow: scrolled ? "0 8px 32px -16px rgba(0,0,0,0.18)" : "none",
           }}
         >
@@ -178,33 +182,32 @@ export function Navbar() {
                 />
               </button>
             </div>
-          </div>
-        </div>
 
-        {/* Floating Absolute Mobile Menu */}
-        <div
-          className={`lg:hidden absolute left-0 right-0 top-full mt-2 mx-4 overflow-hidden rounded-2xl border border-black/5 bg-white/95 shadow-xl backdrop-blur-xl transition-all duration-200 ease-out z-40 ${
-            open ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0"
-          }`}
-        >
-          <div className="flex flex-col gap-1 p-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="block rounded-xl px-4 py-3 text-[14px] font-medium text-black/80 transition-colors hover:bg-black/[0.05] hover:text-black"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href="/contact"
-              onClick={() => setOpen(false)}
-              className="mt-2 flex h-11 items-center justify-center rounded-full bg-black text-[14px] font-medium text-white"
+            <div
+              className={`grid transition-all duration-300 ease-in-out ${open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
             >
-              Get Started
-            </Link>
+              <div className="overflow-hidden">
+                <div className="flex flex-col gap-1 px-5 pb-8 pt-4">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setOpen(false)}
+                      className="block rounded-xl px-4 py-3 text-[14px] font-medium text-black/80 transition-colors hover:bg-black/[0.05] hover:text-black"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                  <Link
+                    href="/contact"
+                    onClick={() => setOpen(false)}
+                    className="mt-4 flex h-11 items-center justify-center rounded-full bg-black text-[14px] font-medium text-white"
+                  >
+                    Get Started
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
