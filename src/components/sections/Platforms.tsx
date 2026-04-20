@@ -51,7 +51,7 @@ export function Platforms() {
 
         {/* Core Services — image-inspired layout */}
         <ScrollReveal delay={100}>
-          <div className="grid md:grid-cols-3 border-y border-black/[0.08] mb-16">
+          <div className="grid md:grid-cols-3 border-y border-black/[0.08] mb-10">
             {pillars.map((pillar, index) => (
               <div key={pillar.title} className={`p-6 md:p-10 ${index !== 2 ? 'border-b md:border-b-0 md:border-r border-black/[0.08]' : ''}`}>
                 <div className="inline-flex size-10 items-center justify-center rounded-xl border border-black/[0.08] mb-6">
@@ -70,7 +70,7 @@ export function Platforms() {
 
         {/* Additional capabilities — simple text list instead of chips */}
         <ScrollReveal delay={200}>
-          <div className="pt-2">
+          <div className="pt-0">
             <div className="flex flex-col md:flex-row md:items-center gap-6 justify-between">
               <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
                 <h4 
