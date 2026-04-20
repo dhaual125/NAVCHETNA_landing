@@ -39,7 +39,7 @@ export function Navbar() {
         <div
           className="overflow-hidden"
           style={{
-            borderRadius: open ? "0px" : scrolled ? "9999px" : "0px",
+            borderRadius: open ? "24px" : scrolled ? "9999px" : "0px",
             background: open 
               ? "rgba(255,255,255,0.75)"
               : scrolled
