@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { NewsSidebar, NewsMobileBar } from "@/components/sections/NewsSidebar";
-import { Calendar, ArrowUpRight, Brain, Shield, Eye, FileText, Layers, BarChart3, Cloud, Server, Cpu, Database } from "lucide-react";
+import { Calendar, ArrowUpRight, Brain, Shield, Eye, FileText, Layers, BarChart3, Cloud, Server, Cpu, Database, Sparkles } from "lucide-react";
 
 /* Map badge label → chip color class */
 function badgeChip(badge: string) {
@@ -18,7 +18,8 @@ function badgeChip(badge: string) {
 }
 
 const toc = [
-  { id: "osmium",         label: "Osmium AI 2.0",      icon: Brain },
+  { id: "osmiumllm",      label: "OsmiumLLM",           icon: Sparkles },
+  { id: "osmium",         label: "Osmium AI",         icon: Brain },
   { id: "natraj",         label: "Natraj AR",           icon: Eye },
   { id: "aegis",          label: "Aegis Auth",          icon: Shield },
   { id: "nsl",            label: "NSL Billing",         icon: BarChart3 },
@@ -32,9 +33,17 @@ const toc = [
 
 const articles = [
   {
+    id: "osmiumllm", badge: "Flagship Launch", date: "Aug 15, 2025", status: "Launched",
+    title: "OsmiumLLM: A Global Benchmark in Education-Focused AI",
+    desc: "Osmium has emerged as the world's smartest educational LLM, surpassing even GPT-5. With 96B parameters trained exclusively for education, it sets a new global benchmark — scoring 98 in High School Academics and 97 in Reasoning.",
+    callout: { label: "Global #1 in Education AI", text: "Outperformed GPT-5, Claude 4 (Opus), Gemini 2.5 Pro, DeepSeek R1, and Llama 4 across all five educational benchmarks." },
+    author: "Varun Yadav, Co-Founder & Director", readTime: "10 min read",
+    tags: ["LLM", "AI", "Education", "Benchmark"],
+  },
+  {
     id: "osmium", badge: "Flagship Launch", date: "Jan 15, 2025", status: "Launched",
-    title: "Osmium AI 2.0: The Future of AI-Powered Education",
-    desc: "Osmium AI 2.0 isn't just another EdTech upgrade — it's a rethink. Where others stop at academics, Osmium AI goes deeper: it mentors, predicts, and monitors student mental health. Deployed with 276 students at Rai University, Ahmedabad.",
+    title: "Osmium AI: The Future of AI-Powered Education",
+    desc: "Osmium AI isn't just another EdTech upgrade — it's a rethink. Powered by OsmiumLLM, the world's smartest educational model, it goes beyond academics: it mentors, predicts, and monitors student mental health. Deployed with 276 students at Rai University, Ahmedabad.",
     callout: { label: "Historic Achievement", text: "Outperformed leading global LLMs in benchmarked educational content generation (August 15, 2025)." },
     author: "Varun Yadav, Co-Founder & Director", readTime: "12 min read",
     tags: ["AI", "EdTech", "Education"],

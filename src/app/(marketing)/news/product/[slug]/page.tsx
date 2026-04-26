@@ -23,10 +23,12 @@ function badgeChip(badge: string) {
 const productArticles: Record<string, {
   title: string; badge: string; date: string; image: string;
   hero: string; tryLink?: string; tryLabel?: string;
+  noBanner?: boolean;
   sections: { heading: string; body: string; bullets?: string[]; }[];
   metrics?: { label: string; value: string }[];
   callout?: { label: string; text: string };
   achievements?: { title: string; desc: string; tag: string; tagColor: string }[];
+  benchmarkTable?: { headers: string[]; rows: { model: string; scores: number[]; highlight?: boolean }[]; };
   benchmarks?: { title: string; columns: { heading: string; items: string[] }[] };
   benchmarkCallout?: { label: string; text: string };
   enterprise?: { intro: string; columns: { heading: string; items: string[] }[] };
@@ -93,7 +95,45 @@ console.log(result.questions);`,
     quote: "Learning should feel calm, guided, and deeply personal — not cluttered or mechanical.",
     author: "Varun Yadav, Co-Founder & Director", readTime: "12 min read",
     tags: ["AI", "EdTech", "Education"],
-    related: [{ slug: "natraj", title: "Natraj AR Platform", badge: "Feature Update", desc: "AR + AI-powered anatomy learning platform" }],
+    related: [{ slug: "osmiumllm", title: "OsmiumLLM Benchmark", badge: "Flagship", desc: "World's smartest educational LLM" }, { slug: "natraj", title: "Natraj AR Platform", badge: "Feature Update", desc: "AR + AI-powered anatomy learning platform" }],
+  },
+  "osmiumllm": {
+    title: "OsmiumLLM: A Global Benchmark in Education-Focused AI",
+    badge: "Flagship Launch", date: "Aug 15, 2025",
+    image: "/assets/osmium-mockup.png",
+    noBanner: true,
+    hero: "Osmium has emerged as the world's smartest educational LLM, surpassing even the newly released GPT-5. With a massive 96B parameters trained exclusively for education, it sets a new global benchmark in the domain, redefining the future of AI-powered learning.",
+    tryLink: "https://www.osmium.co.in/", tryLabel: "Try OsmiumLLM",
+    callout: { label: "Global #1 in Education AI", text: "OsmiumLLM scored 98 in High School Academics and 97 in Reasoning — outperforming GPT-5, Claude 4 (Opus), Gemini 2.5 Pro, DeepSeek R1, and Llama 4 across all five educational benchmarks." },
+    benchmarkTable: {
+      headers: ["Model", "High School Academics", "Higher Academics", "Mental Health", "General Knowledge", "Reasoning"],
+      rows: [
+        { model: "OsmiumLLM", scores: [98, 96, 82, 92, 97], highlight: true },
+        { model: "GPT-5", scores: [97, 95, 85, 97, 95] },
+        { model: "Claude 4 (Opus)", scores: [93, 93, 87, 94, 93] },
+        { model: "Gemini 2.5 Pro", scores: [94, 93, 86, 96, 94] },
+        { model: "DeepSeek R1", scores: [91, 92, 80, 90, 92] },
+        { model: "GPT-4.5/o3", scores: [92, 91, 81, 83, 90] },
+        { model: "Grok 3", scores: [91, 90, 79, 91, 93] },
+        { model: "Llama 4", scores: [89, 88, 78, 89, 88] },
+      ],
+    },
+    sections: [
+      { heading: "Why OsmiumLLM Leads", body: "Unlike general-purpose LLMs that treat education as a secondary capability, OsmiumLLM was architectured from the ground up for learning. Its 96 billion parameters are trained on curated educational corpora spanning NCERT, JEE, NEET, GATE, university-level curricula, and competitive exam datasets — making it the most domain-specialized model in production today.", bullets: ["96B parameters trained exclusively on educational datasets", "Purpose-built architecture for pedagogy, not generic chat", "Covers school to postgraduate — NCERT, JEE, NEET, GATE, and beyond", "Outperforms GPT-5, Claude 4, and Gemini 2.5 Pro in head-to-head benchmarks"] },
+      { heading: "Personalized Learning at Scale", body: "OsmiumLLM doesn't just answer questions — it understands how each student learns. It adapts content difficulty, pacing, and format in real time based on individual performance patterns, weak areas, and cognitive load.", bullets: ["Adaptive difficulty that responds to student performance in real time", "Personalized study plans based on weak-area analysis", "Context-aware explanations that match the student's level", "Multi-format output: video recommendations, flashcards, and detailed solutions"] },
+      { heading: "AI Mentorship & Mental Wellness", body: "Education isn't just about grades. OsmiumLLM integrates proactive mentorship and mental health monitoring to ensure students stay motivated, focused, and balanced through exam preparation.", bullets: ["AI mentor that identifies burnout signals early", "Exam anxiety detection and coping strategy suggestions", "Career guidance based on academic strengths and interests", "Motivational nudges timed to individual study patterns"] },
+      { heading: "Predictive Test Generation", body: "OsmiumLLM's most powerful capability — generating mock exams that predict real questions. By analyzing years of question patterns across JEE, NEET, and GATE, it produces practice papers with up to 50% overlap with actual exam content.", bullets: ["Pattern analysis across 10+ years of competitive exam papers", "Up to 50% predictive accuracy with real exam questions", "Difficulty-calibrated tests that mirror actual exam structure", "Instant detailed analysis with performance insights after every attempt"] },
+    ],
+    achievements: [
+      { title: "#1 in High School Academics", desc: "Scored 98 — the highest of any LLM including GPT-5 (97) and Gemini 2.5 Pro (94)", tag: "Global Leader", tagColor: "text-purple-600" },
+      { title: "#1 in Reasoning", desc: "Scored 97 in logical reasoning — ahead of GPT-5 (95) and Claude 4 (93)", tag: "Reasoning", tagColor: "text-blue-600" },
+      { title: "96B Parameters", desc: "Purpose-built architecture trained exclusively for education", tag: "Education-First", tagColor: "text-green-600" },
+      { title: "50% Exam Prediction", desc: "Up to 50% overlap between AI-generated and real exam questions", tag: "Proven Accuracy", tagColor: "text-pink-600" },
+    ],
+    quote: "We didn't build another chatbot. We built the world's most intelligent education engine.",
+    author: "Varun Yadav, Co-Founder & Director", readTime: "10 min read",
+    tags: ["LLM", "AI", "Education", "Benchmark"],
+    related: [{ slug: "osmium", title: "Osmium AI 2.0 Platform", badge: "Flagship Launch", desc: "The platform powered by OsmiumLLM" }],
   },
   "natraj": {
     title: "Natraj: AR + AI Anatomy Learning Platform",
@@ -103,10 +143,9 @@ console.log(result.questions);`,
     tryLink: "https://natraj.navchetna.tech", tryLabel: "Try Now",
     callout: { label: "Key Innovation", text: "Immersive AR overlays and AI-driven tutoring that provide interactive, clinically accurate insights tailored to students' needs." },
     sections: [
-      { heading: "Skeletal System (Phase 1)", body: "AR Body Scan and 3D Bone Visualization.", bullets: ["AR Body Scan: Overlay skeletal structures in real time", "3D Bone Visualization: Explore accurate anatomical proportions", "Interactive Labels: Tap to reveal names, functions, and clinical notes", "AI Q&A: Instant answers on anatomy and pathology"] },
-      { heading: "Fracture & Pathology Simulation (Phase 2)", body: "Realistic clinical simulations for deeper understanding.", bullets: ["Realistic fracture demonstrations", "Animated healing stage overlays", "Pediatric vs. adult anatomy comparisons"] },
-      { heading: "Advanced Learning Capabilities (Phase 5)", body: "AI Tutor, VR Mode, and Surgical Training.", bullets: ["AI Tutor: Guided lessons, quizzes, and explanations", "Virtual Reality Mode: Full-body immersive simulations", "Surgical Training Simulations: Safe practice modules for professionals"] },
-      { heading: "Collaboration Features", body: "Natraj supports seamless educational collaboration with classroom-focused features.", bullets: ["Shared AR sessions with synchronized views", "Instructor-led annotations and walkthroughs", "Role-based permissions for educators and students", "Integrated review workflows"] },
+      { heading: "Skeletal System (Phase 1)", body: "AR Body Scan and 3D Bone Visualization — explore the human skeleton like never before.", bullets: ["AR Body Scan: Overlay skeletal structures in real time", "3D Bone Visualization: Accurate anatomical proportions", "Interactive Labels: Tap to reveal names, functions, and clinical notes", "AI Q&A: Instant answers on anatomy and pathology"] },
+      { heading: "Fracture & Pathology Simulation (Phase 2)", body: "Realistic clinical simulations that deepen understanding of injury, disease, and healing.", bullets: ["Realistic fracture demonstrations with visual overlays", "Animated healing stage progressions", "Pediatric vs. adult anatomy comparisons"] },
+      { heading: "Advanced Learning Capabilities (Phase 5)", body: "AI Tutor, VR Mode, and Surgical Training — the full spectrum of immersive medical education.", bullets: ["AI Tutor: Guided lessons, quizzes, and instant explanations", "Virtual Reality Mode: Full-body immersive simulations", "Surgical Training: Safe practice modules for professionals"] },
     ],
     achievements: [
       { title: "Knowledge Retention", desc: "+40% improvement in anatomy knowledge retention vs traditional methods", tag: "Validated", tagColor: "text-green-600" },
@@ -114,13 +153,6 @@ console.log(result.questions);`,
       { title: "Engagement Increase", desc: "+60% student engagement compared to textbook-based learning", tag: "Interactive", tagColor: "text-purple-600" },
       { title: "Mobile-First Design", desc: "Built for accessibility — works on any modern smartphone camera", tag: "Universal Access", tagColor: "text-pink-600" },
     ],
-    enterprise: {
-      intro: "Natraj is designed for medical institutions with scalable, secure deployment:",
-      columns: [
-        { heading: "Deployment & Access", items: ["Mobile-first AR on any modern device", "Offline-capable 3D model caching", "Institution-wide license management"] },
-        { heading: "Content & Accuracy", items: ["Clinically verified anatomical models", "Regular updates with peer-reviewed data", "Multi-language support for regional institutions"] },
-      ],
-    },
     author: "Navchetna EdTech Team", readTime: "10 min read",
     tags: ["AR", "AI", "EdTech"],
     related: [{ slug: "osmium", title: "Osmium AI 2.0 Platform", badge: "Flagship Launch", desc: "Revolutionary AI platform for personalized learning" }],
@@ -287,8 +319,8 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
 
         {/* Hero */}
         <ScrollReveal>
-          <div className="mb-12">
-            <div className="flex items-center gap-3 mb-6">
+          <div className="mb-14">
+            <div className="flex items-center gap-3 mb-7">
               <span className={badgeChip(article.badge)}>{article.badge}</span>
               <span className="text-[12px] text-black/35 flex items-center gap-1.5" style={{ fontFamily: "'Inter', sans-serif" }}>
                 <Calendar className="size-3" />
@@ -296,51 +328,99 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
               </span>
             </div>
             <h1
-              className="text-black mb-10"
-              style={{ fontFamily: "var(--font-waldenburg)", fontSize: "clamp(1.6rem, 3.2vw, 2.2rem)", lineHeight: 1.1, letterSpacing: "-0.03em" }}
+              className="text-black mb-16"
+              style={{ fontFamily: "var(--font-waldenburg)", fontSize: "clamp(1.6rem, 3.2vw, 2.2rem)", lineHeight: 1.08, letterSpacing: "-0.03em" }}
             >
               {article.title}
             </h1>
-            <p className="text-[0.9rem] text-black/75 leading-[1.7] max-w-2xl" style={{ fontFamily: "'Inter', sans-serif" }}>
+            <p className="text-[0.925rem] text-black/70 leading-[1.75] max-w-2xl" style={{ fontFamily: "'Inter', sans-serif" }}>
               {article.hero}
             </p>
             {article.tryLink && (
               <Link href={article.tryLink} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-8 bg-black text-white text-[13px] font-semibold px-6 py-3 rounded-full hover:bg-black/80 transition-colors">
+                className="inline-flex items-center gap-2 mt-9 bg-black text-white text-[13px] font-semibold px-6 py-3 rounded-full hover:bg-black/80 transition-colors">
                 {article.tryLabel || "Try Now"} <ArrowUpRight className="size-3.5" />
               </Link>
             )}
           </div>
         </ScrollReveal>
 
-        <div className="border-t border-black/[0.07] mb-12" />
+        <div className="border-t border-black/[0.07] mb-14" />
 
-        {/* Banner Image — lazy loaded to prevent lag */}
-        <ScrollReveal>
-          <div className="relative w-full aspect-[16/9] mb-14 overflow-hidden rounded-md border border-black/[0.07] bg-black/[0.02]">
-            <Image
-              src={article.image}
-              alt={article.title}
-              fill
-              sizes="(max-width: 768px) 100vw, 800px"
-              className="object-cover"
-              quality={75}
-              loading="lazy"
-            />
-          </div>
-        </ScrollReveal>
+        {/* Banner Image — conditional */}
+        {!article.noBanner && (
+          <ScrollReveal>
+            <div className="relative w-full aspect-[16/9] mb-16 overflow-hidden rounded-xl border border-black/[0.07] bg-black/[0.02]">
+              <Image
+                src={article.image}
+                alt={article.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 800px"
+                className="object-cover"
+                quality={75}
+                loading="lazy"
+              />
+            </div>
+          </ScrollReveal>
+        )}
 
-        {/* Callout — purple left border style */}
+        {/* Callout — accent left border */}
         {article.callout && (
           <ScrollReveal>
-            <div className="mb-14 rounded-xl overflow-hidden" style={{ background: "linear-gradient(135deg, rgba(139,92,246,0.06) 0%, rgba(139,92,246,0.02) 100%)", border: "1px solid rgba(139,92,246,0.1)" }}>
+            <div className="mb-16 rounded-xl overflow-hidden" style={{ background: "linear-gradient(135deg, rgba(139,92,246,0.055) 0%, rgba(139,92,246,0.015) 100%)", border: "1px solid rgba(139,92,246,0.12)" }}>
               <div className="flex">
-                <div className="w-1 shrink-0" style={{ background: "rgb(139,92,246)" }} />
-                <div className="px-7 py-6">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-3" style={{ color: "rgb(139,92,246)" }}>{article.callout.label}</p>
-                  <p className="text-[0.9rem] text-black/80 leading-[1.7]" style={{ fontFamily: "'Inter', sans-serif" }}>{article.callout.text}</p>
+                <div className="w-[3px] shrink-0 rounded-l-xl" style={{ background: "rgb(139,92,246)" }} />
+                <div className="px-7 py-7">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-3.5" style={{ color: "rgb(139,92,246)" }}>{article.callout.label}</p>
+                  <p className="text-[0.9rem] text-black/80 leading-[1.75]" style={{ fontFamily: "'Inter', sans-serif" }}>{article.callout.text}</p>
                 </div>
               </div>
+            </div>
+          </ScrollReveal>
+        )}
+
+        {/* Benchmark Comparison Table */}
+        {article.benchmarkTable && (
+          <ScrollReveal>
+            <div className="mb-16">
+              <h2 className="text-black mb-14" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
+                Education-Focused LLM Benchmark
+              </h2>
+              <div className="rounded-xl border border-black/[0.08] overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left" style={{ fontFamily: "'Inter', sans-serif" }}>
+                    <thead>
+                      <tr style={{ background: "rgba(0,0,0,0.03)" }}>
+                        {article.benchmarkTable.headers.map((h, i) => (
+                          <th key={i} className="px-5 py-4 text-[0.72rem] font-bold uppercase tracking-[0.1em] text-black/50 whitespace-nowrap border-b border-black/[0.06]">
+                            {h}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {article.benchmarkTable.rows.map((row) => (
+                        <tr key={row.model} className="border-b border-black/[0.05] last:border-0" style={row.highlight ? { background: "linear-gradient(90deg, rgba(139,92,246,0.06) 0%, rgba(139,92,246,0.02) 100%)" } : {}}>
+                          <td className={`px-5 py-3.5 text-[0.82rem] whitespace-nowrap ${row.highlight ? "font-bold text-black" : "font-medium text-black/75"}`}>
+                            {row.model}
+                          </td>
+                          {row.scores.map((score, i) => {
+                            const isTopInCol = article.benchmarkTable!.rows.every(r => score >= r.scores[i]);
+                            return (
+                              <td key={i} className={`px-5 py-3.5 text-[0.82rem] tabular-nums ${row.highlight ? "font-bold text-black" : isTopInCol ? "font-semibold text-black/85" : "text-black/60"}`}>
+                                {score}
+                              </td>
+                            );
+                          })}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-[0.78rem] text-black/40 mt-4 leading-[1.65]" style={{ fontFamily: "'Inter', sans-serif" }}>
+                Benchmark scores based on standardized educational content evaluation across five domains. Higher is better.
+              </p>
             </div>
           </ScrollReveal>
         )}
@@ -348,16 +428,16 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
         {/* Key Achievements — 2×2 card grid */}
         {article.achievements && (
           <ScrollReveal>
-            <div className="mb-14">
-              <h2 className="text-black mb-8" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.02em", lineHeight: 1.25 }}>
+            <div className="mb-16">
+              <h2 className="text-black mb-14" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
                 Key Achievements
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {article.achievements.map((a) => (
-                  <div key={a.title} className="border border-black/[0.07] rounded-xl p-6">
-                    <h3 className="text-[0.95rem] text-black font-medium mb-2" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.01em" }}>{a.title}</h3>
-                    <p className="text-[0.82rem] text-black/60 leading-[1.65] mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>{a.desc}</p>
-                    <span className={`text-[0.75rem] font-semibold ${a.tagColor}`} style={{ fontFamily: "'Inter', sans-serif" }}>{a.tag}</span>
+                  <div key={a.title} className="border border-black/[0.08] rounded-xl p-6 hover:border-black/[0.14] transition-colors" style={{ background: "linear-gradient(145deg, #ffffff 0%, rgba(0,0,0,0.008) 100%)" }}>
+                    <h3 className="text-[0.95rem] text-black font-semibold mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.01em" }}>{a.title}</h3>
+                    <p className="text-[0.82rem] text-black/58 leading-[1.7] mb-4" style={{ fontFamily: "'Inter', sans-serif" }}>{a.desc}</p>
+                    <span className={`inline-block text-[0.72rem] font-semibold px-2.5 py-1 rounded-full ${a.tagColor}`} style={{ fontFamily: "'Inter', sans-serif", background: "rgba(0,0,0,0.035)" }}>{a.tag}</span>
                   </div>
                 ))}
               </div>
@@ -365,26 +445,26 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
           </ScrollReveal>
         )}
 
-        {/* Sections */}
-        <div className="space-y-14">
+        {/* Sections — pill-card layout instead of plain dots */}
+        <div className="space-y-16">
           {article.sections.map((s, i) => (
             <ScrollReveal key={i}>
               <div>
-                <h2 className="text-black mb-8" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.15rem", letterSpacing: "-0.02em", lineHeight: 1.25 }}>
+                <h2 className="text-black mb-14" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.2rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
                   {s.heading}
                 </h2>
-                <p className="text-[0.875rem] text-black/80 leading-[1.7] mb-5" style={{ fontFamily: "'Inter', sans-serif" }}>
+                <p className="text-[0.9rem] text-black/72 leading-[1.75] mb-8" style={{ fontFamily: "'Inter', sans-serif" }}>
                   {s.body}
                 </p>
                 {s.bullets && (
-                  <ul className="space-y-3 pl-1">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {s.bullets.map((b, j) => (
-                      <li key={j} className="flex items-start gap-3 text-[0.855rem] text-black/75 leading-[1.7]" style={{ fontFamily: "'Inter', sans-serif" }}>
-                        <span className="mt-[0.55rem] size-1.5 rounded-full bg-black/40 shrink-0" />
-                        {b}
-                      </li>
+                      <div key={j} className="flex items-start gap-3 px-4 py-3.5 rounded-lg border border-black/[0.06]" style={{ background: "linear-gradient(135deg, rgba(0,0,0,0.018) 0%, rgba(0,0,0,0.005) 100%)" }}>
+                        <span className="mt-[0.35rem] size-1.5 rounded-full bg-black/25 shrink-0" />
+                        <span className="text-[0.82rem] text-black/70 leading-[1.65]" style={{ fontFamily: "'Inter', sans-serif" }}>{b}</span>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 )}
               </div>
             </ScrollReveal>
@@ -394,20 +474,20 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
         {/* Performance Benchmarks */}
         {article.benchmarks && (
           <ScrollReveal>
-            <div className="mt-16">
-              <h2 className="text-black mb-8" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.02em", lineHeight: 1.25 }}>
+            <div className="mt-18">
+              <h2 className="text-black mb-14" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
                 Performance Benchmarks
               </h2>
-              <div className="rounded-xl p-6 sm:p-8 mb-6" style={{ background: "linear-gradient(135deg, rgba(59,130,246,0.04) 0%, rgba(59,130,246,0.01) 100%)", border: "1px solid rgba(59,130,246,0.1)" }}>
-                <h3 className="text-[0.95rem] text-black font-medium mb-6" style={{ fontFamily: "var(--font-waldenburg)" }}>{article.benchmarks.title}</h3>
+              <div className="rounded-xl p-7 sm:p-9 mb-6" style={{ background: "linear-gradient(135deg, rgba(59,130,246,0.045) 0%, rgba(59,130,246,0.01) 100%)", border: "1px solid rgba(59,130,246,0.12)" }}>
+                <h3 className="text-[0.95rem] text-black font-semibold mb-8" style={{ fontFamily: "var(--font-waldenburg)" }}>{article.benchmarks.title}</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                   {article.benchmarks.columns.map((col) => (
                     <div key={col.heading}>
-                      <h4 className="text-[0.82rem] font-semibold text-black/90 mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>{col.heading}</h4>
-                      <ul className="space-y-2.5">
+                      <h4 className="text-[0.8rem] font-bold text-black/80 mb-4 uppercase tracking-[0.08em]" style={{ fontFamily: "'Inter', sans-serif" }}>{col.heading}</h4>
+                      <ul className="space-y-3">
                         {col.items.map((item, i) => (
-                          <li key={i} className="flex items-start gap-2.5 text-[0.8rem] text-black/65 leading-[1.6]" style={{ fontFamily: "'Inter', sans-serif" }}>
-                            <span className="mt-[0.45rem] size-1 rounded-full bg-black/30 shrink-0" />
+                          <li key={i} className="flex items-start gap-3 text-[0.82rem] text-black/65 leading-[1.65]" style={{ fontFamily: "'Inter', sans-serif" }}>
+                            <span className="mt-[0.45rem] size-1 rounded-full bg-blue-400/60 shrink-0" />
                             {item}
                           </li>
                         ))}
@@ -423,12 +503,12 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
         {/* Benchmark Callout */}
         {article.benchmarkCallout && (
           <ScrollReveal>
-            <div className="mb-14 rounded-xl overflow-hidden" style={{ background: "linear-gradient(135deg, rgba(59,130,246,0.06) 0%, rgba(59,130,246,0.02) 100%)", border: "1px solid rgba(59,130,246,0.12)" }}>
+            <div className="mb-16 rounded-xl overflow-hidden" style={{ background: "linear-gradient(135deg, rgba(59,130,246,0.055) 0%, rgba(59,130,246,0.015) 100%)", border: "1px solid rgba(59,130,246,0.14)" }}>
               <div className="flex">
-                <div className="w-1 shrink-0" style={{ background: "rgb(59,130,246)" }} />
-                <div className="px-7 py-5">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: "rgb(37,99,235)" }}>{article.benchmarkCallout.label}</p>
-                  <p className="text-[0.85rem] text-black/70 leading-[1.7]" style={{ fontFamily: "'Inter', sans-serif" }}>{article.benchmarkCallout.text}</p>
+                <div className="w-[3px] shrink-0 rounded-l-xl" style={{ background: "rgb(59,130,246)" }} />
+                <div className="px-7 py-6">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2.5" style={{ color: "rgb(37,99,235)" }}>{article.benchmarkCallout.label}</p>
+                  <p className="text-[0.87rem] text-black/72 leading-[1.75]" style={{ fontFamily: "'Inter', sans-serif" }}>{article.benchmarkCallout.text}</p>
                 </div>
               </div>
             </div>
@@ -438,19 +518,19 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
         {/* Enterprise Features */}
         {article.enterprise && (
           <ScrollReveal>
-            <div className="mb-14">
-              <h2 className="text-black mb-6" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.02em", lineHeight: 1.25 }}>
+            <div className="mb-16">
+              <h2 className="text-black mb-14" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
                 Enterprise Features
               </h2>
-              <p className="text-[0.875rem] text-black/75 leading-[1.7] mb-6" style={{ fontFamily: "'Inter', sans-serif" }}>{article.enterprise.intro}</p>
+              <p className="text-[0.9rem] text-black/68 leading-[1.75] mb-8" style={{ fontFamily: "'Inter', sans-serif" }}>{article.enterprise.intro}</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {article.enterprise.columns.map((col) => (
-                  <div key={col.heading} className="rounded-xl p-6" style={{ background: "linear-gradient(135deg, rgba(59,130,246,0.04) 0%, rgba(59,130,246,0.01) 100%)", border: "1px solid rgba(59,130,246,0.08)" }}>
-                    <h3 className="text-[0.9rem] font-semibold text-black/90 mb-4" style={{ fontFamily: "var(--font-waldenburg)" }}>{col.heading}</h3>
+                  <div key={col.heading} className="rounded-xl p-6" style={{ background: "linear-gradient(135deg, rgba(59,130,246,0.04) 0%, rgba(59,130,246,0.01) 100%)", border: "1px solid rgba(59,130,246,0.1)" }}>
+                    <h3 className="text-[0.9rem] font-semibold text-black mb-5" style={{ fontFamily: "var(--font-waldenburg)" }}>{col.heading}</h3>
                     <ul className="space-y-3">
                       {col.items.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-[0.82rem] text-black/65 leading-[1.6]" style={{ fontFamily: "'Inter', sans-serif" }}>
-                          <span className="mt-[0.45rem] size-1 rounded-full bg-black/30 shrink-0" />
+                        <li key={i} className="flex items-start gap-3 text-[0.82rem] text-black/65 leading-[1.65]" style={{ fontFamily: "'Inter', sans-serif" }}>
+                          <span className="mt-[0.45rem] size-1 rounded-full bg-blue-400/60 shrink-0" />
                           {item}
                         </li>
                       ))}
@@ -465,14 +545,20 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
         {/* Integration APIs — Code Example */}
         {article.codeExample && (
           <ScrollReveal>
-            <div className="mb-14">
-              <h2 className="text-black mb-6" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.02em", lineHeight: 1.25 }}>
+            <div className="mb-16">
+              <h2 className="text-black mb-14" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
                 Integration APIs
               </h2>
-              <p className="text-[0.875rem] text-black/75 leading-[1.7] mb-6" style={{ fontFamily: "'Inter', sans-serif" }}>{article.codeExample.intro}</p>
-              <div className="rounded-xl overflow-hidden" style={{ background: "#1a2332", border: "1px solid rgba(255,255,255,0.06)" }}>
+              <p className="text-[0.9rem] text-black/68 leading-[1.75] mb-7" style={{ fontFamily: "'Inter', sans-serif" }}>{article.codeExample.intro}</p>
+              <div className="rounded-xl overflow-hidden" style={{ background: "#111827", border: "1px solid rgba(255,255,255,0.07)" }}>
+                <div className="px-5 py-3 border-b border-white/[0.06] flex items-center gap-2">
+                  <span className="size-2.5 rounded-full bg-red-400/60" />
+                  <span className="size-2.5 rounded-full bg-yellow-400/60" />
+                  <span className="size-2.5 rounded-full bg-green-400/60" />
+                  <span className="ml-3 text-[11px] text-white/25" style={{ fontFamily: "'Inter', sans-serif" }}>osmium-client.js</span>
+                </div>
                 <pre className="p-6 sm:p-8 overflow-x-auto">
-                  <code className="text-[0.8rem] leading-[1.8] block" style={{ fontFamily: "'Fira Code', 'JetBrains Mono', monospace", color: "rgba(148,210,162,0.9)" }}>
+                  <code className="text-[0.8rem] leading-[1.85] block whitespace-pre" style={{ fontFamily: "'Fira Code', 'JetBrains Mono', 'Courier New', monospace", color: "rgba(134,239,172,0.88)" }}>
                     {article.codeExample.code}
                   </code>
                 </pre>
@@ -484,19 +570,19 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
         {/* Migration Guide */}
         {article.migration && (
           <ScrollReveal>
-            <div className="mb-14">
-              <h2 className="text-black mb-6" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.02em", lineHeight: 1.25 }}>
+            <div className="mb-16">
+              <h2 className="text-black mb-14" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
                 Migration Guide
               </h2>
-              <p className="text-[0.875rem] text-black/75 leading-[1.7] mb-6" style={{ fontFamily: "'Inter', sans-serif" }}>{article.migration.intro}</p>
-              <ol className="space-y-4 pl-1">
+              <p className="text-[0.9rem] text-black/68 leading-[1.75] mb-8" style={{ fontFamily: "'Inter', sans-serif" }}>{article.migration.intro}</p>
+              <div className="space-y-3">
                 {article.migration.steps.map((step, i) => (
-                  <li key={i} className="flex items-start gap-4 text-[0.855rem] text-black/75 leading-[1.7]" style={{ fontFamily: "'Inter', sans-serif" }}>
-                    <span className="shrink-0 text-[0.8rem] font-semibold text-black/40 mt-[1px]" style={{ fontFamily: "'Inter', sans-serif" }}>{i + 1}.</span>
-                    {step}
-                  </li>
+                  <div key={i} className="flex items-start gap-4 px-5 py-4 rounded-lg border border-black/[0.06]" style={{ background: "linear-gradient(135deg, rgba(0,0,0,0.018) 0%, rgba(0,0,0,0.005) 100%)" }}>
+                    <span className="shrink-0 size-6 flex items-center justify-center rounded-full bg-black/[0.06] text-[0.72rem] font-bold text-black/50 mt-[1px]" style={{ fontFamily: "'Inter', sans-serif" }}>{i + 1}</span>
+                    <span className="text-[0.875rem] text-black/72 leading-[1.7] pt-[2px]" style={{ fontFamily: "'Inter', sans-serif" }}>{step}</span>
+                  </div>
                 ))}
-              </ol>
+              </div>
             </div>
           </ScrollReveal>
         )}
@@ -504,8 +590,8 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
         {/* Pull Quote */}
         {(article as { quote?: string }).quote && (
           <ScrollReveal>
-            <blockquote className="my-16 pl-6 border-l-2 border-black/20">
-              <p className="text-[1.1rem] text-black/50 leading-[1.75] italic" style={{ fontFamily: "'Instrument Serif', serif" }}>
+            <blockquote className="my-18 pl-7 border-l-[3px] border-black/15">
+              <p className="text-[1.05rem] text-black/45 leading-[1.8] italic" style={{ fontFamily: "'Instrument Serif', serif" }}>
                 &ldquo;{(article as { quote?: string }).quote}&rdquo;
               </p>
             </blockquote>
@@ -513,7 +599,7 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
         )}
 
         {/* Footer meta */}
-        <div className="border-t border-black/[0.07] mt-16 pt-8 flex flex-wrap items-center gap-3">
+        <div className="border-t border-black/[0.07] mt-18 pt-8 flex flex-wrap items-center gap-3">
           <span className="text-[12.5px] text-black/35 flex-1" style={{ fontFamily: "'Inter', sans-serif" }}>
             {article.author} · {article.readTime}
           </span>
@@ -530,15 +616,15 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
         {article.related && article.related.length > 0 && (
           <ScrollReveal>
             <div className="mt-16 pt-10 border-t border-black/[0.07]">
-              <p className="text-[10px] uppercase tracking-[0.18em] font-bold text-black/30 mb-6">Related Articles</p>
+              <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-black/30 mb-7">Related Articles</p>
               <div className="flex flex-col gap-3">
                 {article.related.map((r) => (
                   <Link key={r.slug} href={`/news/product/${r.slug}`}
-                    className="group flex items-center justify-between p-5 rounded-2xl border border-black/[0.07] hover:bg-black/[0.02] transition-colors">
+                    className="group flex items-center justify-between p-5 rounded-xl border border-black/[0.07] hover:border-black/[0.14] hover:bg-black/[0.015] transition-all">
                     <div>
-                      <span className="text-[10px] uppercase tracking-wider font-semibold text-black/30 mb-1.5 block">{r.badge}</span>
+                      <span className="text-[10px] uppercase tracking-wider font-semibold text-black/30 mb-2 block">{r.badge}</span>
                       <p className="text-[1rem] text-black" style={{ fontFamily: "var(--font-waldenburg)" }}>{r.title}</p>
-                      <p className="text-[13px] text-black/45 mt-1 leading-relaxed">{r.desc}</p>
+                      <p className="text-[13px] text-black/45 mt-1.5 leading-relaxed">{r.desc}</p>
                     </div>
                     <ArrowUpRight className="size-4 text-black/25 group-hover:text-black transition-colors shrink-0 ml-6" />
                   </Link>
