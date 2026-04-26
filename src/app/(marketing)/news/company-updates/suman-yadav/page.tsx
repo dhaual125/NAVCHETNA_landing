@@ -78,11 +78,11 @@ export default function SumanProfilePage() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-16 lg:gap-20">
 
           {/* Left Column: Biography */}
-          <div className="space-y-8 text-black/75" style={{ fontFamily: "'Inter', sans-serif", fontSize: "13.5px", lineHeight: 1.7 }}>
+          <div className="space-y-8 text-black/85" style={{ fontFamily: "'Inter', sans-serif", fontSize: "13.5px", lineHeight: 1.7 }}>
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>About Suman</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>About Suman</h2>
                 <p className="mb-4">
                   I&apos;m Suman Yadav, Co-Founder and Head of Design at Navchetna. Coming from a humble background, I&apos;ve always believed that technology can change lives — especially for students like me who dream of creating something meaningful despite limited resources.
                 </p>
@@ -94,7 +94,7 @@ export default function SumanProfilePage() {
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Design at Navchetna</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Design at Navchetna</h2>
                 <p className="mb-4">
                   At Navchetna, I channel this vision into design — crafting experiences that are not only functional but also inspiring. My story is proof that you don&apos;t need to have it all figured out to start — you just need the courage to begin.
                 </p>
@@ -106,7 +106,7 @@ export default function SumanProfilePage() {
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Design Philosophy</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Design Philosophy</h2>
                 <p className="mb-4">
                   My approach to design is rooted in the belief that technology should be accessible to everyone, regardless of their background or resources. Every interface, every interaction, and every experience we create at Navchetna is designed with the student in mind — those who dare to dream big despite facing challenges.
                 </p>
@@ -118,7 +118,7 @@ export default function SumanProfilePage() {
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Impact & Vision</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Impact & Vision</h2>
                 <p className="mb-4">
                   At Navchetna, my role extends beyond traditional design. I&apos;m committed to creating solutions that bridge the gap between advanced AI technology and students who need it most. My vision is to ensure that every young mind, regardless of their economic background, has access to tools that can transform their educational journey.
                 </p>
@@ -161,7 +161,7 @@ export default function SumanProfilePage() {
                   </li>
                   <li className="flex flex-col">
                     <span className="text-[12.5px] font-semibold text-black/80">Co-Founder</span>
-                    <span className="text-[11px] text-black/50 mt-0.5">Osmium — AI EdTech Platform</span>
+                    <span className="text-[11px] text-black/50 mt-0.5">Osmium AI — AI EdTech Platform</span>
                   </li>
                 </ul>
               </div>

@@ -8,7 +8,7 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 const launchedProducts = [
   {
     id: "osmium",
-    name: "Osmium",
+    name: "Osmium AI",
     tag: "EdTech Platform",
     category: "Education",
     image: "/assets/osmium-mockup.png",
@@ -66,7 +66,7 @@ const comingSoonProducts = [
   },
   {
     id: "crm",
-    name: "CRM",
+    name: "Vyom",
     tag: "Customer Relationship",
     category: "Enterprise",
     image: "/assets/Frame 110.png",
@@ -84,7 +84,7 @@ const comingSoonProducts = [
   },
   {
     id: "agentic_sde",
-    name: "Agentic SDE",
+    name: "Vega",
     tag: "Developer AI",
     category: "AI & Tools",
     image: "/assets/Frame 112.png",
@@ -93,7 +93,7 @@ const comingSoonProducts = [
   },
   {
     id: "unified_storage",
-    name: "Unified Storage",
+    name: "Yugm",
     tag: "Storage Platform",
     category: "Enterprise",
     image: "/assets/Frame 113.png",

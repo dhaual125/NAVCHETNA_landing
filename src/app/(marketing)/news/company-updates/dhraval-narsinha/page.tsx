@@ -80,7 +80,7 @@ export default function DhravalProfilePage() {
               "
             </span>
             <p className="relative z-10 text-base md:text-xl text-black/80 leading-relaxed" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.01em" }}>
-              From Diu to revolutionary AI EdTech — a journey of resilience, passion, and innovation. Co-Founder of Osmium, transforming education through technology despite every challenge.
+              From Diu to revolutionary AI EdTech — a journey of resilience, passion, and innovation. Co-Founder of Osmium AI, transforming education through technology despite every challenge.
             </p>
           </div>
         </ScrollReveal>
@@ -89,11 +89,11 @@ export default function DhravalProfilePage() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-16 lg:gap-20">
 
           {/* Left Column: Biography */}
-          <div className="space-y-8 text-black/75" style={{ fontFamily: "'Inter', sans-serif", fontSize: "13.5px", lineHeight: 1.7 }}>
+          <div className="space-y-8 text-black/85" style={{ fontFamily: "'Inter', sans-serif", fontSize: "13.5px", lineHeight: 1.7 }}>
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Early Life & Challenges</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Early Life & Challenges</h2>
                 <p className="mb-4">
                   I am Dhraval Narsinha, born on January 1, 2006, in Diu, into a middle class family. Life was not always easy as my family faced financial struggles, but those challenges only strengthened my determination to grow and succeed.
                 </p>
@@ -105,7 +105,7 @@ export default function DhravalProfilePage() {
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Overcoming Setbacks</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Overcoming Setbacks</h2>
                 <p className="mb-4">
                   It was a setback, and I had to leave Navodaya. I then enrolled at Government Higher Secondary School in Diu, where I completed my 11th and 12th standards and graduated with the Class of 2024.
                 </p>
@@ -117,31 +117,31 @@ export default function DhravalProfilePage() {
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>The Birth of Osmium</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>The Birth of Osmium AI</h2>
                 <p className="mb-4">
-                  It was at University that I met some of my closest friends — Ayushmaan, Swastik, Varun, and Suman. Together, we participated in a hackathon that became the birthplace of Osmium, an AI-driven EdTech platform.
+                  It was at University that I met some of my closest friends — Ayushmaan, Swastik, Varun, and Suman. Together, we participated in a hackathon that became the birthplace of Osmium AI, an AI-driven EdTech platform.
                 </p>
                 <p>
-                  From the very beginning, we decided Osmium would not remain just another hackathon project. We committed ourselves to building it at an industry level.
+                  From the very beginning, we decided Osmium AI would not remain just another hackathon project. We committed ourselves to building it at an industry level.
                 </p>
               </div>
             </ScrollReveal>
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Building the Future</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Building the Future</h2>
                 <p className="mb-4">
                   We kept refining it, adding advanced AI features, and even creating our own large language model. Every step was filled with challenges. We faced setbacks, technical difficulties, and moments of doubt. Yet, we never gave up.
                 </p>
                 <p>
-                  Our persistence turned Osmium into a revolutionary platform with the potential to transform education itself. To carry this vision forward, we founded NineLLMS Solutions Limited Liability Partnership, also known as Navchetna. Today, our team is actively working on Osmium, determined to create an impact that reaches learners everywhere.
+                  Our persistence turned Osmium AI into a revolutionary platform with the potential to transform education itself. To carry this vision forward, we founded NineLLMS Solutions Limited Liability Partnership, also known as Navchetna. Today, our team is actively working on Osmium AI, determined to create an impact that reaches learners everywhere.
                 </p>
               </div>
             </ScrollReveal>
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Team & Collaboration</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Team & Collaboration</h2>
                 <p className="mb-4">
                   The strength of our team lies in our shared vision and complementary skills. Working alongside Ayushmaan, Swastik, Varun, and Suman has been an incredible journey of learning, innovation, and mutual growth.
                 </p>
@@ -153,7 +153,7 @@ export default function DhravalProfilePage() {
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Philosophy & Commitment</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Philosophy & Commitment</h2>
                 <p className="mb-4">
                   Even now, I remain deeply committed to learning and developing new technologies. My journey from a curious child building models to becoming a driving force behind an innovative EdTech platform is proof that passion and persistence can shape dreams into reality.
                 </p>
@@ -193,7 +193,7 @@ export default function DhravalProfilePage() {
                   </li>
                   <li className="flex flex-col">
                     <span className="text-[12.5px] font-semibold text-black/80">Co-Creator</span>
-                    <span className="text-[11px] text-black/50 mt-0.5">Osmium — AI EdTech Platform</span>
+                    <span className="text-[11px] text-black/50 mt-0.5">Osmium AI — AI EdTech Platform</span>
                   </li>
                 </ul>
               </div>

@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "Products — NAVCHETNA TECHNOLOGIES",
-  description: "Explore Navchetna Technologies' AI-powered products: Osmium, Natraj, Aegis Auth, Kriya, LM Lens, and NSL.",
+  description: "Explore Navchetna Technologies' AI-powered products: Osmium AI, Natraj, Aegis Auth, Kriya, LM Lens, and NSL.",
 };
 
 export default function ProductsLayout({ children }: { children: ReactNode }) {

@@ -22,7 +22,7 @@ const articles = [
     date: "Dec 22, 2025",
     title: "Navchetna Technologies: Now a Government Recognized Startup",
     body: "Navchetna Technologies is officially a DPIIT Recognized Startup under the Startup India Initiative. This recognition validates our journey from five friends in Jodhpur to national innovators building enterprise-grade technology.",
-    callout: { label: "NineLLMs Solution", text: "Our proprietary NineLLMs ecosystem powers everything from Osmium's adaptive learning to Natraj's creative engines, establishing us as leaders in AI-driven innovation." },
+    callout: { label: "NineLLMs Solution", text: "Our proprietary NineLLMs ecosystem powers everything from Osmium AI's adaptive learning to Natraj's creative engines, establishing us as leaders in AI-driven innovation." },
     author: "Navchetna Team", readTime: "5 min read",
     tags: ["DPIIT", "Government", "Recognition"],
   },
@@ -30,8 +30,8 @@ const articles = [
     id: "research",
     badge: "Research",
     date: "Aug 15, 2025",
-    title: "Osmium Outperforms All Global LLMs in Educational Content Benchmarks",
-    body: "We are proud to announce that Osmium, Navchetna's flagship AI platform, has officially outperformed every existing large language model worldwide in the domain of educational content generation. This milestone, achieved on August 15, 2025, marks a historic step in our mission to revolutionize personalized learning and empower students globally.",
+    title: "Osmium AI Outperforms All Global LLMs in Educational Content Benchmarks",
+    body: "We are proud to announce that Osmium AI, Navchetna's flagship AI platform, has officially outperformed every existing large language model worldwide in the domain of educational content generation. This milestone, achieved on August 15, 2025, marks a historic step in our mission to revolutionize personalized learning and empower students globally.",
     callout: { label: "Benchmark Documentation", text: "The full benchmark methodology, evaluation criteria, and results are available in our official documentation." },
     author: "Research Department", readTime: "8 min read",
     tags: ["AI", "Research", "EdTech"],
@@ -71,7 +71,7 @@ const articles = [
     badge: "Partnership",
     date: "Jul 16, 2025",
     title: "Navchetna Collaborates with AWS",
-    body: "We are excited to announce our collaboration with Amazon Web Services to accelerate the growth of Osmium and our future products. This partnership provides access to world-class cloud infrastructure and advanced AI tools, enabling us to scale rapidly and deliver secure, reliable solutions to learners across the nation.",
+    body: "We are excited to announce our collaboration with Amazon Web Services to accelerate the growth of Osmium AI and our future products. This partnership provides access to world-class cloud infrastructure and advanced AI tools, enabling us to scale rapidly and deliver secure, reliable solutions to learners across the nation.",
     callout: { label: "Strategic Growth", text: "Through AWS, Navchetna will leverage Amazon S3, CloudFront, Cognito, and Bedrock to build the next generation of AI-powered educational technology." },
     author: "Editorial Dept.", readTime: "5 min read",
     tags: ["AWS", "Partnership", "Cloud"],
@@ -80,11 +80,11 @@ const articles = [
     id: "milestone",
     badge: "Milestone",
     date: "Sep 15, 2024",
-    title: "First Prototype of Osmium Completed",
-    body: "Just days after its inception, Navchetna achieved a major milestone with the creation of the first prototype of Osmium, our AI-driven EdTech platform. This early version validated our vision and proved that innovation, persistence, and teamwork could turn ideas into reality.",
-    callout: { label: "Key Milestone", text: "The prototype demonstrated adaptive mock test generation — the foundation of Osmium's future success as a revolutionary learning platform." },
+    title: "First Prototype of Osmium AI Completed",
+    body: "Just days after its inception, Navchetna achieved a major milestone with the creation of the first prototype of Osmium AI, our AI-driven EdTech platform. This early version validated our vision and proved that innovation, persistence, and teamwork could turn ideas into reality.",
+    callout: { label: "Key Milestone", text: "The prototype demonstrated adaptive mock test generation — the foundation of Osmium AI's future success as a revolutionary learning platform." },
     author: "Editorial Dept.", readTime: "4 min read",
-    tags: ["Osmium", "Milestone", "EdTech"],
+    tags: ["Osmium AI", "Milestone", "EdTech"],
   },
   {
     id: "foundation",
@@ -92,7 +92,7 @@ const articles = [
     date: "Sep 6, 2024",
     title: "The Birth of Navchetna",
     body: "On this day, Navchetna was born out of a shared vision to reshape the future of education through innovation and technology. Although unofficial at the time, the journey began with a small team of dreamers determined to create solutions that empower learners everywhere. This day marks the true beginning of our story.",
-    callout: { label: "Founding Spark", text: "Navchetna emerged from late-night discussions and bold ideas, setting the foundation for Osmium, our first product that would later define our mission." },
+    callout: { label: "Founding Spark", text: "Navchetna emerged from late-night discussions and bold ideas, setting the foundation for Osmium AI, our first product that would later define our mission." },
     author: "Editorial Dept.", readTime: "5 min read",
     tags: ["Founding", "Story", "Team"],
   },
@@ -139,17 +139,17 @@ export default function CompanyNewsPage() {
                       </div>
 
                       <h2
-                        className="text-[1.35rem] md:text-[1.6rem] leading-[1.2] text-black mb-5"
+                        className="text-[1.35rem] md:text-[1.6rem] leading-[1.2] text-black mb-9"
                         style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.022em" }}
                       >
                         {a.title}
                       </h2>
 
-                      <div className="space-y-4 text-[0.9rem] leading-[1.75] text-black/55" style={{ fontFamily: "'Inter', sans-serif" }}>
+                      <div className="space-y-4 text-[0.9rem] leading-[1.7] text-black/80" style={{ fontFamily: "'Inter', sans-serif" }}>
                         <p>{a.body}</p>
                         <div className="border border-black/[0.06] rounded-xl px-5 py-4">
                           <p className="text-[11px] font-semibold uppercase tracking-widest text-black/35 mb-1.5">{a.callout.label}</p>
-                          <p className="text-[0.88rem] text-black/50 leading-relaxed">{a.callout.text}</p>
+                          <p className="text-[0.88rem] text-black/70 leading-[1.7]">{a.callout.text}</p>
                         </div>
                       </div>
 

@@ -89,20 +89,20 @@ export default function SwastikProfilePage() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-16 lg:gap-20">
 
           {/* Left Column: Biography */}
-          <div className="space-y-8 text-black/75" style={{ fontFamily: "'Inter', sans-serif", fontSize: "13.5px", lineHeight: 1.7 }}>
+          <div className="space-y-8 text-black/85" style={{ fontFamily: "'Inter', sans-serif", fontSize: "13.5px", lineHeight: 1.7 }}>
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>The Rising Tech Visionary</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>The Rising Tech Visionary</h2>
                 <p className="mb-4">
-                  Born on August 16, 2006, in Kukarwada, Gujarat, India, Swastik Khatua is not just another name in technology — he is the symbol of next-gen innovation. At just 19, Swastik has already carved a niche for himself as a Co-Founder of Osmium, an AI-driven EdTech platform, and as a pioneering frontend engineer.
+                  Born on August 16, 2006, in Kukarwada, Gujarat, India, Swastik Khatua is not just another name in technology — he is the symbol of next-gen innovation. At just 19, Swastik has already carved a niche for himself as a Co-Founder of Osmium AI, an AI-driven EdTech platform, and as a pioneering frontend engineer.
                 </p>
               </div>
             </ScrollReveal>
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Family & Early Life</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Family & Early Life</h2>
                 <p className="mb-4">
                   Swastik comes from a modest family background, where financial challenges were a constant part of life. Growing up, he witnessed the value of hard work, determination, and resourcefulness. Despite the constraints, his family always encouraged him to dream bigger and chase excellence.
                 </p>
@@ -114,7 +114,7 @@ export default function SwastikProfilePage() {
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>The Journey of Innovation</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>The Journey of Innovation</h2>
                 <p className="mb-4">
                   Swastik&apos;s journey is fueled by raw passion, relentless curiosity, and an unshakable determination to transform ideas into reality. His technical arsenal includes React.js, Angular, Next.js, Tailwind CSS, JavaScript, TypeScript, and advanced state management systems.
                 </p>
@@ -126,9 +126,9 @@ export default function SwastikProfilePage() {
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Osmium — Rewriting Education</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Osmium AI — Rewriting Education</h2>
                 <p className="mb-4">
-                  With Osmium, Swastik is rewriting the future of education. The platform doesn&apos;t just deliver learning — it predicts competitive exam questions, tailors study plans, and guides careers with AI precision.
+                  With Osmium AI, Swastik is rewriting the future of education. The platform doesn&apos;t just deliver learning — it predicts competitive exam questions, tailors study plans, and guides careers with AI precision.
                 </p>
                 <p>
                   His vision is crystal clear: empower learners with tools so advanced that education feels less like a burden and more like a superpower.
@@ -138,9 +138,9 @@ export default function SwastikProfilePage() {
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Beyond Osmium</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Beyond Osmium AI</h2>
                 <p className="mb-4">
-                  But Osmium is just the beginning. Swastik has also delved into AI-powered experiments such as hand gesture-controlled systems, real-time collaborative platforms rivaling global innovations, and projects that push the boundary of what&apos;s possible.
+                  But Osmium AI is just the beginning. Swastik has also delved into AI-powered experiments such as hand gesture-controlled systems, real-time collaborative platforms rivaling global innovations, and projects that push the boundary of what&apos;s possible.
                 </p>
                 <p>
                   His performances in hackathons, SIH 2024–25, and Breached 5.0 showcase his ability to think beyond the ordinary and execute under pressure.
@@ -150,7 +150,7 @@ export default function SwastikProfilePage() {
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Mindset & Vision</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Mindset & Vision</h2>
                 <p className="mb-4">
                   What makes Swastik stand apart is not just his skillset — it&apos;s his mindset. Coming from a financially modest background, he understands the value of perseverance and innovation. He is a creator who doesn&apos;t wait for opportunities but builds them, a learner who thrives in challenges, and a leader who believes in shaping technology with purpose.
                 </p>
@@ -178,7 +178,7 @@ export default function SwastikProfilePage() {
                   </li>
                   <li className="flex flex-col">
                     <span className="text-[12.5px] font-semibold text-black/80">Co-Founder</span>
-                    <span className="text-[11px] text-black/50 mt-0.5">Osmium — AI EdTech Platform</span>
+                    <span className="text-[11px] text-black/50 mt-0.5">Osmium AI — AI EdTech Platform</span>
                   </li>
                 </ul>
               </div>

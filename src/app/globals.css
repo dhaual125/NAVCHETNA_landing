@@ -289,6 +289,20 @@ h1, h2, h3, h4, h5, h6 {
   flex-shrink: 0;
 }
 
+/* Colored chip variants by badge type */
+.chip-blue   { background: rgba(37,99,235,0.07);  color: rgba(37,99,235,0.75);  border-color: rgba(37,99,235,0.15); }
+.chip-blue::before   { background: rgba(37,99,235,0.5); }
+.chip-green  { background: rgba(22,163,74,0.07);  color: rgba(22,163,74,0.80);  border-color: rgba(22,163,74,0.15); }
+.chip-green::before  { background: rgba(22,163,74,0.5); }
+.chip-amber  { background: rgba(217,119,6,0.07);  color: rgba(180,96,0,0.85);   border-color: rgba(217,119,6,0.18); }
+.chip-amber::before  { background: rgba(180,96,0,0.5); }
+.chip-purple { background: rgba(124,58,237,0.07); color: rgba(109,40,217,0.80); border-color: rgba(124,58,237,0.15); }
+.chip-purple::before { background: rgba(109,40,217,0.5); }
+.chip-red    { background: rgba(220,38,38,0.07);  color: rgba(185,28,28,0.80);  border-color: rgba(220,38,38,0.15); }
+.chip-red::before    { background: rgba(185,28,28,0.5); }
+.chip-teal   { background: rgba(13,148,136,0.07); color: rgba(15,118,110,0.80); border-color: rgba(13,148,136,0.15); }
+.chip-teal::before   { background: rgba(15,118,110,0.5); }
+
 /* Section container — ultra-wide margins */
 .section-container {
   margin-inline: auto;

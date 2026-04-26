@@ -18,11 +18,11 @@ const articles = [
     title: "The Navchetna Story: How five friends built a tech company from a single conversation",
     paras: [
       "On 6th September 2024, five friends — Ayushmaan, Varun, Suman, Swastik, and Dhraval — were talking about school, college, and life when they realized something: education could be so much better with the right tools. From that conversation, Navchetna Technology was born.",
-      "No fancy offices, no investors, no roadmap. Just a shared vision, late nights, and a lot of determination. Today we build products like Osmium, Natraj, and Aegis Auth — tools designed to make learning smarter and more accessible.",
+      "No fancy offices, no investors, no roadmap. Just a shared vision, late nights, and a lot of determination. Today we build products like Osmium AI, Natraj, and Aegis Auth — tools designed to make learning smarter and more accessible.",
     ],
     callout: {
       label: "Product Portfolio",
-      text: "Our flagship products — Osmium, Natraj, and Aegis Auth — span web, iOS, Android, AI/ML solutions, cybersecurity, and more.",
+      text: "Our flagship products — Osmium AI, Natraj, and Aegis Auth — span web, iOS, Android, AI/ML solutions, cybersecurity, and more.",
     },
     quote: "\"Navchetna isn't just a company. It's a story of friendship, late-night ideas, and small wins that compound.\"",
     tags: ["Innovation", "Startup", "EdTech"],
@@ -98,20 +98,20 @@ export default function NewsPage() {
 
                       {/* Title */}
                       <h2
-                        className="text-[1.35rem] md:text-[1.6rem] leading-[1.2] text-black mb-5"
+                        className="text-[1.35rem] md:text-[1.6rem] leading-[1.2] text-black mb-9"
                         style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.022em" }}
                       >
                         {a.title}
                       </h2>
 
                       {/* Body */}
-                      <div className="space-y-4 text-[0.9rem] leading-[1.75] text-black/55" style={{ fontFamily: "'Inter', sans-serif" }}>
+                      <div className="space-y-4 text-[0.9rem] leading-[1.7] text-black/80" style={{ fontFamily: "'Inter', sans-serif" }}>
                         {a.paras.map((p, i) => <p key={i}>{p}</p>)}
 
                         {a.callout && (
                           <div className="border border-black/[0.06] rounded-xl px-5 py-4 my-2">
                             <p className="text-[11px] font-semibold uppercase tracking-widest text-black/35 mb-1.5">{a.callout.label}</p>
-                            <p className="text-[0.88rem] text-black/50 leading-relaxed">{a.callout.text}</p>
+                            <p className="text-[0.88rem] text-black/70 leading-[1.7]">{a.callout.text}</p>
                           </div>
                         )}
 

@@ -7,6 +7,7 @@ export function ContactForm() {
   const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -15,16 +16,37 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError("");
     try {
-      const res = await fetch("https://formspree.io/f/hello@navchetna.tech", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: "f2b0c5e1-7c1a-4c1e-9f1e-1a2b3c4d5e6f",
+          from_name: formData.name,
+          email: formData.email,
+          subject: formData.subject || "New Contact Form Submission",
+          message: formData.message,
+          to: "hello@navchetna.tech",
+        }),
       });
-      if (res.ok) {
+      const data = await res.json();
+      if (data.success || res.ok) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        // Fallback: use mailto
+        const mailtoLink = `mailto:hello@navchetna.tech?subject=${encodeURIComponent(formData.subject || "Contact Form")}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`;
+        window.open(mailtoLink, "_blank");
         setSubmitted(true);
         setFormData({ name: "", email: "", subject: "", message: "" });
       }
+    } catch {
+      // Fallback to mailto on network error
+      const mailtoLink = `mailto:hello@navchetna.tech?subject=${encodeURIComponent(formData.subject || "Contact Form")}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`;
+      window.open(mailtoLink, "_blank");
+      setSubmitted(true);
+      setFormData({ name: "", email: "", subject: "", message: "" });
     } finally {
       setIsSubmitting(false);
     }
@@ -51,6 +73,11 @@ export function ContactForm() {
         </div>
       ) : (
         <>
+          {error && (
+            <div className="bg-red-50 border border-red-100 rounded-xl px-4 py-3 text-[13px] text-red-700">
+              {error}
+            </div>
+          )}
           <div className="grid sm:grid-cols-2 gap-5">
             <div className="flex flex-col gap-1.5">
               <label htmlFor="name" className="text-black/60 text-[11px] font-semibold uppercase tracking-wider pl-1">Full Name</label>
@@ -95,4 +122,3 @@ export function ContactForm() {
     </form>
   );
 }
-

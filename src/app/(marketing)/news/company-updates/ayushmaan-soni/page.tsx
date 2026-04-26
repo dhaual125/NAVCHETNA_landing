@@ -88,10 +88,10 @@ export default function AyushmaanProfilePage() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-16 lg:gap-20">
           
           {/* Left Column: Biography */}
-          <div className="space-y-8 text-black/75" style={{ fontFamily: "'Inter', sans-serif", fontSize: "13.5px", lineHeight: 1.7 }}>
+          <div className="space-y-8 text-black/85" style={{ fontFamily: "'Inter', sans-serif", fontSize: "13.5px", lineHeight: 1.7 }}>
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>The Journey Begins</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>The Journey Begins</h2>
                 <p className="mb-4">
                   I was born on February 14, 2005, in Jodhpur, Rajasthan, into a middle class family. Life was not always smooth. My family went through financial and personal struggles, and those challenges shaped me into who I am today. Instead of breaking me, they became the reason I developed a relentless determination to grow and succeed.
                 </p>
@@ -103,7 +103,7 @@ export default function AyushmaanProfilePage() {
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Academic Transformation</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Academic Transformation</h2>
                 <p className="mb-4">
                   I completed my schooling at Kendriya Vidyalaya Number 1 AFS Jodhpur until Class 11. Until Class 7, academics were not my strength. Everything changed when I met my mentor, Mr. Santosh Singh. His tuition classes gave me not only knowledge but also a new outlook on learning. That shift transformed me completely.
                 </p>
@@ -115,7 +115,7 @@ export default function AyushmaanProfilePage() {
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>JEE Success & Legal Battle</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>JEE Success & Legal Battle</h2>
                 <p className="mb-4">
                   My first JEE attempt earned me 99.16 percentile in JEE Mains and 207 marks in JEE Advanced, though I missed qualifying in physics. I refused to stop there. I took a drop year and worked harder. In my second attempt, I became Jodhpur's topper in JEE Mains with 99.91 percentile.
                 </p>
@@ -127,7 +127,7 @@ export default function AyushmaanProfilePage() {
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Entrepreneurial Journey</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Entrepreneurial Journey</h2>
                 <p className="mb-4">
                   At the age of 17, while still in Class 12, I began working as a software developer at Secure E Techno World Private Limited in Jodhpur. After a year, I left my job to dedicate myself fully to my entrepreneurial journey.
                 </p>
@@ -142,22 +142,22 @@ export default function AyushmaanProfilePage() {
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Birth of Osmium & Navchetna</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Birth of Osmium AI & Navchetna</h2>
                 <p className="mb-4">
-                  To keep exploring bigger ideas, I intentionally joined a private university. There, I met some of my closest collaborators, Varun, Swastik, Suman, and Dhraval. Together we participated in a hackathon where the idea of Osmium was born.
+                  To keep exploring bigger ideas, I intentionally joined a private university. There, I met some of my closest collaborators, Varun, Swastik, Suman, and Dhraval. Together we participated in a hackathon where the idea of Osmium AI was born.
                 </p>
                 <p className="mb-4">
-                  From the very first day, we promised ourselves that Osmium would not be just another hackathon project. We treated it like an industry level platform. We kept upgrading it with advanced features and even trained our own large language model.
+                  From the very first day, we promised ourselves that Osmium AI would not be just another hackathon project. We treated it like an industry level platform. We kept upgrading it with advanced features and even trained our own large language model.
                 </p>
                 <p>
-                  To take this vision forward, I founded NINELLMS Solutions Limited Liability Partnership, also known as Navchetna. Today, our team is building Osmium into a product that can make a real difference for learners across the world.
+                  To take this vision forward, I founded NINELLMS Solutions Limited Liability Partnership, also known as Navchetna. Today, our team is building Osmium AI into a product that can make a real difference for learners across the world.
                 </p>
               </div>
             </ScrollReveal>
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Mathematical Research & Innovation</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Mathematical Research & Innovation</h2>
                 <p className="mb-4">
                   Outside of technology, mathematics is a part of me. I often say that mathematics is like a girlfriend to me. It is something I cannot live without. One day, while reading about the Riemann Hypothesis, a question came to me: Why cannot we define factorials for negative numbers?
                 </p>
@@ -172,7 +172,7 @@ export default function AyushmaanProfilePage() {
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Philosophy & Vision</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Philosophy & Vision</h2>
                 <p className="mb-4">
                   Today, I continue to learn, to create, and to innovate. My journey from a curious child dismantling toys to becoming the founder of multiple companies and contributing to mathematics has been full of challenges. But every obstacle has been a lesson, every failure a stepping stone.
                 </p>
@@ -254,7 +254,7 @@ export default function AyushmaanProfilePage() {
                       </li>
                       <li className="flex items-start gap-2.5">
                         <span className="mt-1.5 w-1.25 h-1.25 rounded-full bg-black/20 shrink-0" />
-                        <span>Created Osmium - revolutionary AI education platform</span>
+                        <span>Created Osmium AI - revolutionary AI education platform</span>
                       </li>
                       <li className="flex items-start gap-2.5">
                         <span className="mt-1.5 w-1.25 h-1.25 rounded-full bg-black/20 shrink-0" />

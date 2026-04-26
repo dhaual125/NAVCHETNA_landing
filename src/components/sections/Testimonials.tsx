@@ -8,7 +8,7 @@ const testimonials = [
     name: "Priya Kumari",
     role: "Engineering Student, Jodhpur",
     quote:
-      "Osmium helped me understand exactly where I was going wrong in calculus, not just what the right answer was. My mock test scores improved steadily over the course of a month. It genuinely felt like having a patient tutor who never gets tired.",
+      "Osmium AI helped me understand exactly where I was going wrong in calculus, not just what the right answer was. My mock test scores improved steadily over the course of a month. It genuinely felt like having a patient tutor who never gets tired.",
     avatar: "/assets/avatar-priya.jpg",
   },
   {

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 const perks = [
-  { icon: Rocket, title: "Build What Matters", desc: "Work on products like Osmium and Natraj that solve practical problems." },
+  { icon: Rocket, title: "Build What Matters", desc: "Work on products like Osmium AI and Natraj that solve practical problems." },
   { icon: GraduationCap, title: "Learn Every Day", desc: "Explore AI, AR, cloud, product thinking, and design through real work." },
   { icon: Coffee, title: "Builder Energy", desc: "Curious, scrappy, and focused on shipping useful things with taste." },
 ];

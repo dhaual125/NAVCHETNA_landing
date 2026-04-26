@@ -85,11 +85,11 @@ export default function VarunProfilePage() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-16 lg:gap-20">
 
           {/* Left Column: Biography */}
-          <div className="space-y-8 text-black/75" style={{ fontFamily: "'Inter', sans-serif", fontSize: "13.5px", lineHeight: 1.7 }}>
+          <div className="space-y-8 text-black/85" style={{ fontFamily: "'Inter', sans-serif", fontSize: "13.5px", lineHeight: 1.7 }}>
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Early Challenges & Growth</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Early Challenges & Growth</h2>
                 <p className="mb-4">
                   I am Varun Yadav, Co-Founder and Director at Navchetna. My early years of schooling were in Noida until Class 10, after which I moved to Alwar, Rajasthan, to prepare for JEE. Living away from my parents at such a young age with limited resources was not easy.
                 </p>
@@ -101,31 +101,31 @@ export default function VarunProfilePage() {
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>The Spark of Innovation</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>The Spark of Innovation</h2>
                 <p className="mb-4">
                   In college, I met Ayushmaan, Swastik, Suman, and Dhraval. As we shared our stories, we realized that our struggles were not unique. Millions of students across the country were going through the same journey of stress, confusion, and lack of proper guidance.
                 </p>
                 <p>
-                  That realization became the spark for Osmium, an AI-driven EdTech platform designed to make learning more personal, adaptive, and supportive.
+                  That realization became the spark for Osmium AI, an AI-driven EdTech platform designed to make learning more personal, adaptive, and supportive.
                 </p>
               </div>
             </ScrollReveal>
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>From Osmium to Navchetna</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>From Osmium AI to Navchetna</h2>
                 <p className="mb-4">
-                  What began as an idea at a hackathon soon grew into something much bigger. From Osmium emerged Navchetna, the company that now carries forward our mission to reshape education.
+                  What began as an idea at a hackathon soon grew into something much bigger. From Osmium AI emerged Navchetna, the company that now carries forward our mission to reshape education.
                 </p>
                 <p>
-                  With Osmium and our new innovation, Natraj, we are building solutions that turn setbacks into stepping stones, giving students the tools and mentorship they need to succeed.
+                  With Osmium AI and our new innovation, Natraj, we are building solutions that turn setbacks into stepping stones, giving students the tools and mentorship they need to succeed.
                 </p>
               </div>
             </ScrollReveal>
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Philosophy & Vision</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Philosophy & Vision</h2>
                 <p className="mb-4">
                   My journey proves that you do not need to have everything figured out to begin. What matters most is the courage to take the first step and the persistence to keep moving forward. Every challenge along the way has been a lesson, and every failure has become an opportunity to grow.
                 </p>
@@ -152,7 +152,7 @@ export default function VarunProfilePage() {
 
             <ScrollReveal>
               <div>
-                <h2 className="text-xl text-black mb-3" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Student-Centric Mission</h2>
+                <h2 className="text-xl text-black mb-10" style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}>Student-Centric Mission</h2>
                 <p className="mb-4">
                   Our shared experiences of struggle, stress, and confusion during JEE preparation revealed a universal truth — millions of students face the same challenges we did. This realization drives our commitment to building solutions that address these fundamental issues.
                 </p>
@@ -195,7 +195,7 @@ export default function VarunProfilePage() {
                     <ul className="space-y-2.5 text-[12px] text-black/60 leading-relaxed">
                       <li className="flex items-start gap-2.5">
                         <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-black/20 shrink-0" />
-                        <span>Co-creator of Osmium — AI-driven EdTech platform</span>
+                        <span>Co-creator of Osmium AI — AI-driven EdTech platform</span>
                       </li>
                       <li className="flex items-start gap-2.5">
                         <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-black/20 shrink-0" />

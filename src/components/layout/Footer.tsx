@@ -3,7 +3,7 @@ import { Sparkles } from "lucide-react";
 
 const productLinks = [
   { href: "/products", label: "All Products" },
-  { href: "https://www.osmium.co.in/", label: "Osmium", external: true },
+  { href: "https://www.osmium.co.in/", label: "Osmium AI", external: true },
   { href: "https://natraj.navchetna.tech/", label: "Natraj", external: true },
   { href: "https://aegis.navchetna.tech/", label: "Aegis Auth", external: true },
   { href: "https://kriya.navchetna.tech/", label: "Kriya", external: true },

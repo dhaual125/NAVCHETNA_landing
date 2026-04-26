@@ -15,7 +15,7 @@ export function Hero() {
         priority
         quality={92}
         className="md:hidden object-cover object-center"
-        sizes="100vw"
+        sizes="(max-width: 768px) 100vw, 0vw"
       />
       
       {/* Desktop background image */}
@@ -26,7 +26,7 @@ export function Hero() {
         priority
         quality={92}
         className="hidden md:block object-cover object-center"
-        sizes="100vw"
+        sizes="(max-width: 768px) 0vw, 100vw"
       />
 
       {/* Layered overlays for legibility */}
@@ -129,14 +129,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-        <div
-          className="w-px h-10 opacity-25"
-          style={{ background: "linear-gradient(to bottom, transparent, #fff)" }}
-        />
-        <div className="w-1 h-1 rounded-full bg-white/40" />
-      </div>
     </section>
   );
 }
