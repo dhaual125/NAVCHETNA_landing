@@ -98,7 +98,7 @@ export default function NewsPage() {
 
                       {/* Title */}
                       <h2
-                        className="text-[1.35rem] md:text-[1.6rem] leading-[1.2] text-black mb-9"
+                        className="text-[1.35rem] md:text-[1.6rem] leading-[1.2] text-black mb-12"
                         style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.022em" }}
                       >
                         {a.title}

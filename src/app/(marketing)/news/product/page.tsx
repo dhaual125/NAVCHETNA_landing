@@ -175,7 +175,7 @@ export default function ProductNewsPage() {
                       </div>
 
                       <h2
-                        className="text-[1.15rem] md:text-[1.3rem] leading-[1.25] text-black mb-8"
+                        className="text-[1.15rem] md:text-[1.3rem] leading-[1.25] text-black mb-12"
                         style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}
                       >
                         {a.title}
