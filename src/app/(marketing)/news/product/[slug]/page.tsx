@@ -162,7 +162,6 @@ console.log(result.questions);`,
     badge: "Product Launch", date: "Apr 15, 2025",
     image: "/assets/vedsegment.png",
     hero: "We built VedSegment because we kept asking the same question: why does a one-on-one tutoring session — the most powerful learning format known to education — still look exactly like it did twenty years ago? Two people on a call, maybe a shared screen, and that's it. We thought we could do better. A lot better.",
-    tryLink: "https://www.osmium.co.in/", tryLabel: "Try VedSegment",
     callout: { label: "Built for Real Teaching", text: "VedSegment isn't a video call with a few extras bolted on. It's a purpose-built tutoring environment where every feature — from the AI whiteboard to live quiz generation — exists to make the moment between a teacher and student more productive, more engaging, and more human." },
     sections: [
       {
