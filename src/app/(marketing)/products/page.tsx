@@ -7,16 +7,6 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const launchedProducts = [
   {
-    id: "osmiumllm",
-    name: "OsmiumLLM",
-    tag: "Education LLM",
-    category: "Education",
-    image: "/assets/osmium (1).png",
-    desc: "World's smartest educational LLM with 96B parameters. Outperforms GPT-5, Claude 4, and Gemini 2.5 Pro across all educational benchmarks.",
-    href: "/news/product/osmiumllm",
-    isFlagship: true,
-  },
-  {
     id: "osmium",
     name: "Osmium AI",
     tag: "EdTech Platform",
@@ -61,6 +51,16 @@ const launchedProducts = [
     image: "/assets/lmlens.png",
     desc: "Intelligently extracts the texts and images efficiently and effectively.",
     href: "/products",
+  },
+  {
+    id: "osmiumllm",
+    name: "OsmiumLLM",
+    tag: "Education LLM",
+    category: "Education",
+    image: "/assets/osmium (1).png",
+    desc: "World's smartest educational LLM with 96B parameters. Outperforms GPT-5, Claude 4, and Gemini 2.5 Pro across all educational benchmarks.",
+    href: "/news/product/osmiumllm",
+    isFlagship: true,
   }
 ];
 
