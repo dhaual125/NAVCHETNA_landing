@@ -34,6 +34,7 @@ const productArticles: Record<string, {
   enterprise?: { intro: string; columns: { heading: string; items: string[] }[] };
   codeExample?: { intro: string; code: string };
   migration?: { intro: string; steps: string[] };
+  quote?: string;
   author: string; readTime: string; tags: string[];
   related?: { slug: string; title: string; badge: string; desc: string }[];
 }> = {
