@@ -21,7 +21,7 @@ function badgeChip(badge: string) {
 
 /* ── Product article data ── */
 const productArticles: Record<string, {
-  title: string; badge: string; date: string; image: string;
+  title: string; badge: string; date: string; image?: string;
   hero: string; tryLink?: string; tryLabel?: string;
   noBanner?: boolean;
   sections: { heading: string; body: string; bullets?: string[]; }[];
@@ -101,8 +101,7 @@ console.log(result.questions);`,
   "osmiumllm": {
     title: "OsmiumLLM: A Global Benchmark in Education-Focused AI",
     badge: "Flagship Launch", date: "Aug 15, 2025",
-    image: "/assets/osmium-mockup.png",
-    noBanner: true,
+    image: "/assets/osmium (1).png",
     hero: "Osmium has emerged as the world's smartest educational LLM, surpassing even the newly released GPT-5. With a massive 96B parameters trained exclusively for education, it sets a new global benchmark in the domain, redefining the future of AI-powered learning.",
     tryLink: "https://www.osmium.co.in/", tryLabel: "Try OsmiumLLM",
     callout: { label: "Global #1 in Education AI", text: "OsmiumLLM scored 98 in High School Academics and 97 in Reasoning — outperforming GPT-5, Claude 4 (Opus), Gemini 2.5 Pro, DeepSeek R1, and Llama 4 across all five educational benchmarks." },
@@ -156,7 +155,75 @@ console.log(result.questions);`,
     ],
     author: "Navchetna EdTech Team", readTime: "10 min read",
     tags: ["AR", "AI", "EdTech"],
-    related: [{ slug: "osmium", title: "Osmium AI 2.0 Platform", badge: "Flagship Launch", desc: "Revolutionary AI platform for personalized learning" }],
+    related: [{ slug: "osmium", title: "Osmium AI Platform", badge: "Flagship Launch", desc: "Revolutionary AI platform for personalized learning" }],
+  },
+  "vedsegment": {
+    title: "VedSegment: Where Teaching Meets Intelligence",
+    badge: "Product Launch", date: "Apr 15, 2025",
+    image: "/assets/vedsegment.png",
+    hero: "We built VedSegment because we kept asking the same question: why does a one-on-one tutoring session — the most powerful learning format known to education — still look exactly like it did twenty years ago? Two people on a call, maybe a shared screen, and that's it. We thought we could do better. A lot better.",
+    tryLink: "https://www.osmium.co.in/", tryLabel: "Try VedSegment",
+    callout: { label: "Built for Real Teaching", text: "VedSegment isn't a video call with a few extras bolted on. It's a purpose-built tutoring environment where every feature — from the AI whiteboard to live quiz generation — exists to make the moment between a teacher and student more productive, more engaging, and more human." },
+    sections: [
+      {
+        heading: "Why We Built This",
+        body: "One of the things I noticed early on — both as a student and later as someone building an edtech company — is that the tools we use for online tutoring are fundamentally borrowed. We took a video conferencing product designed for business meetings and tried to teach calculus and organic chemistry in it. It sort of works. But sort of is not good enough when a student's future is on the line.\n\nVedSegment is our answer to that gap. It's built from the ground up for one-on-one and small-group tutoring, with every feature designed around the question: what actually helps a student learn right now, in this session?",
+        bullets: [
+          "Purpose-built for live tutoring — not repurposed from enterprise video tools",
+          "Supports 1:1 sessions and group tutoring with seamless participant management",
+          "Designed around the teacher-student interaction, not the other way around",
+          "Works on any device — no downloads, no friction for the student",
+        ],
+      },
+      {
+        heading: "The AI Toolkit — Built Into Every Session",
+        body: "This is where VedSegment becomes something genuinely different. Every tool in the session is powered by OsmiumLLM — the same model that sits at the heart of our education platform and has benchmarked higher than GPT-5 in educational content generation. It's not an AI assistant you open in a separate tab. It's embedded directly into the teaching experience.",
+        bullets: [
+          "AI Whiteboard — draw, annotate, and let OsmiumLLM generate diagrams and step-by-step solutions in real time",
+          "Quiz Generation — the AI reads the session topic and generates contextual MCQs, fill-in-the-blanks, and problem sets on the fly",
+          "Poll Maker — run quick comprehension checks mid-session without breaking the flow",
+          "Maths & Scientific Calculator — full symbolic computation, equation solving, and graphing built right in",
+          "Code Compiler — supports Python, JavaScript, C++, Java and more; write, run, and debug live during the session",
+          "YouTube Link Preview — share any YouTube link and it renders an in-session preview without navigation away",
+          "Live Transcript Generation — OsmiumLLM generates a real-time transcript of the session, useful for revision notes",
+          "Resource Sharing — share documents, PDFs, and links that students can access directly inside the session window",
+        ],
+      },
+      {
+        heading: "The Technical Foundation",
+        body: "Building a real-time collaborative platform is hard. Building one where AI is deeply embedded into every interaction — not just as a background feature — is significantly harder. We spent months getting this right. The architecture had to support low-latency video, real-time AI inference, collaborative canvas synchronization, and live code execution, all simultaneously and without degrading the experience.",
+        bullets: [
+          "WebRTC-based peer-to-peer video with adaptive bitrate for unstable connections",
+          "Collaborative canvas powered by CRDT (Conflict-free Replicated Data Types) for real-time whiteboard sync",
+          "OsmiumLLM inference runs server-side with sub-200ms response latency for in-session AI actions",
+          "Isolated code execution sandboxes per session for safe, real-time compilation",
+          "End-to-end encrypted sessions — transcripts, recordings, and shared content are yours alone",
+        ],
+      },
+      {
+        heading: "More Than a Tool — A Teaching Philosophy",
+        body: "I want to be honest about what VedSegment is and isn't. It's not trying to replace the tutor. It's not trying to automate teaching. We believe deeply that the best learning happens in a relationship — between a knowledgeable, caring human and a curious, motivated student. VedSegment just removes the friction so that relationship can do its best work.\n\nWhen a student is stuck on a differential equation and the tutor can instantly render a step-by-step solution on the shared whiteboard, and then generate three similar problems for practice without leaving the session — that's not automation. That's augmentation. That's what we're building toward.",
+        bullets: [
+          "AI as a co-pilot for the teacher, not a replacement",
+          "Every AI feature is triggered by the tutor, keeping them in control",
+          "Designed to reduce the administrative overhead of tutoring (note-taking, quiz creation, resource sharing)",
+          "Session transcripts sent automatically to the student post-session for revision",
+        ],
+      },
+    ],
+    achievements: [
+      { title: "12+ Integrated Tools", desc: "Whiteboard, quiz gen, code compiler, calculator, polls, transcripts and more — all in one session window", tag: "All-in-One", tagColor: "text-purple-600" },
+      { title: "Powered by OsmiumLLM", desc: "The world's highest-benchmarked educational LLM embedded directly into the tutoring environment", tag: "AI-Native", tagColor: "text-blue-600" },
+      { title: "Real-Time Transcripts", desc: "Auto-generated session transcripts delivered to students for post-session revision", tag: "Study Ready", tagColor: "text-green-600" },
+      { title: "1:1 & Group Sessions", desc: "Start one-on-one, invite more people whenever the session calls for it — no friction, no limit", tagColor: "text-pink-600", tag: "Flexible Format" },
+    ],
+    quote: "We didn't set out to build another video call platform. We set out to build the room where the best teaching in India can happen — and then make it available to every student, everywhere.",
+    author: "Varun Yadav, Co-Founder & Director", readTime: "8 min read",
+    tags: ["EdTech", "Video", "AI", "Tutoring"],
+    related: [
+      { slug: "osmium", title: "Osmium AI Platform", badge: "Flagship Launch", desc: "The full AI-powered education platform" },
+      { slug: "osmiumllm", title: "OsmiumLLM", badge: "Flagship", desc: "The AI model powering VedSegment" },
+    ],
   },
   "aegis": {
     title: "Aegis Auth v3.0: The New Standard for Digital Identity",
@@ -219,7 +286,7 @@ console.log(result.questions);`,
   "vajra": {
     title: "Vajra: The AWS Lambda for AI",
     badge: "Infrastructure", date: "Mar 1, 2025",
-    image: "/assets/osmium (1).png",
+    noBanner: true,
     hero: "Vajra is a sovereign serverless GPU cloud designed to solve the industry's utilization crisis. By employing a novel 'Frozen Core + Hot Adapter' architecture, we achieve sub-500ms cold starts for 70B+ LLMs and enable pay-per-gradient fine-tuning.",
     callout: { label: "Cost Revolution", text: "Supports 50-100 concurrent tenants on a single A100 GPU, delivering enterprise-grade infrastructure at 1/100th the cost of traditional cloud providers." },
     sections: [
@@ -262,7 +329,7 @@ console.log(result.questions);`,
   "crm": {
     title: "Vyom: Intelligent Customer Relationship Management",
     badge: "Coming Soon", date: "Q4 2025",
-    image: "/assets/Frame 110.png",
+    noBanner: true,
     hero: "Advanced Customer Relationship Management tailored for seamless interactions and data-driven insights. Our CRM combines AI-powered analytics with intuitive workflows to transform how businesses manage customer relationships.",
     sections: [
       { heading: "AI-Powered Insights", body: "Move beyond traditional CRM with intelligent automation.", bullets: ["Predictive lead scoring and conversion forecasting", "Automated customer segmentation and targeting", "Sentiment analysis across all communication channels", "Smart task prioritization based on deal potential"] },
@@ -275,7 +342,7 @@ console.log(result.questions);`,
   "agentic-sde": {
     title: "Vega: Autonomous Software Engineering",
     badge: "Coming Soon", date: "Q4 2025",
-    image: "/assets/Frame 112.png",
+    noBanner: true,
     hero: "Next-generation software engineering platform driven by agentic AI capabilities. Agentic SDE collaborates with development teams to write, review, test, and deploy code autonomously while maintaining human oversight.",
     sections: [
       { heading: "Autonomous Development", body: "An AI agent that understands codebases and ships features.", bullets: ["Context-aware code generation across entire repositories", "Automated pull request creation with documentation", "Intelligent bug detection and fix suggestions", "End-to-end feature implementation from ticket to deployment"] },
@@ -288,7 +355,7 @@ console.log(result.questions);`,
   "unified-storage": {
     title: "Yugm: Unified Synced Storage with Version Control",
     badge: "Coming Soon", date: "2026",
-    image: "/assets/Frame 113.png",
+    noBanner: true,
     hero: "A unified synced storage platform with inbuilt version control for seamless asset management across teams, projects, and infrastructure. Built for organizations that need reliable, versioned, and synchronized file management.",
     sections: [
       { heading: "Version Control Built-In", body: "Every file, every change, fully tracked.", bullets: ["Git-like versioning for all file types", "Branching and merging for collaborative workflows", "Conflict resolution with visual diff tools", "Complete audit trail and rollback capabilities"] },
@@ -329,7 +396,7 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
               </span>
             </div>
             <h1
-              className="text-black mb-16"
+              className="text-black mb-6"
               style={{ fontFamily: "var(--font-waldenburg)", fontSize: "clamp(1.6rem, 3.2vw, 2.2rem)", lineHeight: 1.08, letterSpacing: "-0.03em" }}
             >
               {article.title}
@@ -353,13 +420,14 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
           <ScrollReveal>
             <div className="relative w-full aspect-[16/9] mb-16 overflow-hidden rounded-xl border border-black/[0.07] bg-black/[0.02]">
               <Image
-                src={article.image}
+                src={article.image as string}
                 alt={article.title}
                 fill
-                sizes="(max-width: 768px) 100vw, 800px"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 768px"
                 className="object-cover"
-                quality={75}
+                quality={65}
                 loading="lazy"
+                placeholder="empty"
               />
             </div>
           </ScrollReveal>
@@ -384,7 +452,7 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
         {article.benchmarkTable && (
           <ScrollReveal>
             <div className="mb-16">
-              <h2 className="text-black mb-14" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
+              <h2 className="text-black mb-5" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
                 Education-Focused LLM Benchmark
               </h2>
               <div className="rounded-xl border border-black/[0.08] overflow-hidden">
@@ -430,7 +498,7 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
         {article.achievements && (
           <ScrollReveal>
             <div className="mb-16">
-              <h2 className="text-black mb-14" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
+              <h2 className="text-black mb-5" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
                 Key Achievements
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -451,7 +519,7 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
           {article.sections.map((s, i) => (
             <ScrollReveal key={i}>
               <div>
-                <h2 className="text-black mb-14" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.2rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
+                <h2 className="text-black mb-5" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.2rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
                   {s.heading}
                 </h2>
                 <p className="text-[0.9rem] text-black/72 leading-[1.75] mb-8" style={{ fontFamily: "'Inter', sans-serif" }}>
@@ -476,7 +544,7 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
         {article.benchmarks && (
           <ScrollReveal>
             <div className="mt-18">
-              <h2 className="text-black mb-14" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
+              <h2 className="text-black mb-5" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
                 Performance Benchmarks
               </h2>
               <div className="rounded-xl p-7 sm:p-9 mb-6" style={{ background: "linear-gradient(135deg, rgba(59,130,246,0.045) 0%, rgba(59,130,246,0.01) 100%)", border: "1px solid rgba(59,130,246,0.12)" }}>
@@ -520,7 +588,7 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
         {article.enterprise && (
           <ScrollReveal>
             <div className="mb-16">
-              <h2 className="text-black mb-14" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
+              <h2 className="text-black mb-5" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
                 Enterprise Features
               </h2>
               <p className="text-[0.9rem] text-black/68 leading-[1.75] mb-8" style={{ fontFamily: "'Inter', sans-serif" }}>{article.enterprise.intro}</p>
@@ -547,7 +615,7 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
         {article.codeExample && (
           <ScrollReveal>
             <div className="mb-16">
-              <h2 className="text-black mb-14" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
+              <h2 className="text-black mb-5" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
                 Integration APIs
               </h2>
               <p className="text-[0.9rem] text-black/68 leading-[1.75] mb-7" style={{ fontFamily: "'Inter', sans-serif" }}>{article.codeExample.intro}</p>
@@ -572,7 +640,7 @@ export default function ProductArticlePage({ params }: { params: Promise<{ slug:
         {article.migration && (
           <ScrollReveal>
             <div className="mb-16">
-              <h2 className="text-black mb-14" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
+              <h2 className="text-black mb-5" style={{ fontFamily: "var(--font-waldenburg)", fontSize: "1.35rem", letterSpacing: "-0.025em", lineHeight: 1.2 }}>
                 Migration Guide
               </h2>
               <p className="text-[0.9rem] text-black/68 leading-[1.75] mb-8" style={{ fontFamily: "'Inter', sans-serif" }}>{article.migration.intro}</p>

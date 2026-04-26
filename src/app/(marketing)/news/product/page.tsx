@@ -21,6 +21,7 @@ const toc = [
   { id: "osmiumllm",      label: "OsmiumLLM",           icon: Sparkles },
   { id: "osmium",         label: "Osmium AI",         icon: Brain },
   { id: "natraj",         label: "Natraj AR",           icon: Eye },
+  { id: "vedsegment",     label: "VedSegment",          icon: Layers },
   { id: "aegis",          label: "Aegis Auth",          icon: Shield },
   { id: "nsl",            label: "NSL Billing",         icon: BarChart3 },
   { id: "lmlens",         label: "LM Lens",             icon: FileText },
@@ -58,6 +59,13 @@ const articles = [
     ],
     author: "Navchetna EdTech Team", readTime: "10 min read",
     tags: ["AR", "AI", "EdTech"],
+  },
+  {
+    id: "vedsegment", badge: "Product Launch", date: "Apr 15, 2025", status: "Launched",
+    title: "VedSegment: Where Teaching Meets Intelligence",
+    desc: "A video tutoring platform built for the way real learning happens — one conversation at a time. VedSegment brings together live video, an AI whiteboard, quiz generation, code compilation, and more, all powered by OsmiumLLM.",
+    author: "Varun Yadav, Co-Founder & Director", readTime: "8 min read",
+    tags: ["EdTech", "Video", "AI", "Tutoring"],
   },
   {
     id: "aegis", badge: "Security", date: "Jan 15, 2026", status: "Launched",
@@ -175,7 +183,7 @@ export default function ProductNewsPage() {
                       </div>
 
                       <h2
-                        className="text-[1.15rem] md:text-[1.3rem] leading-[1.25] text-black mb-12"
+                        className="text-[1.15rem] md:text-[1.3rem] leading-[1.25] text-black mb-7"
                         style={{ fontFamily: "var(--font-waldenburg)", letterSpacing: "-0.02em" }}
                       >
                         {a.title}

@@ -53,6 +53,15 @@ const launchedProducts = [
     href: "/products",
   },
   {
+    id: "vedsegment",
+    name: "VedSegment",
+    tag: "AI Video Tutoring",
+    category: "Education",
+    image: "/assets/vedsegment.png",
+    desc: "AI-powered one-on-one video tutoring platform with whiteboard, quiz generation, code compiler, and more — all powered by OsmiumLLM.",
+    href: "/news/product/vedsegment",
+  },
+  {
     id: "osmiumllm",
     name: "OsmiumLLM",
     tag: "Education LLM",
@@ -70,9 +79,9 @@ const comingSoonProducts = [
     name: "Vajra",
     tag: "Serverless GPU Cloud",
     category: "AI & Tools",
-    image: "/assets/osmium (1).png",
+    image: "/assets/Frame 113.png",
     desc: "AWS Lambda for AI, a sovereign serverless GPU cloud designed to solve the industry's utilization crisis with sub-500ms cold starts.",
-    href: "#",
+    href: "/news/product/vajra",
   },
   {
     id: "crm",
@@ -81,7 +90,7 @@ const comingSoonProducts = [
     category: "Enterprise",
     image: "/assets/Frame 110.png",
     desc: "Advanced Customer Relationship Management tailored for seamless interactions and data insights.",
-    href: "#",
+    href: "/news/product/crm",
   },
   {
     id: "kriya",
@@ -90,25 +99,25 @@ const comingSoonProducts = [
     category: "AI & Tools",
     image: "/assets/kriya1.png",
     desc: "A platform where you describe what you want in plain English, and it builds it—code, websites, APIs, marketing campaigns, everything.",
-    href: "https://kriya.navchetna.tech/",
+    href: "/news/product/kriya",
   },
   {
-    id: "agentic_sde",
+    id: "agentic-sde",
     name: "Vega",
     tag: "Developer AI",
     category: "AI & Tools",
     image: "/assets/Frame 112.png",
     desc: "Next-generation software engineering platform driven by agentic AI capabilities.",
-    href: "#",
+    href: "/news/product/agentic-sde",
   },
   {
-    id: "unified_storage",
+    id: "unified-storage",
     name: "Yugm",
     tag: "Storage Platform",
     category: "Enterprise",
     image: "/assets/Frame 113.png",
     desc: "Unified synced storage platform with inbuilt version control.",
-    href: "#",
+    href: "/news/product/unified-storage",
   }
 ];
 
@@ -295,7 +304,12 @@ export default function ProductsPage() {
             <div className="grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-6 sm:gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
               {filteredUpcoming.map((p, index) => (
                 <ScrollReveal key={p.id} delay={index * 45}>
-                  <div className="group block">
+                  <Link
+                    href={p.href}
+                    target={p.href.startsWith("http") ? "_blank" : undefined}
+                    rel={p.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="group block"
+                  >
                     <div className="relative mb-4 overflow-hidden rounded-sm border border-black/[0.08] opacity-80">
                       <div className="relative aspect-[16/10] w-full overflow-hidden grayscale">
                         <Image
@@ -342,7 +356,7 @@ export default function ProductsPage() {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </ScrollReveal>
               ))}
             </div>
