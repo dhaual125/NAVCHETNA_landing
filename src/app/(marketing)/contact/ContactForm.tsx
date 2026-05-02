@@ -18,35 +18,20 @@ export function ContactForm() {
     setIsSubmitting(true);
     setError("");
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: "f2b0c5e1-7c1a-4c1e-9f1e-1a2b3c4d5e6f",
-          from_name: formData.name,
-          email: formData.email,
-          subject: formData.subject || "New Contact Form Submission",
-          message: formData.message,
-          to: "hello@navchetna.tech",
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
-      const data = await res.json();
-      if (data.success || res.ok) {
+      if (res.ok) {
         setSubmitted(true);
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
-        // Fallback: use mailto
-        const mailtoLink = `mailto:hello@navchetna.tech?subject=${encodeURIComponent(formData.subject || "Contact Form")}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`;
-        window.open(mailtoLink, "_blank");
-        setSubmitted(true);
-        setFormData({ name: "", email: "", subject: "", message: "" });
+        const data = await res.json();
+        setError(data.error || "Something went wrong. Please try again.");
       }
     } catch {
-      // Fallback to mailto on network error
-      const mailtoLink = `mailto:hello@navchetna.tech?subject=${encodeURIComponent(formData.subject || "Contact Form")}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`;
-      window.open(mailtoLink, "_blank");
-      setSubmitted(true);
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setError("Network error. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -63,8 +48,8 @@ export function ContactForm() {
           </div>
           <h3 className="type-2xl text-green-900 mb-1">Message Sent</h3>
           <p className="text-green-800/60 text-sm max-w-xs mx-auto">Thanks for reaching out! We&apos;ll get back to you shortly.</p>
-          <button 
-            type="button" 
+          <button
+            type="button"
             onClick={() => setSubmitted(false)}
             className="mt-6 text-[12.5px] font-semibold text-green-800/80 hover:text-green-900"
           >
