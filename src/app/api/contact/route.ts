@@ -2,14 +2,18 @@ import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 function createTransporter() {
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASS;
+
+  if (!user || !pass) {
+    throw new Error(`SMTP credentials missing — SMTP_USER: ${user ? "set" : "undefined"}, SMTP_PASS: ${pass ? "set" : "undefined"}`);
+  }
+
   return nodemailer.createTransport({
     host: "smtp.hostinger.com",
     port: 465,
     secure: true,
-    auth: {
-      user: process.env.SMTP_USER!,
-      pass: process.env.SMTP_PASS!,
-    },
+    auth: { user, pass },
     tls: { rejectUnauthorized: false },
   });
 }
@@ -294,7 +298,14 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
   }
 
-  const transporter = createTransporter();
+  let transporter;
+  try {
+    transporter = createTransporter();
+  } catch (err: unknown) {
+    const error = err as { message?: string };
+    console.error("Transporter init error:", error?.message);
+    return NextResponse.json({ error: error?.message ?? "SMTP config error" }, { status: 500 });
+  }
 
   try {
     // Send notification to admin

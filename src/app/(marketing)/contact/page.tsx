@@ -12,8 +12,8 @@ export default function ContactPage() {
   return (
     <div className="bg-white min-h-screen">
       {/* HERO */}
-      <section 
-        className="relative pt-32 pb-16 md:pt-40 md:pb-20" 
+      <section
+        className="relative pt-32 pb-16 md:pt-40 md:pb-20"
         style={{ background: "linear-gradient(180deg, rgba(72,105,133,0.04) 0%, rgba(125,72,53,0.03) 40%, #ffffff 100%)" }}
       >
         <div className="grid-overlay" />
