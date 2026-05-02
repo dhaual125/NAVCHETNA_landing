@@ -13,7 +13,7 @@ const launchedProducts = [
     category: "Education",
     image: "/assets/osmium-mockup.png",
     desc: "AI-Powered Learning That Feels Personal. Combines AI-guided courses, smart test analysis, and adaptive learning into one seamless experience.",
-    href: "https://www.osmium.co.in/",
+    href: "/news/product/osmiumllm",
     isFlagship: true,
   },
   {
@@ -23,7 +23,7 @@ const launchedProducts = [
     category: "Education",
     image: "/assets/nataraj_mockup.png",
     desc: "AR + AI-powered anatomy learning platform designed to make human biology interactive and accessible with real-time body scanning.",
-    href: "https://natraj.navchetna.tech/",
+    href: "/news/product/natraj",
   },
   {
     id: "aegis",
@@ -32,7 +32,7 @@ const launchedProducts = [
     category: "Enterprise",
     image: "/assets/aegis1.png",
     desc: "A unified identity management system providing memory-safe Rust-based authentication. Consolidation of disparate identity providers into a single canonical source.",
-    href: "https://aegis.navchetna.tech/",
+    href: "/news/product/aegis",
   },
   {
     id: "nsl",
@@ -41,7 +41,7 @@ const launchedProducts = [
     category: "Enterprise",
     image: "/assets/nsl.png",
     desc: "Our own ledger manages transaction, bills, invoices, subscriptions, and all monitoring stuffs.",
-    href: "/products",
+    href: "/news/product/nsl",
   },
   {
     id: "lmlens",
@@ -50,14 +50,14 @@ const launchedProducts = [
     category: "AI & Tools",
     image: "/assets/lmlens.png",
     desc: "Intelligently extracts the texts and images efficiently and effectively.",
-    href: "/products",
+    href: "/news/product/lmlens",
   },
   {
     id: "vedsegment",
-    name: "VedSegment",
+    name: "One on One",
     tag: "AI Video Tutoring",
     category: "Education",
-    image: "/assets/vedsegment.png",
+    image: "/assets/vedsegment-new.png",
     desc: "AI-powered one-on-one video tutoring platform with whiteboard, quiz generation, code compiler, and more — all powered by OsmiumLLM.",
     href: "/news/product/vedsegment",
   },
@@ -237,8 +237,8 @@ export default function ProductsPage() {
                     rel={p.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="group block"
                   >
-                    <div className="relative mb-4 overflow-hidden rounded-sm border border-black/[0.08]">
-                      <div className="relative aspect-[16/10] w-full overflow-hidden">
+                    <div className="relative mb-4 overflow-hidden rounded-sm border border-black/8">
+                      <div className="relative aspect-16/10 w-full overflow-hidden">
                         <Image
                           src={p.image}
                           alt={p.name}
@@ -272,13 +272,13 @@ export default function ProductsPage() {
                             {p.name}
                           </h3>
                           {p.isFlagship && (
-                            <span className="rounded-full bg-[rgba(125,72,53,0.06)] px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-[var(--color-brand)]">
+                            <span className="rounded-full bg-[rgba(125,72,53,0.06)] px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-(--color-brand)">
                               Flagship
                             </span>
                           )}
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="text-[9.5px] sm:text-[11px] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.16em] text-black/40">
+                          <span className="text-[9.5px] sm:text-[11px] font-semibold uppercase tracking-widest sm:tracking-[0.16em] text-black/40">
                             {p.tag}
                           </span>
                         </div>
@@ -310,8 +310,8 @@ export default function ProductsPage() {
                     rel={p.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="group block"
                   >
-                    <div className="relative mb-4 overflow-hidden rounded-sm border border-black/[0.08] opacity-80">
-                      <div className="relative aspect-[16/10] w-full overflow-hidden grayscale">
+                    <div className="relative mb-4 overflow-hidden rounded-sm border border-black/8 opacity-80">
+                      <div className="relative aspect-16/10 w-full overflow-hidden grayscale">
                         <Image
                           src={p.image}
                           alt={p.name}
@@ -350,7 +350,7 @@ export default function ProductsPage() {
                           </h3>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="text-[9.5px] sm:text-[11px] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.16em] text-black/40">
+                          <span className="text-[9.5px] sm:text-[11px] font-semibold uppercase tracking-widest sm:tracking-[0.16em] text-black/40">
                             {p.tag}
                           </span>
                         </div>
@@ -383,7 +383,7 @@ export default function ProductsPage() {
           <div className="grid gap-10 md:grid-cols-3">
             {pillars.map((w, i) => (
               <ScrollReveal key={w.title} delay={i * 70}>
-                <div className="flex flex-col border-l border-dotted border-black/[0.25] pl-6">
+                <div className="flex flex-col border-l border-dotted border-black/25 pl-6">
                   <span className="text-[10px] font-semibold text-black/30 mb-4 tracking-widest">
                     0{i + 1}
                   </span>
@@ -424,10 +424,10 @@ export default function ProductsPage() {
               }}
             >
               {/* corner accents */}
-              <span className="absolute top-0 left-0 w-12 h-px bg-gradient-to-r from-black/15 to-transparent" />
-              <span className="absolute top-0 left-0 h-12 w-px bg-gradient-to-b from-black/15 to-transparent" />
-              <span className="absolute bottom-0 right-0 w-12 h-px bg-gradient-to-l from-black/15 to-transparent" />
-              <span className="absolute bottom-0 right-0 h-12 w-px bg-gradient-to-t from-black/15 to-transparent" />
+              <span className="absolute top-0 left-0 w-12 h-px bg-linear-to-r from-black/15 to-transparent" />
+              <span className="absolute top-0 left-0 h-12 w-px bg-linear-to-b from-black/15 to-transparent" />
+              <span className="absolute bottom-0 right-0 w-12 h-px bg-linear-to-l from-black/15 to-transparent" />
+              <span className="absolute bottom-0 right-0 h-12 w-px bg-linear-to-t from-black/15 to-transparent" />
               <div className="absolute top-0 left-1/4 w-64 h-64 bg-gradient-radial from-purple-200/20 to-transparent blur-3xl opacity-40" />
               <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-gradient-radial from-orange-200/20 to-transparent blur-3xl opacity-40" />
               <div className="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto">

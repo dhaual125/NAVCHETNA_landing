@@ -21,7 +21,7 @@ const toc = [
   { id: "osmiumllm",      label: "OsmiumLLM",           icon: Sparkles },
   { id: "osmium",         label: "Osmium AI",         icon: Brain },
   { id: "natraj",         label: "Natraj AR",           icon: Eye },
-  { id: "vedsegment",     label: "VedSegment",          icon: Layers },
+  { id: "vedsegment",     label: "One on One",          icon: Layers },
   { id: "aegis",          label: "Aegis Auth",          icon: Shield },
   { id: "nsl",            label: "NSL Billing",         icon: BarChart3 },
   { id: "lmlens",         label: "LM Lens",             icon: FileText },
@@ -62,8 +62,8 @@ const articles = [
   },
   {
     id: "vedsegment", badge: "Product Launch", date: "Apr 15, 2025", status: "Launched",
-    title: "VedSegment: Where Teaching Meets Intelligence",
-    desc: "A video tutoring platform built for the way real learning happens — one conversation at a time. VedSegment brings together live video, an AI whiteboard, quiz generation, code compilation, and more, all powered by OsmiumLLM.",
+    title: "One on One: Where Teaching Meets Intelligence",
+    desc: "A video tutoring platform built for the way real learning happens — one conversation at a time. One on One brings together live video, an AI whiteboard, quiz generation, code compilation, and more, all powered by OsmiumLLM.",
     author: "Varun Yadav, Co-Founder & Director", readTime: "8 min read",
     tags: ["EdTech", "Video", "AI", "Tutoring"],
   },
@@ -145,7 +145,7 @@ export default function ProductNewsPage() {
 
         <NewsSidebar activeHref="/news/product" />
 
-        <main className="flex-1 min-w-0 pb-20">
+        <main className="flex-1 min-w-0 pb-20 lg:ml-64">
           <NewsMobileBar activeHref="/news/product" />
 
           <div className="flex flex-col xl:flex-row xl:gap-12 px-6 sm:px-10 lg:px-14 pt-10 pb-4">
@@ -232,7 +232,7 @@ export default function ProductNewsPage() {
 
             {/* ── Right TOC ── */}
             <div className="hidden xl:block w-52 shrink-0">
-              <div className="sticky top-28 border border-black/[0.06] rounded-xl p-5">
+              <div className="fixed top-28 border border-black/[0.06] rounded-xl p-5 w-52">
                 <p className="text-[10px] uppercase tracking-widest font-semibold text-black/40 mb-4">On this page</p>
                 <nav className="flex flex-col gap-0.5">
                   {toc.map((item) => (

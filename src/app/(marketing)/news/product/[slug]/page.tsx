@@ -158,15 +158,15 @@ console.log(result.questions);`,
     related: [{ slug: "osmium", title: "Osmium AI Platform", badge: "Flagship Launch", desc: "Revolutionary AI platform for personalized learning" }],
   },
   "vedsegment": {
-    title: "VedSegment: Where Teaching Meets Intelligence",
+    title: "One on One: Where Teaching Meets Intelligence",
     badge: "Product Launch", date: "Apr 15, 2025",
-    image: "/assets/vedsegment.png",
-    hero: "We built VedSegment because we kept asking the same question: why does a one-on-one tutoring session — the most powerful learning format known to education — still look exactly like it did twenty years ago? Two people on a call, maybe a shared screen, and that's it. We thought we could do better. A lot better.",
-    callout: { label: "Built for Real Teaching", text: "VedSegment isn't a video call with a few extras bolted on. It's a purpose-built tutoring environment where every feature — from the AI whiteboard to live quiz generation — exists to make the moment between a teacher and student more productive, more engaging, and more human." },
+    image: "/assets/vedsegment-new.png",
+    hero: "We built One on One because we kept asking the same question: why does a one-on-one tutoring session — the most powerful learning format known to education — still look exactly like it did twenty years ago? Two people on a call, maybe a shared screen, and that's it. We thought we could do better. A lot better.",
+    callout: { label: "Built for Real Teaching", text: "One on One isn't a video call with a few extras bolted on. It's a purpose-built tutoring environment where every feature — from the AI whiteboard to live quiz generation — exists to make the moment between a teacher and student more productive, more engaging, and more human." },
     sections: [
       {
         heading: "Why We Built This",
-        body: "One of the things I noticed early on — both as a student and later as someone building an edtech company — is that the tools we use for online tutoring are fundamentally borrowed. We took a video conferencing product designed for business meetings and tried to teach calculus and organic chemistry in it. It sort of works. But sort of is not good enough when a student's future is on the line.\n\nVedSegment is our answer to that gap. It's built from the ground up for one-on-one and small-group tutoring, with every feature designed around the question: what actually helps a student learn right now, in this session?",
+        body: "One of the things I noticed early on — both as a student and later as someone building an edtech company — is that the tools we use for online tutoring are fundamentally borrowed. We took a video conferencing product designed for business meetings and tried to teach calculus and organic chemistry in it. It sort of works. But sort of is not good enough when a student's future is on the line.\n\nOne on One is our answer to that gap. It's built from the ground up for one-on-one and small-group tutoring, with every feature designed around the question: what actually helps a student learn right now, in this session?",
         bullets: [
           "Purpose-built for live tutoring — not repurposed from enterprise video tools",
           "Supports 1:1 sessions and group tutoring with seamless participant management",
@@ -221,7 +221,7 @@ console.log(result.questions);`,
     tags: ["EdTech", "Video", "AI", "Tutoring"],
     related: [
       { slug: "osmium", title: "Osmium AI Platform", badge: "Flagship Launch", desc: "The full AI-powered education platform" },
-      { slug: "osmiumllm", title: "OsmiumLLM", badge: "Flagship", desc: "The AI model powering VedSegment" },
+      { slug: "osmiumllm", title: "OsmiumLLM", badge: "Flagship", desc: "The AI model powering One on One" },
     ],
   },
   "aegis": {

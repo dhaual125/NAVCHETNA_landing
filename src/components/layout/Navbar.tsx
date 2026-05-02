@@ -47,18 +47,9 @@ export function Navbar() {
                 : white
                   ? "transparent"
                   : "rgba(250,250,250,0.88)",
-            border: scrolled
-              ? "1px solid rgba(0,0,0,0.07)"
-              : white
-                ? "0 solid transparent"
-                : "0 solid transparent",
-            borderBottom: open
-              ? "1px solid rgba(0,0,0,0.08)"
-              : scrolled
-                ? undefined
-                : white
-                  ? "1px solid rgba(255,255,255,0.12)"
-                  : "1px solid rgba(0,0,0,0.05)",
+            borderWidth: scrolled ? "1px" : open ? "1px" : "0px",
+            borderStyle: "solid",
+            borderColor: scrolled ? "rgba(0,0,0,0.07)" : open ? "rgba(0,0,0,0.08)" : "transparent",
             backdropFilter: open ? "blur(32px) saturate(2)" : scrolled ? "blur(24px) saturate(1.8)" : white ? "none" : "blur(16px)",
             WebkitBackdropFilter: open ? "blur(32px) saturate(2)" : scrolled ? "blur(24px) saturate(1.8)" : white ? "none" : "blur(16px)",
             boxShadow: scrolled ? "0 8px 32px -16px rgba(0,0,0,0.18)" : "none",

@@ -105,7 +105,7 @@ export default function CompanyNewsPage() {
 
         <NewsSidebar activeHref="/news/company" />
 
-        <main className="flex-1 min-w-0 pb-20">
+        <main className="flex-1 min-w-0 pb-20 lg:ml-64">
           <NewsMobileBar activeHref="/news/company" />
 
           <div className="flex flex-col xl:flex-row xl:gap-12 px-6 sm:px-10 lg:px-14 pt-10 pb-4">
@@ -173,7 +173,7 @@ export default function CompanyNewsPage() {
 
             {/* ── Right TOC ── */}
             <div className="hidden xl:block w-52 shrink-0">
-              <div className="sticky top-28 border border-black/[0.06] rounded-xl p-5">
+              <div className="fixed top-28 border border-black/[0.06] rounded-xl p-5 w-52">
                 <p className="text-[10px] uppercase tracking-widest font-semibold text-black/40 mb-4">On this page</p>
                 <nav className="flex flex-col gap-0.5">
                   {toc.map((item) => (
