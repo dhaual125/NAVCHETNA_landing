@@ -13,7 +13,7 @@ const launchedProducts = [
     category: "Education",
     image: "/assets/osmium-mockup.png",
     desc: "AI-Powered Learning That Feels Personal. Combines AI-guided courses, smart test analysis, and adaptive learning into one seamless experience.",
-    href: "/news/product/osmiumllm",
+    href: "/news/product/osmium",
     isFlagship: true,
   },
   {

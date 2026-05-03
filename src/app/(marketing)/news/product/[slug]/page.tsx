@@ -39,7 +39,7 @@ const productArticles: Record<string, {
   related?: { slug: string; title: string; badge: string; desc: string }[];
 }> = {
   "osmium": {
-    title: "Osmium AI: Learning That Feels Personal",
+    title: "Osmium AI: The Future of AI-Powered Education",
     badge: "Flagship Launch", date: "Jan 15, 2025",
     image: "/assets/osmium-mockup.png",
     hero: "Osmium AI is built to make learning feel clear, focused, and personal. It combines AI-guided courses, smart test analysis, and adaptive learning into one seamless experience — so students spend less time figuring out what to do next and more time actually improving.",
