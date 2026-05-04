@@ -486,23 +486,12 @@ export default function ProductsPage() {
 
                         {/* ── 8. Bottom info bar ── */}
                         <div
-                          className="absolute bottom-0 left-0 right-0 z-30 flex items-center justify-between px-4 py-2.5"
+                          className="absolute bottom-0 left-0 right-0 z-30 flex items-center justify-end px-4 py-2.5"
                           style={{
                             background: "linear-gradient(to top, rgba(10,8,5,0.80) 0%, transparent 100%)",
                             borderTop: "1px solid rgba(255,255,255,0.04)",
                           }}
                         >
-                          <span
-                            style={{
-                              fontFamily: "var(--font-waldenburg)",
-                              fontSize: "11px",
-                              fontWeight: 500,
-                              letterSpacing: "0.04em",
-                              color: "rgba(255,255,255,0.14)",
-                            }}
-                          >
-                            {idx}
-                          </span>
                           {/* Arrow — appears on hover */}
                           <svg
                             className="opacity-0 group-hover:opacity-100 transition-all duration-400 translate-x-1 group-hover:translate-x-0"
