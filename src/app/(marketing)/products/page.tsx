@@ -298,67 +298,270 @@ export default function ProductsPage() {
           <div className="section-container">
             <div className="mb-12">
               <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-black/36">In Development</p>
-              <h2 className="section-heading">Coming Soon</h2>
+              <h2 className="section-heading">
+                Coming <span className="serif-italic">Soon.</span>
+              </h2>
               <div className="section-divider mt-6" />
             </div>
-            <div className="grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-6 sm:gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredUpcoming.map((p, index) => (
-                <ScrollReveal key={p.id} delay={index * 45}>
-                  <Link
-                    href={p.href}
-                    target={p.href.startsWith("http") ? "_blank" : undefined}
-                    rel={p.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="group block"
-                  >
-                    <div className="relative mb-4 overflow-hidden rounded-sm border border-black/8 opacity-80">
-                      <div className="relative aspect-16/10 w-full overflow-hidden grayscale">
-                        <Image
-                          src={p.image}
-                          alt={p.name}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
-                          quality={75} />
-                        <div className="absolute inset-0 z-10 opacity-[0.15] mix-blend-overlay pointer-events-none transition-opacity duration-500 group-hover:opacity-[0.35]" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }} />
-                        <div className="absolute inset-0 flex items-center justify-center bg-black/10 backdrop-blur-[2px] transition-opacity duration-500 group-hover:opacity-0">
-                          <span className="rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-black/80 shadow-sm">
-                            Upcoming
-                          </span>
+
+            <div className="grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-x-5 sm:gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+              {filteredUpcoming.map((p, index) => {
+                const isWarm = index % 2 === 0;
+                const accentRgb = isWarm ? "198,139,89" : "84,91,140";
+                const accentHex = isWarm ? "#C68B59" : "#8288C3";
+                const accentMid = isWarm ? "#b87a48" : "#6b72b0";
+                const idx = String(index + 1).padStart(2, "0");
+                return (
+                  <ScrollReveal key={p.id} delay={index * 55}>
+                    <Link
+                      href={p.href}
+                      target={p.href.startsWith("http") ? "_blank" : undefined}
+                      rel={p.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="group block"
+                    >
+                      {/* ────────────────────────────────────────
+                          CARD VISUAL
+                      ──────────────────────────────────────── */}
+                      <div
+                        className="relative overflow-hidden transition-shadow duration-500 group-hover:shadow-2xl"
+                        style={{
+                          borderRadius: "4px",
+                          border: "1px solid rgba(30,26,20,0.85)",
+                          boxShadow: "0 2px 8px rgba(0,0,0,0.18), 0 1px 2px rgba(0,0,0,0.12)",
+                          aspectRatio: "4 / 3",
+                        }}
+                      >
+                        {/* ── Inset border glow on hover ── */}
+                        <div
+                          className="absolute inset-0 z-40 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                          style={{
+                            borderRadius: "3px",
+                            boxShadow: `inset 0 0 0 1px rgba(${accentRgb},0.40), inset 0 1px 0 0 rgba(${accentRgb},0.60)`,
+                          }}
+                        />
+
+                        {/* ── 1. Deep warm dark base ── */}
+                        <div
+                          className="absolute inset-0"
+                          style={{ background: "linear-gradient(160deg, #141210 0%, #19160f 60%, #100e0a 100%)" }}
+                        />
+
+                        {/* ── 2. Noise grain — premium texture ── */}
+                        <div
+                          className="absolute inset-0 opacity-[0.22] mix-blend-soft-light pointer-events-none"
+                          style={{
+                            backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')",
+                            backgroundSize: "200px 200px",
+                          }}
+                        />
+
+                        {/* ── 3. Ambient glow orb — bottom-center, breathes ── */}
+                        <div
+                          className="absolute left-1/2 -translate-x-1/2 transition-all duration-700 group-hover:opacity-80 group-hover:scale-110"
+                          style={{
+                            bottom: "-20%",
+                            width: "110%",
+                            height: "70%",
+                            borderRadius: "50%",
+                            background: `radial-gradient(ellipse at center, rgba(${accentRgb},0.38) 0%, rgba(${accentRgb},0.10) 55%, transparent 80%)`,
+                            filter: "blur(1px)",
+                            opacity: 0.55,
+                          }}
+                        />
+
+                        {/* ── 4. Top accent line ── */}
+                        <div
+                          className="absolute top-0 left-0 right-0 h-px z-10"
+                          style={{ background: `linear-gradient(90deg, transparent 0%, rgba(${accentRgb},0.70) 40%, rgba(${accentRgb},0.40) 70%, transparent 100%)` }}
+                        />
+
+                        {/* ── 5. Dot grid — ultra subtle ── */}
+                        <div
+                          className="absolute inset-0 opacity-[0.04]"
+                          style={{
+                            backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.9) 0.8px, transparent 0.8px)",
+                            backgroundSize: "22px 22px",
+                          }}
+                        />
+
+                        {/* ── 6. IDLE: center lock-up ── */}
+                        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2.5 px-6 z-20 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-0 group-hover:-translate-y-3 group-hover:scale-95">
+                          {/* Badge */}
+                          <div
+                            className="inline-flex items-center gap-1.5 rounded-full mb-1"
+                            style={{
+                              padding: "4px 10px",
+                              background: `rgba(20,18,14,0.75)`,
+                              border: `1px solid rgba(${accentRgb},0.28)`,
+                              backdropFilter: "blur(12px)",
+                              boxShadow: `0 0 0 1px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.25)`,
+                            }}
+                          >
+                            <span
+                              className="w-[5px] h-[5px] rounded-full animate-pulse flex-shrink-0"
+                              style={{ background: accentHex, boxShadow: `0 0 5px 2px rgba(${accentRgb},0.80)` }}
+                            />
+                            <span
+                              style={{
+                                fontFamily: "var(--font-body), system-ui, sans-serif",
+                                fontSize: "8px",
+                                fontWeight: 700,
+                                letterSpacing: "0.16em",
+                                textTransform: "uppercase",
+                                color: `rgba(${accentRgb},0.85)`,
+                              }}
+                            >
+                              Coming Soon
+                            </span>
+                          </div>
+
+                          {/* Product name — bold typographic statement */}
+                          <p
+                            className="text-center select-none"
+                            style={{
+                              fontFamily: "var(--font-waldenburg)",
+                              fontSize: "clamp(1.25rem, 3.5vw, 2rem)",
+                              fontWeight: 500,
+                              letterSpacing: "-0.03em",
+                              lineHeight: 1.0,
+                              color: "rgba(255,255,255,0.92)",
+                            }}
+                          >
+                            {p.name}
+                          </p>
+
+                          {/* Tag — spaced uppercase */}
+                          <p
+                            className="text-center select-none"
+                            style={{
+                              fontFamily: "var(--font-body), system-ui, sans-serif",
+                              fontSize: "8.5px",
+                              fontWeight: 600,
+                              letterSpacing: "0.20em",
+                              textTransform: "uppercase",
+                              color: `rgba(${accentRgb},0.55)`,
+                            }}
+                          >
+                            {p.tag}
+                          </p>
                         </div>
-                        <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 bg-black/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                          <p className="text-white/90 text-[13px] leading-relaxed translate-y-4 transition-transform duration-500 group-hover:translate-y-0">
+
+                        {/* ── 7. HOVER: description panel ── */}
+                        <div
+                          className="absolute inset-0 z-20 flex flex-col justify-end px-5 pb-5 pt-10 opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                          style={{ background: `linear-gradient(to top, rgba(12,10,7,0.97) 0%, rgba(12,10,7,0.82) 45%, rgba(12,10,7,0.30) 75%, transparent 100%)` }}
+                        >
+                          {/* Product name — reappears in description panel */}
+                          <p
+                            className="mb-2 select-none"
+                            style={{
+                              fontFamily: "var(--font-waldenburg)",
+                              fontSize: "clamp(0.95rem, 2.5vw, 1.2rem)",
+                              fontWeight: 500,
+                              letterSpacing: "-0.02em",
+                              color: "rgba(255,255,255,0.90)",
+                              lineHeight: 1.2,
+                            }}
+                          >
+                            {p.name}
+                          </p>
+
+                          {/* Thin divider */}
+                          <div
+                            className="mb-3 w-8 h-px"
+                            style={{ background: `rgba(${accentRgb},0.45)` }}
+                          />
+
+                          <p
+                            style={{
+                              fontFamily: "var(--font-body), system-ui, sans-serif",
+                              fontSize: "11px",
+                              lineHeight: 1.65,
+                              color: "rgba(255,255,255,0.55)",
+                            }}
+                          >
                             {p.desc}
                           </p>
                         </div>
-                      </div>
-                    </div>
 
-                    <div className="flex flex-col pb-4 pt-2">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-1 sm:gap-0">
-                        <div className="flex items-center gap-2">
+                        {/* ── 8. Bottom info bar ── */}
+                        <div
+                          className="absolute bottom-0 left-0 right-0 z-30 flex items-center justify-between px-4 py-2.5"
+                          style={{
+                            background: "linear-gradient(to top, rgba(10,8,5,0.80) 0%, transparent 100%)",
+                            borderTop: "1px solid rgba(255,255,255,0.04)",
+                          }}
+                        >
+                          <span
+                            style={{
+                              fontFamily: "var(--font-waldenburg)",
+                              fontSize: "11px",
+                              fontWeight: 500,
+                              letterSpacing: "0.04em",
+                              color: "rgba(255,255,255,0.14)",
+                            }}
+                          >
+                            {idx}
+                          </span>
+                          {/* Arrow — appears on hover */}
+                          <svg
+                            className="opacity-0 group-hover:opacity-100 transition-all duration-400 translate-x-1 group-hover:translate-x-0"
+                            width="12" height="12" viewBox="0 0 12 12" fill="none"
+                          >
+                            <path d="M2 6h8M7 3l3 3-3 3" stroke={accentHex} strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" opacity="0.7"/>
+                          </svg>
+                        </div>
+                      </div>
+
+                      {/* ── Card meta below image ── */}
+                      <div className="flex items-start justify-between pt-3 pb-4 gap-3">
+                        <div>
                           <h3
                             style={{
                               fontFamily: "var(--font-waldenburg)",
-                              fontSize: "clamp(1.05rem, 2.5vw, 1.25rem)",
+                              fontSize: "clamp(0.95rem, 2.2vw, 1.1rem)",
                               fontWeight: 500,
                               letterSpacing: "-0.015em",
                               color: "var(--heading-color)",
-                              lineHeight: 1.2
+                              lineHeight: 1.25,
                             }}
                           >
                             {p.name}
                           </h3>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <span className="text-[9.5px] sm:text-[11px] font-semibold uppercase tracking-widest sm:tracking-[0.16em] text-black/40">
+                          <p
+                            className="mt-0.5"
+                            style={{
+                              fontFamily: "var(--font-body), system-ui, sans-serif",
+                              fontSize: "10px",
+                              fontWeight: 500,
+                              color: "rgba(0,0,0,0.38)",
+                              letterSpacing: "0.01em",
+                            }}
+                          >
                             {p.tag}
-                          </span>
+                          </p>
                         </div>
+                        <span
+                          className="shrink-0 rounded-full mt-0.5"
+                          style={{
+                            padding: "3px 8px",
+                            background: `rgba(${accentRgb},0.07)`,
+                            border: `1px solid rgba(${accentRgb},0.18)`,
+                            fontFamily: "var(--font-body), system-ui, sans-serif",
+                            fontSize: "8px",
+                            fontWeight: 700,
+                            letterSpacing: "0.14em",
+                            textTransform: "uppercase",
+                            color: accentMid,
+                          }}
+                        >
+                          Upcoming
+                        </span>
                       </div>
-                    </div>
-                  </Link>
-                </ScrollReveal>
-              ))}
+                    </Link>
+                  </ScrollReveal>
+                );
+              })}
             </div>
           </div>
         </section>
